@@ -1,0 +1,63 @@
+<div class="user-form">
+	<div class="form-title">@@if(context.title){@@title}@@if(!context.title){Закажите звонок}</div>
+	@@if(!context.noteFalse){
+	<p class="user-form__note">
+		Чтобы уточнить детали продажи или приступить к оформлению, <strong>закажите звонок</strong> или свяжитесь с нами в социальнных сетях.
+	</p>
+	}
+	<form action="" method="post" class="validation-form-js">
+		<div class="form-row">
+			@@loop("_tpl_forms_field.html", [{
+					"wrap": "true",
+					"type": "text",
+					"name": "f-col-1",
+					"ph": "Введите Ваше имя...",
+					"id": "f-col-1",
+					"label": "Имя",
+					"labelClasses": "",
+					"valid": "true",
+					"required": "true"
+				}
+			])
+			@@loop("_tpl_forms_field.html", [{
+					"wrap": "true",
+					"type": "text",
+					"name": "phoneNumber",
+					"ph": "+375 29 656-98-25",
+					"classes": "has-phone-mask",
+					"id": "f-col-2",
+					"label": "Телефон",
+					"labelClasses": "",
+					"valid": "true",
+					"required": "true"
+				}
+			])
+			<div class="input-wrap form-buttons">
+				<label>&nbsp;</label>
+				@@include("_tpl_btn.html", {"type": "button!", "value": "Заказать звонок", "iconRight": "@@include('./includes/svg/icon-phone.svg')"})
+			</div>
+		</div>
+
+		<div class="user-form__msg">
+			<div class="user-form__msg__caption">
+				<strong class="user-form__msg__title">Звонок заказан!</strong>
+				<span class="user-form__msg__subtitle">Мы перезвоним Вам на следующий номер:</span>
+			</div>
+			<div class="user-form__msg__tel"><a href="tel:+375296892548">+375 29 689-25-48</a></div>
+			<div class="user-form__msg__soc">
+				<div class="social-networks align-center">
+					<div class="social-networks__list">
+						@@loop('_tpl_social-items.html', 'includes/json/social-items.json')
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	@@if(!context.socFalse){
+	<div class="social-networks align-center">
+		<div class="social-networks__list">
+			@@loop('_tpl_social-items.html', 'includes/json/social-items.json')
+		</div>
+	</div>
+	}
+</div>

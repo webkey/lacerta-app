@@ -1,0 +1,3198 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]>      <html class="no-js old-ie" lang="ru"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js ie10" lang="ru"> <![endif]-->
+<!--[if gt IE 10]><!-->
+<html class="no-js" lang="ru">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>Forms</title>
+	<!--Mobile optimized-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+	<!--Theme color-->
+	<meta name="theme-color" content="#333399">
+	<!--SEO-->
+	<meta name="description" content="описание">
+	<meta name="keywords" content="ключевые слова">
+	<meta name="yandex-verification" content="XXXXXXXXXXXXXX">
+	<meta name="google-site-verification" content="XXXXXXXXXXXXXX">
+	<!--The Open Graph protocol-->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:url" content="http://localhost:3000/index.html">
+	<meta property="og:title" content="Название">
+	<meta property="og:image" content="http://localhost:3000/share.png">
+	<meta property="og:image:height" content="256">
+	<meta property="og:image:width" content="256">
+	<meta property="og:description" content="Описание">
+	<meta property="og:site_name" content="Расширенное название">
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.ico?rev=@@hash">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico?rev=@@hash">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png?rev=@@hash">
+	<!--Style-->
+	<link rel="stylesheet" href="css/fonts.css?rev=@@hash">
+	<link rel="stylesheet" href="css/libs.min.css?rev=@@hash">
+	<link rel="stylesheet" href="css/main.css?rev=@@hash">
+	<!--Modernizr-->
+	<script src="js/modernizr.min.js"></script>
+</head>
+
+<body>
+	<noscript>
+		<div class="no-js-warning">Для корректной работы сайта <strong>включите JavaScript</strong> в браузере</div>
+	</noscript>
+	<!--[if lt IE 10]> <div class="browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div> <![endif]-->
+	<!-- >>> head.tpl END <<< -->
+	<div class="wrapper" id="page">
+		<!--HEADER-->
+		<header class="header formPage">
+			<div class="header__layout max-wrap">
+				<div class="header__holder">
+					<div class="header__top">
+						<strong class="logo">
+							<a href="index.html" data-heading-align="left"><em>Покупка и<br> продажа облигаций</em></span></a>
+						</strong>
+						<ul class="header-menu">
+							<li class="small"><a href="about.html" data-heading="Скажите:<br> “Здравствуйте, деньги”">Компания Lacerta</a></li>
+							<li><a href="buy.html" data-heading="Покупка облигаций">Купить</a></li>
+							<li><a href="sell.html" data-heading="Продажа облигаций">Продать</a></li>
+						</ul>
+					</div>
+					<div class="nav-wrap shutter--nav-js" data-tc-stop>
+						<div class="max-wrap-text push-auto">
+							<nav class="nav">
+								<ul class="nav__list">
+									<li class="">
+										<a href="about.html" data-heading="Скажите:&lt;br&gt; “Здравствуйте, деньги”"><span>Компания Lacerta</span></a>
+									</li>
+									<li class="">
+										<a href="docs.html" data-heading="Юридические документы"><span>Юридические документы</span></a>
+									</li>
+								</ul>
+								<ul class="nav__list">
+									<li class="">
+										<a href="secondary.html" data-heading="Вторичный - значит&lt;br&gt; “на бис!”"><span>Вторичный рынок облигаций</span></a>
+									</li>
+									<li class="">
+										<a href="place-bonds.html" data-heading="Будет лучше их выпустить!"><span>Выпустить и разместить облигации</span></a>
+									</li>
+									<li class="">
+										<a href="payments.html" data-heading="Утром деньги -&lt;br&gt; вечером дивиденты"><span>Выплаты доходов</span></a>
+									</li>
+								</ul>
+								<ul class="nav__list">
+									<li class="high ">
+										<a href="buy.html" data-heading="Покупка облигаций"><span>Купить облигации</span></a>
+									</li>
+									<li class="high ">
+										<a href="sell.html" data-heading="Продажа облигаций"><span>Продать облигации</span></a>
+									</li>
+								</ul>
+								<ul class="nav__list">
+									<li class="">
+										<a href="contacts.html" data-heading="Контакты"><span>Контакты</span></a>
+										<a href="tel:+375172247479">+375 17 <strong>224-74-79</strong></a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="overlay nav-overlay nav-overlay-js">&nbsp;</div>
+					<a href="#" class="nav-opener nav-opener-js"><i>&nbsp;</i><span>Меню</span></a>
+				</div>
+			</div>
+		</header>
+		<!--HEADER end-->
+		<!--MAIN-->
+		<div class="main formPage">
+			<div class="bg-phone">
+				<div class="bg-phone__img">
+					<img src="img/phone.png" alt="" />
+				</div>
+			</div>
+			<div class="layout content user-content">
+				<div class="heading">
+					<h1>Forms</h1>
+				</div>
+				<style>
+					.formPage{
+		background-color: #333399;
+	}
+	h3 + div {
+		border-bottom: 2px solid #ffa43f;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	form > div:not(.input-wrap):not(.form-row):not(.form-footer){
+		padding-top: 40px;
+		padding-bottom: 40px;
+		border-top: 1px dashed #ffa43f;
+	}
+	form > div:not(.input-wrap):not(.form-row):not(.form-footer):first-child{
+		padding-top: 0;
+		border: none;
+	}
+	form > div:not(.input-wrap):not(.form-row):not(.form-footer):last-child{
+		padding-bottom: 0;
+	}
+	h3, h4{
+		position: relative;
+		padding-right: 40px !important;
+	}
+	h3{
+		margin-top: 3rem;
+	}
+	h3 label, h4 label{
+		position: absolute;
+		right: 0;
+		top: 50%;
+		display: block;
+		float: right;
+		width: 30px;
+		height: 30px;
+		border: 1px solid #000;
+		cursor: pointer;
+		margin: -15px 0 0;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	h3 label::before, h4 label::before{
+		content: "–";
+		position: relative;
+		display: block;
+		font-size: 24px;
+		line-height: 1;
+		text-align: center;
+		top: -1px;
+	}
+	.accordionOpener:checked + h3,
+	.accordionOpener:checked + h4{
+		margin-bottom: 0;
+	}
+	.accordionOpener:checked + h3 label::before,
+	.accordionOpener:checked + h4 label::before{
+		content: "+";
+	}
+	.accordionOpener:checked + h3 + div,
+	.accordionOpener:checked + h4 + div{
+		display: none;
+	}
+</style>
+				<!--===============forms default===============-->
+				<input type="checkbox" class="accordionOpener" id="0_01">
+				<h3>
+					<label class="mark" for="0_01"></label>
+					<a href="#hash-formElementsDef" id="hash-formElementsDef" class="hashAnchor"><span class="mark">Fields of forms without wrappers (recommended)</span></a>
+				</h3>
+				<div class="layout-flood">
+					<form action="#" method="post">
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_01_tpl">
+							<h4>
+								<label class="mark" for="0_01_tpl"></label>
+								<a href="#hash-inputTextTpl" id="hash-inputTextTpl" class="hashAnchor"><span class="mark">Example input field</span></a>
+							</h4>
+							<div>
+								<label for="id">Label:</label>
+								<input class="field-js" id="id" name="id" placeholder="Placeholder" type="text" required />
+								<div class="error-note">Error text</div>
+								<div class="success-note">Success text</div>
+								<!--===================================================-->
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_01_text" checked>
+							<h4>
+								<label class="mark" for="0_01_text"></label>
+								<a href="#hash-inputText" id="hash-inputText" class="hashAnchor"><span class="mark">Input type 'text'</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without js</b></p>
+									<label for="f-base">Text input:</label>
+									<input id="f-base" name="f-base" placeholder="Placeholder" type="text" />
+									<!--===================================================-->
+									<label for="f-base-disabled">Text input - disabled:</label>
+									<input id="f-base-disabled" name="f-base-disabled" placeholder="Placeholder" type="text" disabled />
+									<!--===================================================-->
+									<label for="f-fit">Text input - has value:</label>
+									<input id="f-fit" name="f-fit" placeholder="Value placeholder" type="text" value="Value" />
+									<!--===================================================-->
+									<label for="f-fit-disabled">Text input - has value - disabled:</label>
+									<input id="f-fit-disabled" name="f-fit-disabled" placeholder="Value placeholder disabled" type="text" value="Value disabled" disabled />
+									<!--===================================================-->
+									<label for="f-validation">Text input - validation:</label>
+									<input id="f-validation" name="f-validation" placeholder="Validation" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="f-err">Text input - error:</label>
+									<input class="error" id="f-err" name="f-err" placeholder="Error" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="f-suc">Text input - success:</label>
+									<input class="success" id="f-suc" name="f-suc" placeholder="Success" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+								<div class="col">
+									<p><b>With js</b></p>
+									<label for="f-base-js">Text input:</label>
+									<input class="field-js" id="f-base-js" name="f-base-js" placeholder="Placeholder" type="text" />
+									<!--===================================================-->
+									<label for="f-base-disabled-js">Text input - disabled:</label>
+									<input class="field-js" id="f-base-disabled-js" name="f-base-disabled-js" placeholder="Placeholder" type="text" disabled />
+									<!--===================================================-->
+									<label for="f-fit-js">Text input - has value:</label>
+									<input class="field-js" id="f-fit-js" name="f-fit-js" placeholder="Value placeholder" type="text" value="Value" />
+									<!--===================================================-->
+									<label for="f-fit-disabled-js">Text input - has value - disabled:</label>
+									<input class="field-js" id="f-fit-disabled-js" name="f-fit-disabled-js" placeholder="Value placeholder disabled" type="text" value="Value disabled" disabled />
+									<!--===================================================-->
+									<label for="f-validation-js">Text input - validation:</label>
+									<input class="field-js" id="f-validation-js" name="f-validation-js" placeholder="Validation" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="f-err-js">Text input - error:</label>
+									<input class="field-js error" id="f-err-js" name="f-err-js" placeholder="Error" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="f-suc-js">Text input - success:</label>
+									<input class="field-js success" id="f-suc-js" name="f-suc-js" placeholder="Success" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_01_textarea" checked>
+							<h4>
+								<label class="mark" for="0_01_textarea"></label>
+								<a href="#hash-textareaDef" id="hash-textareaDef" class="hashAnchor"><span class="mark">Textarea</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without js</b></p>
+									<label for="f-ta-base">Textarea:</label>
+									<textarea id="f-ta-base" name="f-ta-base" placeholder="Placeholder"></textarea>
+									<!--===================================================-->
+									<label for="f-ta-base-disabled">Textarea - disabled:</label>
+									<textarea id="f-ta-base-disabled" name="f-ta-base-disabled" placeholder="Placeholder" disabled></textarea>
+									<!--===================================================-->
+									<label for="f-ta-fit">Textarea - has value:</label>
+									<textarea id="f-ta-fit" name="f-ta-fit" placeholder="Value placeholder">Value</textarea>
+									<!--===================================================-->
+									<label for="f-ta-fit-disabled">Textarea - has value - disabled:</label>
+									<textarea id="f-ta-fit-disabled" name="f-ta-fit-disabled" placeholder="Value placeholder disabled" disabled>Value disabled</textarea>
+									<!--===================================================-->
+									<label for="f-ta-validation">Textarea - validation:</label>
+									<textarea id="f-ta-validation" name="f-ta-validation" placeholder="Validation"></textarea>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="f-ta-err">Textarea - error:</label>
+									<textarea class="error" id="f-ta-err" name="f-ta-err" placeholder="Error"></textarea>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="f-ta-suc">Textarea - success:</label>
+									<textarea class="success" id="f-ta-suc" name="f-ta-suc" placeholder="Success"></textarea>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+								<div class="col">
+									<p><b>With js</b></p>
+									<label for="f-ta-base-js">Textarea:</label>
+									<textarea class="field-js" id="f-ta-base-js" name="f-ta-base-js" placeholder="Placeholder"></textarea>
+									<!--===================================================-->
+									<label for="f-ta-base-disabled-js">Textarea - disabled:</label>
+									<textarea class="field-js" id="f-ta-base-disabled-js" name="f-ta-base-disabled-js" placeholder="Placeholder" disabled></textarea>
+									<!--===================================================-->
+									<label for="f-ta-fit-js">Textarea - has value:</label>
+									<textarea class="field-js" id="f-ta-fit-js" name="f-ta-fit-js" placeholder="Value placeholder">Value</textarea>
+									<!--===================================================-->
+									<label for="f-ta-fit-disabled-js">Textarea - has value - disabled:</label>
+									<textarea class="field-js" id="f-ta-fit-disabled-js" name="f-ta-fit-disabled-js" placeholder="Value placeholder disabled" disabled>Value disabled</textarea>
+									<!--===================================================-->
+									<label for="f-ta-validation-js">Textarea - validation:</label>
+									<textarea class="field-js" id="f-ta-validation-js" name="f-ta-validation-js" placeholder="Validation"></textarea>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="f-ta-err-js">Textarea - error:</label>
+									<textarea class="field-js error" id="f-ta-err-js" name="f-ta-err-js" placeholder="Error"></textarea>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="f-ta-suc-js">Textarea - success:</label>
+									<textarea class="field-js success" id="f-ta-suc-js" name="f-ta-suc-js" placeholder="Success"></textarea>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--===============forms default end===============-->
+				<!--===============forms with wrapper===============-->
+				<input type="checkbox" class="accordionOpener" id="0_02">
+				<h3>
+					<label class="mark" for="0_02"></label>
+					<a href="#hash-formElementsWrap" id="hash-formElementsWrap" class="hashAnchor"><span class="mark">Fields of forms with wrappers (optional)</span></a>
+				</h3>
+				<div class="layout-flood">
+					<form action="#" method="post">
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_02_text">
+							<h4>
+								<label class="mark" for="0_02_text"></label>
+								<a href="#hash-inputTextWrap" id="hash-inputTextWrap" class="hashAnchor"><span class="mark">Input type 'text'</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without js</b></p>
+									<div class="input-wrap">
+										<label for="f-wrap-base">Text input:</label>
+										<div class="input-holder">
+											<input id="f-wrap-base" name="f-wrap-base" placeholder="Placeholder" type="text" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-base-disabled">Text input - disabled:</label>
+										<div class="input-holder">
+											<input id="f-wrap-base-disabled" name="f-wrap-base-disabled" placeholder="Placeholder" type="text" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-fit">Text input - has value:</label>
+										<div class="input-holder">
+											<input id="f-wrap-fit" name="f-wrap-fit" placeholder="Value placeholder" type="text" value="Value" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-fit-disabled">Text input - has value - disabled:</label>
+										<div class="input-holder">
+											<input id="f-wrap-fit-disabled" name="f-wrap-fit-disabled" placeholder="Value placeholder disabled" type="text" value="Value disabled" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-validation">Text input - validation:</label>
+										<div class="input-holder">
+											<input id="f-wrap-validation" name="f-wrap-validation" placeholder="Validation" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="error" for="f-wrap-err">Text input - error:</label>
+										<div class="input-holder error">
+											<input class="error" id="f-wrap-err" name="f-wrap-err" placeholder="Error" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="success" for="f-wrap-suc">Text input - success:</label>
+										<div class="input-holder success">
+											<input class="success" id="f-wrap-suc" name="f-wrap-suc" placeholder="Success" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+								<div class="col">
+									<p><b>With js</b></p>
+									<div class="input-wrap">
+										<label for="f-wrap-base-js">Text input:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-wrap-base-js" name="f-wrap-base-js" placeholder="Placeholder" type="text" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-base-disabled-js">Text input - disabled:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-wrap-base-disabled-js" name="f-wrap-base-disabled-js" placeholder="Placeholder" type="text" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-fit-js">Text input - has value:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-wrap-fit-js" name="f-wrap-fit-js" placeholder="Value placeholder" type="text" value="Value" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-fit-disabled-js">Text input - has value - disabled:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-wrap-fit-disabled-js" name="f-wrap-fit-disabled-js" placeholder="Value placeholder disabled" type="text" value="Value disabled" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-validation-js">Text input - validation:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-wrap-validation-js" name="f-wrap-validation-js" placeholder="Validation" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="error" for="f-wrap-err-js">Text input - error:</label>
+										<div class="input-holder error">
+											<input class="field-js error" id="f-wrap-err-js" name="f-wrap-err-js" placeholder="Error" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="success" for="f-wrap-suc-js">Text input - success:</label>
+										<div class="input-holder success">
+											<input class="field-js success" id="f-wrap-suc-js" name="f-wrap-suc-js" placeholder="Success" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_02_text_small">
+							<h4>
+								<label class="mark" for="0_02_text_small"></label>
+								<a href="#hash-inputTextWrapSmall" id="hash-inputTextWrapSmall" class="hashAnchor"><span class="mark">Input type 'text' .small-field</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without js</b></p>
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-base">Text input:</label>
+										<div class="input-holder">
+											<input id="f-small-wrap-base" name="f-small-wrap-base" placeholder="Placeholder" type="text" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-base-disabled">Text input - disabled:</label>
+										<div class="input-holder">
+											<input id="f-small-wrap-base-disabled" name="f-small-wrap-base-disabled" placeholder="Placeholder" type="text" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-fit">Text input - has value:</label>
+										<div class="input-holder">
+											<input id="f-small-wrap-fit" name="f-small-wrap-fit" placeholder="Value placeholder" type="text" value="Value" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-fit-disabled">Text input - has value - disabled:</label>
+										<div class="input-holder">
+											<input id="f-small-wrap-fit-disabled" name="f-small-wrap-fit-disabled" placeholder="Value placeholder disabled" type="text" value="Value disabled" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-validation">Text input - validation:</label>
+										<div class="input-holder">
+											<input id="f-small-wrap-validation" name="f-small-wrap-validation" placeholder="Validation" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label class="error" for="f-small-wrap-err">Text input - error:</label>
+										<div class="input-holder error">
+											<input class="error" id="f-small-wrap-err" name="f-small-wrap-err" placeholder="Error" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label class="success" for="f-small-wrap-suc">Text input - success:</label>
+										<div class="input-holder success">
+											<input class="success" id="f-small-wrap-suc" name="f-small-wrap-suc" placeholder="Success" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+								<div class="col">
+									<p><b>With js</b></p>
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-base-js">Text input:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-small-wrap-base-js" name="f-small-wrap-base-js" placeholder="Placeholder" type="text" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-base-disabled-js">Text input - disabled:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-small-wrap-base-disabled-js" name="f-small-wrap-base-disabled-js" placeholder="Placeholder" type="text" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-fit-js">Text input - has value:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-small-wrap-fit-js" name="f-small-wrap-fit-js" placeholder="Value placeholder" type="text" value="Value" />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-fit-disabled-js">Text input - has value - disabled:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-small-wrap-fit-disabled-js" name="f-small-wrap-fit-disabled-js" placeholder="Value placeholder disabled" type="text" value="Value disabled" disabled />
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label for="f-small-wrap-validation-js">Text input - validation:</label>
+										<div class="input-holder">
+											<input class="field-js" id="f-small-wrap-validation-js" name="f-small-wrap-validation-js" placeholder="Validation" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label class="error" for="f-small-wrap-err-js">Text input - error:</label>
+										<div class="input-holder error">
+											<input class="field-js error" id="f-small-wrap-err-js" name="f-small-wrap-err-js" placeholder="Error" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap small-field">
+										<label class="success" for="f-small-wrap-suc-js">Text input - success:</label>
+										<div class="input-holder success">
+											<input class="field-js success" id="f-small-wrap-suc-js" name="f-small-wrap-suc-js" placeholder="Success" type="text" />
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_02_textarea">
+							<h4>
+								<label class="mark" for="0_02_textarea"></label>
+								<a href="#hash-textareaWrap" id="hash-textareaWrap" class="hashAnchor"><span class="mark">Textarea</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without js</b></p>
+									<div class="input-wrap">
+										<label for="f-wrap-ta-base">Textarea:</label>
+										<div class="input-holder">
+											<textarea id="f-wrap-ta-base" name="f-wrap-ta-base" placeholder="Placeholder"></textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-base-disabled">Textarea - disabled:</label>
+										<div class="input-holder">
+											<textarea id="f-wrap-ta-base-disabled" name="f-wrap-ta-base-disabled" placeholder="Placeholder" disabled></textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-fit">Textarea - has value:</label>
+										<div class="input-holder">
+											<textarea id="f-wrap-ta-fit" name="f-wrap-ta-fit" placeholder="Value placeholder">Value</textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-fit-disabled">Textarea - has value - disabled:</label>
+										<div class="input-holder">
+											<textarea id="f-wrap-ta-fit-disabled" name="f-wrap-ta-fit-disabled" placeholder="Value placeholder disabled" disabled>Value disabled</textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-validation">Textarea - validation:</label>
+										<div class="input-holder">
+											<textarea id="f-wrap-ta-validation" name="f-wrap-ta-validation" placeholder="Validation"></textarea>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="error" for="f-wrap-ta-err">Textarea - error:</label>
+										<div class="input-holder error">
+											<textarea class="error" id="f-wrap-ta-err" name="f-wrap-ta-err" placeholder="Error"></textarea>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="success" for="f-wrap-ta-suc">Textarea - success:</label>
+										<div class="input-holder success">
+											<textarea class="success" id="f-wrap-ta-suc" name="f-wrap-ta-suc" placeholder="Success"></textarea>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+								<div class="col">
+									<p><b>With js</b></p>
+									<div class="input-wrap">
+										<label for="f-wrap-ta-base-js">Textarea:</label>
+										<div class="input-holder">
+											<textarea class="field-js" id="f-wrap-ta-base-js" name="f-wrap-ta-base-js" placeholder="Placeholder"></textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-base-disabled-js">Textarea - disabled:</label>
+										<div class="input-holder">
+											<textarea class="field-js" id="f-wrap-ta-base-disabled-js" name="f-wrap-ta-base-disabled-js" placeholder="Placeholder" disabled></textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-fit-js">Textarea - has value:</label>
+										<div class="input-holder">
+											<textarea class="field-js" id="f-wrap-ta-fit-js" name="f-wrap-ta-fit-js" placeholder="Value placeholder">Value</textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-fit-disabled-js">Textarea - has value - disabled:</label>
+										<div class="input-holder">
+											<textarea class="field-js" id="f-wrap-ta-fit-disabled-js" name="f-wrap-ta-fit-disabled-js" placeholder="Value placeholder disabled" disabled>Value disabled</textarea>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="f-wrap-ta-validation-js">Textarea - validation:</label>
+										<div class="input-holder">
+											<textarea class="field-js" id="f-wrap-ta-validation-js" name="f-wrap-ta-validation-js" placeholder="Validation"></textarea>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="error" for="f-wrap-ta-err-js">Textarea - error:</label>
+										<div class="input-holder error">
+											<textarea class="field-js error" id="f-wrap-ta-err-js" name="f-wrap-ta-err-js" placeholder="Error"></textarea>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="success" for="f-wrap-ta-suc-js">Textarea - success:</label>
+										<div class="input-holder success">
+											<textarea class="field-js success" id="f-wrap-ta-suc-js" name="f-wrap-ta-suc-js" placeholder="Success"></textarea>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--===============forms with wrapper end===============-->
+				<!--===============selects===============-->
+				<input type="checkbox" class="accordionOpener" id="0_03" checked>
+				<h3>
+					<label class="mark" for="0_03"></label>
+					<a href="#hash-selectsDefGroup" id="hash-selectsDefGroup" class="hashAnchor"><span class="mark">Selects (without js customization)</span></a>
+				</h3>
+				<div class="layout-text">
+					<form action="#" method="post">
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_03_tpl">
+							<h4>
+								<label class="mark" for="0_03_tpl"></label>
+								<a href="#hash-selectTpl" id="hash-selectTpl" class="hashAnchor"><span class="mark">Example template of select</span></a>
+							</h4>
+							<div>
+								<label for="s-id">Label:</label>
+								<select class="field-js" id="s-id" name="s-id">
+									<option value="">-Choose one of the options-</option>
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+									<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+									<option value="4">Option 4</option>
+									<option value="5">Option 5</option>
+									<option value="6">Option 6</option>
+									<option value="7">Option 7</option>
+									<option value="8">Option 8</option>
+								</select>
+								<!--===================================================-->
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_03_default">
+							<h4>
+								<label class="mark" for="0_03_default"></label>
+								<a href="#hash-selectsDef" id="hash-selectsDef" class="hashAnchor"><span class="mark">Selects without a wrapper. Default arrow (recommended)</span></a>
+							</h4>
+							<div class="columns">
+								<div class="column">
+									<p><b>Without js</b></p>
+									<label for="s-base">Select:</label>
+									<select id="s-base" name="s-base">
+										<option value=''>Choose</option>
+										<option value='1'>Option 1</option>
+										<option value='3'>Option 2</option>
+										<option value='3'>Option 3</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-base-disabled">Select - disabled:</label>
+									<select id="s-base-disabled" name="s-base-disabled" disabled>
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-fit">Select - selected:</label>
+									<select id="s-fit" name="s-fit">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2" selected>Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-fit-disabled">Select - selected - disabled:</label>
+									<select id="s-fit-disabled" name="s-fit-disabled" disabled>
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-validation">Select - validation:</label>
+									<select id="s-validation" name="s-validation">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="s-err">Select - error:</label>
+									<select class="error" id="s-err" name="s-err">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="s-suc">Select - success:</label>
+									<select class="success" id="s-suc" name="s-suc">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+								<div class="column">
+									<p><b>With js</b></p>
+									<label for="s-base-js">Select:</label>
+									<select class="field-js" id="s-base-js" name="s-base-js">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-base-disabled-js">Select - disabled:</label>
+									<select class="field-js" id="s-base-disabled-js" name="s-base-disabled-js" disabled>
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-fit-js">Select - selected:</label>
+									<select class="field-js" id="s-fit-js" name="s-fit-js">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2" selected>Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-fit-disabled-js">Select - selected - disabled:</label>
+									<select class="field-js" id="s-fit-disabled-js" name="s-fit-disabled-js" disabled>
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="s-validation-js">Select - validation:</label>
+									<select class="field-js" id="s-validation-js" name="s-validation-js">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="s-err-js">Select - error:</label>
+									<select class="field-js error" id="s-err-js" name="s-err-js">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="s-suc-js">Select - success:</label>
+									<select class="field-js success" id="s-suc-js" name="s-suc-js">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_03_arrows">
+							<h4>
+								<label class="mark" for="0_03_arrows"></label>
+								<a href="#hash-selectsArrows" id="hash-selectsArrows" class="hashAnchor"><span class="mark">Selects without a wrapper. Custom arrow</span></a>
+							</h4>
+							<div>
+								<div><code class="mark">select</code> необходимо завернуть в <code class="mark">div</code> с классом <code class="mark">.select</code></div>
+								<div>Элементы валидаци поместить в <code class="mark">.select</code> после тэга <code class="mark">select</code></div>
+								<div>Если элементы валидаци поместить после <code class="mark">.select</code>, то классы валидации необходимо добавлять и на <code class="mark">.select</code></div>
+								<div class="user-spacer"></div>
+								<div class="columns">
+									<div class="column">
+										<p><b>Without js</b></p>
+										<label for="sm-base">Select:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select id="sm-base" name="sm-base">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-base-disabled">Select - disabled:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select id="sm-base-disabled" name="sm-base-disabled" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-fit">Select - selected:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select id="sm-fit" name="sm-fit">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2" selected>Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-fit-disabled">Select - selected - disabled:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select id="sm-fit-disabled" name="sm-fit-disabled" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-validation">Select - validation:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select id="sm-validation" name="sm-validation">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+										<!--===================================================-->
+										<label class="error" for="sm-err">Select - error:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="error" id="sm-err" name="sm-err">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+										<!--===================================================-->
+										<label class="success" for="sm-suc">Select - success:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="success" id="sm-suc" name="sm-suc">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+										<!--===================================================-->
+									</div>
+									<div class="column">
+										<p><b>With js</b></p>
+										<label for="sm-base-js">Select:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js" id="sm-base-js" name="sm-base-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-base-disabled-js">Select - disabled:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js" id="sm-base-disabled-js" name="sm-base-disabled-js" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-fit-js">Select - selected:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js" id="sm-fit-js" name="sm-fit-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2" selected>Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-fit-disabled-js">Select - selected - disabled:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js" id="sm-fit-disabled-js" name="sm-fit-disabled-js" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+										<!--===================================================-->
+										<label for="sm-validation-js">Select - validation:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js" id="sm-validation-js" name="sm-validation-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+										<!--===================================================-->
+										<label class="error" for="sm-err-js">Select - error:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js error" id="sm-err-js" name="sm-err-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+										<!--===================================================-->
+										<label class="success" for="sm-suc-js">Select - success:</label>
+										<!--Important! First option should have value ""-->
+										<div class="select">
+											<select class="field-js success" id="sm-suc-js" name="sm-suc-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+										<!--===================================================-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_03_default_wrap">
+							<h4>
+								<label class="mark" for="0_03_default_wrap"></label>
+								<a href="#hash-selectsDefWrap" id="hash-selectsDefWrap" class="hashAnchor"><span class="mark">Select has a wrapper. Default arrow</span></a>
+							</h4>
+							<div class="columns">
+								<div class="column">
+									<p><b>Without js</b></p>
+									<div class="input-wrap
+	">
+										<label for="sw-base">Select:</label>
+										<div class="input-holder">
+											<select id="sw-base" name="sw-base">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-base-disabled">Select - disabled:</label>
+										<div class="input-holder">
+											<select id="sw-base-disabled" name="sw-base-disabled" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-fit">Select - selected:</label>
+										<div class="input-holder">
+											<select id="sw-fit" name="sw-fit">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2" selected>Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-fit-disabled">Select - selected - disabled:</label>
+										<div class="input-holder">
+											<select id="sw-fit-disabled" name="sw-fit-disabled" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-validation">Select - validation:</label>
+										<div class="input-holder">
+											<select id="sw-validation" name="sw-validation">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="error" for="sw-err">Select - error:</label>
+										<div class="input-holder error">
+											<select class="error" id="sw-err" name="sw-err">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="success" for="sw-suc">Select - success:</label>
+										<div class="input-holder success">
+											<select class="success" id="sw-suc" name="sw-suc">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+								<div class="column">
+									<p><b>With js</b></p>
+									<div class="input-wrap
+	">
+										<label for="sw-base-js">Select:</label>
+										<div class="input-holder">
+											<select class="field-js" id="sw-base-js" name="sw-base-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-base-disabled-js">Select - disabled:</label>
+										<div class="input-holder">
+											<select class="field-js" id="sw-base-disabled-js" name="sw-base-disabled-js" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-fit-js">Select - selected:</label>
+										<div class="input-holder">
+											<select class="field-js" id="sw-fit-js" name="sw-fit-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2" selected>Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-fit-disabled-js">Select - selected - disabled:</label>
+										<div class="input-holder">
+											<select class="field-js" id="sw-fit-disabled-js" name="sw-fit-disabled-js" disabled>
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="sw-validation-js">Select - validation:</label>
+										<div class="input-holder">
+											<select class="field-js" id="sw-validation-js" name="sw-validation-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="error" for="sw-err-js">Select - error:</label>
+										<div class="input-holder error">
+											<select class="field-js error" id="sw-err-js" name="sw-err-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="success" for="sw-suc-js">Select - success:</label>
+										<div class="input-holder success">
+											<select class="field-js success" id="sw-suc-js" name="sw-suc-js">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_03_arrows_wrap">
+							<h4>
+								<label class="mark" for="0_03_arrows_wrap"></label>
+								<a href="#hash-selectsArrowsWrap" id="hash-selectsArrowsWrap" class="hashAnchor"><span class="mark">Select has a wrapper. Custom arrow</span></a>
+							</h4>
+							<div>
+								<div><code class="mark">select</code> необходимо завернуть в <code class="mark">div</code> с классом <code class="mark">.select</code></div>
+								<div>Элементы валидаци поместить в <code class="mark">.select</code> после тэга <code class="mark">select</code></div>
+								<div>Если элементы валидаци поместить после <code class="mark">.select</code>, то классы валидации необходимо добавлять и на <code class="mark">.select</code></div>
+								<div class="user-spacer"></div>
+								<div class="columns">
+									<div class="column">
+										<p><b>Without js</b></p>
+										<div class="input-wrap">
+											<label for="smw-base">Select:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select id="smw-base" name="smw-base">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-base-disabled">Select - disabled:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select id="smw-base-disabled" name="smw-base-disabled" disabled>
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-fit">Select - selected:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select id="smw-fit" name="smw-fit">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2" selected>Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-fit-disabled">Select - selected - disabled:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select id="smw-fit-disabled" name="smw-fit-disabled" disabled>
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-validation">Select - validation:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select id="smw-validation" name="smw-validation">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+													<div class="error-note">Error text</div>
+													<div class="success-note">Success text</div>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label class="error" for="smw-err">Select - error:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder error">
+												<div class="select">
+													<select class="error" id="smw-err" name="smw-err">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+													<div class="error-note">Error text</div>
+													<div class="success-note">Success text</div>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label class="success" for="smw-suc">Select - success:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder success">
+												<div class="select">
+													<select class="success" id="smw-suc" name="smw-suc">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+													<div class="error-note">Error text</div>
+													<div class="success-note">Success text</div>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+									</div>
+									<div class="column">
+										<p><b>With js</b></p>
+										<div class="input-wrap">
+											<label for="smw-base-js">Select:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select class="field-js" id="smw-base-js" name="smw-base-js">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-base-disabled-js">Select - disabled:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select class="field-js" id="smw-base-disabled-js" name="smw-base-disabled-js" disabled>
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-fit-js">Select - selected:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select class="field-js" id="smw-fit-js" name="smw-fit-js">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2" selected>Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-fit-disabled-js">Select - selected - disabled:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select class="field-js" id="smw-fit-disabled-js" name="smw-fit-disabled-js" disabled>
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label for="smw-validation-js">Select - validation:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder">
+												<div class="select">
+													<select class="field-js" id="smw-validation-js" name="smw-validation-js">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+													<div class="error-note">Error text</div>
+													<div class="success-note">Success text</div>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label class="error" for="smw-err-js">Select - error:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder error">
+												<div class="select">
+													<select class="field-js error" id="smw-err-js" name="smw-err-js">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+													<div class="error-note">Error text</div>
+													<div class="success-note">Success text</div>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap">
+											<label class="success" for="smw-suc-js">Select - success:</label>
+											<!--Important! First option should have value ""-->
+											<div class="input-holder success">
+												<div class="select">
+													<select class="field-js success" id="smw-suc-js" name="smw-suc-js">
+														<option value="">-Choose one of the options-</option>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+														<option value="4">Option 4</option>
+														<option value="5">Option 5</option>
+														<option value="6">Option 6</option>
+														<option value="7">Option 7</option>
+														<option value="8">Option 8</option>
+													</select>
+													<div class="error-note">Error text</div>
+													<div class="success-note">Success text</div>
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--===============selects end===============-->
+				<!--===============custom selects - select2===============-->
+				<input type="checkbox" class="accordionOpener" id="0_04">
+				<h3>
+					<label class="mark" for="0_04"></label>
+					<a href="#hash-select2Group" id="hash-select2Group" class="hashAnchor"><span class="mark">Select2 - Selects (with js customization)</span></a>
+				</h3>
+				<div class="layout-flood">
+					<form action="#" method="post">
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_04_01">
+							<h4>
+								<label class="mark" for="0_04_01"></label>
+								<a href="#hash-fcSelectCustom" id="hash-fcSelectCustom" class="hashAnchor"><span class="mark">Select2</span></a>
+							</h4>
+							<p>На <code class="mark">select</code> добавляем класс <code class="mark">.cselect</code></p>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without a wrapper</b></p>
+									<label for="sc-base">Select - no js states - placeholder:</label>
+									<select class="cselect" id="sc-base" name="sc-base" data-placeholder="-Choose-">
+										<option value="">-Choose-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="sc-ph">Select - placeholder:</label>
+									<select class="cselect field-js" id="sc-ph" name="sc-ph" data-placeholder="-Choose-">
+										<option value="">-Choose-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label for="sc-no-ph">Select - no placeholder:</label>
+									<select class="cselect field-js" id="sc-no-ph" name="sc-no-ph">
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<!--===================================================-->
+									<label class="error" for="sc-ph-error">Select - error - placeholder:</label>
+									<select class="cselect field-js error" id="sc-ph-error" name="sc-ph-error" data-placeholder="-Choose-">
+										<option value="">-Choose-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="sc-no-ph-error">Select - error - no placeholder:</label>
+									<select class="cselect field-js error" id="sc-no-ph-error" name="sc-no-ph-error">
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="sc-ph-success">Select - success - placeholder:</label>
+									<select class="cselect field-js success" id="sc-ph-success" name="sc-ph-success" data-placeholder="-Choose-">
+										<option value="">-Choose-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="sc-no-ph-success">Select - success - no placeholder:</label>
+									<select class="cselect field-js success" id="sc-no-ph-success" name="sc-no-ph-success">
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+								</div>
+								<!--===================================================-->
+								<!--===================================================-->
+								<div class="col">
+									<p><b>With a wrapper</b></p>
+									<div class="input-wrap
+	">
+										<label for="swc-base">Select - no js states - placeholder:</label>
+										<div class="input-holder">
+											<select class="cselect" id="swc-base" name="swc-base" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="swc-ph">Select - placeholder:</label>
+										<div class="input-holder">
+											<select class="cselect field-js" id="swc-ph" name="swc-ph" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label for="swc-no-ph">Select - no placeholder:</label>
+										<div class="input-holder">
+											<select class="cselect field-js" id="swc-no-ph" name="swc-no-ph">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="error" for="swc-ph-error">Select - error - placeholder:</label>
+										<div class="input-holder error">
+											<select class="cselect field-js error" id="swc-ph-error" name="swc-ph-error" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="error" for="swc-no-ph-error">Select - error - no placeholder:</label>
+										<div class="input-holder error">
+											<select class="cselect field-js error" id="swc-no-ph-error" name="swc-no-ph-error">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="success" for="swc-ph-success">Select - success - placeholder:</label>
+										<div class="input-holder success">
+											<select class="cselect field-js success" id="swc-ph-success" name="swc-ph-success" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	">
+										<label class="success" for="swc-no-ph-success">Select - success - no placeholder:</label>
+										<div class="input-holder success">
+											<select class="cselect field-js success" id="swc-no-ph-success" name="swc-no-ph-success">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_04_01_small-field">
+							<h4>
+								<label class="mark" for="0_04_01_small-field"></label>
+								<a href="#hash-fcSelectCustomSmall" id="hash-fcSelectCustomSmall" class="hashAnchor"><span class="mark">Select2 .small-field</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>With a wrapper</b></p>
+									<div class="input-wrap
+	 small-field">
+										<label for="swc-base">Select - no js states - placeholder:</label>
+										<div class="input-holder">
+											<select class="cselect" id="swc-base" name="swc-base" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	 small-field">
+										<label for="swc-ph">Select - placeholder:</label>
+										<div class="input-holder">
+											<select class="cselect field-js" id="swc-ph" name="swc-ph" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	 small-field">
+										<label for="swc-no-ph">Select - no placeholder:</label>
+										<div class="input-holder">
+											<select class="cselect field-js" id="swc-no-ph" name="swc-no-ph">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	 small-field">
+										<label class="error" for="swc-ph-error">Select - error - placeholder:</label>
+										<div class="input-holder error">
+											<select class="cselect field-js error" id="swc-ph-error" name="swc-ph-error" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	 small-field">
+										<label class="error" for="swc-no-ph-error">Select - error - no placeholder:</label>
+										<div class="input-holder error">
+											<select class="cselect field-js error" id="swc-no-ph-error" name="swc-no-ph-error">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	 small-field">
+										<label class="success" for="swc-ph-success">Select - success - placeholder:</label>
+										<div class="input-holder success">
+											<select class="cselect field-js success" id="swc-ph-success" name="swc-ph-success" data-placeholder="-Choose-">
+												<option value="">-Choose-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap
+	 small-field">
+										<label class="success" for="swc-no-ph-success">Select - success - no placeholder:</label>
+										<div class="input-holder success">
+											<select class="cselect field-js success" id="swc-no-ph-success" name="swc-no-ph-success">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--===================================================-->
+						<div>
+							<input type="checkbox" class="accordionOpener" id="0_04_02">
+							<h4>
+								<label class="mark" for="0_04_02"></label>
+								<a href="#hash-fcMultiselectCustom" id="hash-fcMultiselectCustom" class="hashAnchor"><span class="mark">Select2. Multiselect</span></a>
+							</h4>
+							<div class="cols">
+								<div class="col">
+									<p><b>Without a wrapper</b></p>
+									<label for="form-clear-c-mSelect-base">Селект - без js-классов:</label>
+									<select class="cselect" data-placeholder="- Выберите несколько вариантов -" name="select-name" multiple id="form-clear-c-mSelect-base">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label for="form-clear-c-mSelect">Селект - значение не выбрано:</label>
+									<select class="cselect field-js" data-placeholder="- Выбрать -" name="select-name" multiple id="form-clear-c-mSelect">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label for="form-clear-c-mSelect-fit">Селект - значение выбрано по умолчанию:</label>
+									<select class="cselect field-js" name="select-name" multiple id="form-clear-c-mSelect-fit">
+										<option value="1">Размер</option>
+										<option value="2" selected>Вес</option>
+										<option value="3">Цвет</option>
+										<option value="4">Позицию (расположение)</option>
+										<option value="5">Опшин очень-очень-очень-очень длинный</option>
+										<option value="6">Контраст</option>
+										<option value="7">Сочетание</option>
+										<option value="8">Расстояние</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="error" for="form-clear-c-mSelect-err">Селект - невалидный :</label>
+									<select class="cselect field-js error" data-placeholder="- Выбрать -" name="select-name" multiple id="form-clear-c-mSelect-err">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+									<!--===================================================-->
+									<label class="success" for="form-clear-c-mSelect-suc">Селект - валидный:</label>
+									<select class="cselect field-js success" data-placeholder="- Выбрать -" name="select-name" multiple id="form-clear-c-mSelect-suc">
+										<option value="">-Choose one of the options-</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+										<option value="4">Option 4</option>
+										<option value="5">Option 5</option>
+										<option value="6">Option 6</option>
+										<option value="7">Option 7</option>
+										<option value="8">Option 8</option>
+									</select>
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+								<!--===================================================-->
+								<!--===================================================-->
+								<div class="col">
+									<p><b>With a wrapper</b></p>
+									<div class="input-wrap">
+										<label for="form-cover-c-mSelect-base">Селект - без js-классов:</label>
+										<div class="input-holder">
+											<select class="cselect" data-placeholder="- Выберите несколько вариантов -" name="select-name" multiple id="form-cover-c-mSelect-base">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="form-cover-c-mSelect">Селект - значение не выбрано:</label>
+										<div class="input-holder">
+											<select class="cselect field-js" data-placeholder="- Выбрать -" name="select-name" multiple id="form-cover-c-mSelect">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label for="form-cover-c-mSelect-fit">Селект - значение выбрано по умолчанию:</label>
+										<div class="input-holder">
+											<select class="cselect field-js" name="select-name" multiple id="form-cover-c-mSelect-fit">
+												<option value="1">Размер</option>
+												<option value="2" selected>Вес</option>
+												<option value="3">Цвет</option>
+												<option value="4">Позицию (расположение)</option>
+												<option value="5">Опшин очень-очень-очень-очень длинный</option>
+												<option value="6">Контраст</option>
+												<option value="7">Сочетание</option>
+												<option value="8">Расстояние</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="error" for="form-cover-c-mSelect-err">Селект - невалидный :</label>
+										<div class="input-holder error">
+											<select class="cselect field-js error" data-placeholder="- Выбрать -" name="select-name" multiple id="form-cover-c-mSelect-err">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+									<!--===================================================-->
+									<div class="input-wrap">
+										<label class="success" for="form-cover-c-mSelect-suc">Селект - валидный:</label>
+										<div class="input-holder success">
+											<select class="cselect field-js success" data-placeholder="- Выбрать -" name="select-name" multiple id="form-cover-c-mSelect-suc">
+												<option value="">-Choose one of the options-</option>
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+												<option value="4">Option 4</option>
+												<option value="5">Option 5</option>
+												<option value="6">Option 6</option>
+												<option value="7">Option 7</option>
+												<option value="8">Option 8</option>
+											</select>
+											<div class="error-note">Error text</div>
+											<div class="success-note">Success text</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--===============selects - select2 end===============-->
+				<!--===============checkbox and radio===============-->
+				<input type="checkbox" class="accordionOpener" id="0_05" checked>
+				<h3>
+					<label class="mark" for="0_05"></label>
+					<a href="#hash-formCheckboxExample" id="hash-formCheckboxExample" class="hashAnchor"><span class="mark">Checkboxes and Radio Buttons</span></a>
+				</h3>
+				<div class="layout-flood">
+					<form action="#" method="post">
+						<div class="cols">
+							<div class="col">
+								<h4>
+									<a href="#hashFormCheckboxOutsideExample" id="hashFormCheckboxOutsideExample" class="hashAnchor"><span class="mark">Checkbox outside label</span></a>
+								</h4>
+								<ul class="checkbox-list reset-list">
+									<li>
+										<input type="checkbox" name="testCheckboxOutside" id="checkbox-normal" />
+										<label for="checkbox-normal"><span>Normal</span></label>
+									</li>
+									<li>
+										<input type="checkbox" name="testCheckboxOutsideChecked" id="checkbox-checked" checked />
+										<label for="checkbox-checked"><span>Checked</span></label>
+									</li>
+									<li>
+										<input type="checkbox" name="testCheckboxOutsideDisabled" id="checkbox-disabled" disabled />
+										<label for="checkbox-disabled"><span>Disabled</span></label>
+									</li>
+									<li>
+										<input type="checkbox" name="testCheckboxOutsideCheckedDisabled" id="checkbox-checked-disabled" checked disabled />
+										<label for="checkbox-checked-disabled"><span>Checked & Disabled</span></label>
+									</li>
+								</ul>
+								<h4>
+									<a href="#hashFormCheckboxInsideExample" id="hashFormCheckboxInsideExample" class="hashAnchor"><span class="mark">Checkbox inside label</span></a>
+								</h4>
+								<ul class="checkbox-list reset-list">
+									<li>
+										<label class="check-label">
+											<input type="checkbox" name="testCheckboxInside" />
+											<i>&nbsp;</i>
+											<span>Отличный способ для выделения самого важного в тексте – использование контрастных шрифтов</span>
+										</label>
+									</li>
+									<li>
+										<label class="check-label">
+											<input type="checkbox" name="testCheckboxInsideChecked" checked />
+											<i>&nbsp;</i>
+											<span>Checked</span>
+										</label>
+									</li>
+									<li>
+										<label class="check-label">
+											<input type="checkbox" name="testCheckboxInsideDisabled" disabled />
+											<i>&nbsp;</i>
+											<span>Disabled</span>
+										</label>
+									</li>
+									<li>
+										<label class="check-label">
+											<input type="checkbox" name="testCheckboxInsideCheckedDisabled" checked disabled />
+											<i>&nbsp;</i>
+											<span>Checked & Disabled</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h4>
+									<a href="#hashFormRadiobuttonOutsideExample" id="hashFormRadiobuttonOutsideExample" class="hashAnchor"><span class="mark">Radiobutton outside label</span></a>
+								</h4>
+								<ul class="radio-list reset-list">
+									<li>
+										<input type="radio" name="testRadioOutside" id="radio-male" checked />
+										<label for="radio-male"><span>Male</span></label>
+									</li>
+									<li>
+										<input type="radio" name="testRadioOutside" id="radio-female" />
+										<label for="radio-female"><span>Female</span></label>
+									</li>
+									<li>
+										<input type="radio" name="testRadioOutsideDisabled" id="radio-disabled" disabled />
+										<label for="radio-disabled"><span>Disabled</span></label>
+									</li>
+									<li>
+										<input type="radio" name="testRadioOutsideCheckedDisabled" id="radio-checked-disabled" checked disabled />
+										<label for="radio-checked-disabled"><span>Checked & Disabled</span></label>
+									</li>
+								</ul>
+								<h4>
+									<a href="#hashFormRadiobuttonInsideExample" id="hashFormRadiobuttonInsideExample" class="hashAnchor"><span class="mark">Radiobutton inside label</span></a>
+								</h4>
+								<ul class="radio-list reset-list">
+									<li>
+										<label class="radio-label">
+											<input type="radio" name="testRadioInside" />
+											<i>&nbsp;</i>
+											<span>Male</span>
+										</label>
+									</li>
+									<li>
+										<label class="radio-label">
+											<input type="radio" name="testRadioInside" checked />
+											<i>&nbsp;</i>
+											<span>Female</span>
+										</label>
+									</li>
+									<li>
+										<label class="radio-label">
+											<input type="radio" name="testRadioInsideDisabled" disabled />
+											<i>&nbsp;</i>
+											<span>Disabled</span>
+										</label>
+									</li>
+									<li>
+										<label class="radio-label">
+											<input type="radio" name="testRadioInsideCheckedDisabled" checked disabled />
+											<i>&nbsp;</i>
+											<span>Checked & Disabled</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!--===============checkbox and radio end===============-->
+				<!--===============columnize===============-->
+				<input type="checkbox" class="accordionOpener" id="0_06">
+				<h3>
+					<label class="mark" for="0_06"></label>
+					<a href="#hash-fcColumnsCustom" id="hash-fcColumnsCustom" class="hashAnchor"><span class="mark">Three columns</span></a>
+				</h3>
+				<div class="layout-flood">
+					<form action="#" method="post">
+						<div class="form-row">
+							<div class="input-wrap">
+								<label for="f-col-1">Label 1:</label>
+								<div class="input-holder">
+									<input id="f-col-1" name="f-col-1" placeholder="Placeholder" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+							</div>
+							<!--===================================================-->
+							<div class="input-wrap">
+								<label for="f-col-2">Label 2:</label>
+								<div class="input-holder">
+									<input id="f-col-2" name="f-col-2" placeholder="Placeholder" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+							</div>
+							<!--===================================================-->
+							<div class="input-wrap">
+								<label for="f-col-3">Label 3:</label>
+								<div class="input-holder">
+									<input id="f-col-3" name="f-col-3" placeholder="Placeholder" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+							</div>
+							<!--===================================================-->
+						</div>
+						<!--===================================================-->
+						<div class="form-row">
+							<div class="input-wrap">
+								<label for="f-col-4">Label 4:</label>
+								<div class="input-holder">
+									<input id="f-col-4" name="f-col-4" placeholder="Placeholder" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+							</div>
+							<!--===================================================-->
+							<div class="input-wrap">
+								<label for="f-col-5">Label 5:</label>
+								<div class="input-holder">
+									<input id="f-col-5" name="f-col-5" placeholder="Placeholder" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+							</div>
+							<!--===================================================-->
+							<div class="input-wrap">
+								<label for="f-col-6">Label 6:</label>
+								<div class="input-holder">
+									<input id="f-col-6" name="f-col-6" placeholder="Placeholder" type="text" />
+									<div class="error-note">Error text</div>
+									<div class="success-note">Success text</div>
+								</div>
+							</div>
+							<!--===================================================-->
+						</div>
+					</form>
+				</div>
+				<!--===============columnize end===============-->
+				<!--===============user form===============-->
+				<input type="checkbox" class="accordionOpener" id="0_07">
+				<h3>
+					<label class="mark" for="0_07"></label>
+					<a href="#hash-userFormExample" id="hash-userFormExample" class="hashAnchor"><span class="mark">Validation form</span></a>
+				</h3>
+				<div>
+					<div class="user-form">
+						<div class="form-title">Title of Form</div>
+						<p class="user-form__note">
+							Чтобы уточнить детали продажи или приступить к оформлению, <strong>закажите звонок</strong> или свяжитесь с нами в социальнных сетях.
+						</p>
+						<form action="" method="post" class="validation-form-js">
+							<div class="form-row">
+								<div class="input-wrap">
+									<label for="f-col-1">Имя</label>
+									<div class="input-holder">
+										<input id="f-col-1" name="f-col-1" placeholder="Введите Ваше имя..." type="text" required />
+										<div class="error-note">Error text</div>
+										<div class="success-note">Success text</div>
+									</div>
+								</div>
+								<!--===================================================-->
+								<div class="input-wrap">
+									<label for="f-col-2">Телефон</label>
+									<div class="input-holder">
+										<input class="has-phone-mask" id="f-col-2" name="phoneNumber" placeholder="+375 29 656-98-25" type="text" required />
+										<div class="error-note">Error text</div>
+										<div class="success-note">Success text</div>
+									</div>
+								</div>
+								<!--===================================================-->
+								<div class="input-wrap form-buttons">
+									<label>&nbsp;</label>
+									<button class="btn-def btn-def_icon_right">Заказать звонок<svg class="svg-ico-phone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path>
+										</svg></button>
+								</div>
+							</div>
+							<div class="user-form__msg">
+								<div class="user-form__msg__caption">
+									<strong class="user-form__msg__title">Звонок заказан!</strong>
+									<span class="user-form__msg__subtitle">Мы перезвоним Вам на следующий номер:</span>
+								</div>
+								<div class="user-form__msg__tel"><a href="tel:+375296892548">+375 29 689-25-48</a></div>
+								<div class="user-form__msg__soc">
+									<div class="social-networks align-center">
+										<div class="social-networks__list">
+											<div class="social-networks__item">
+												<a href="https://www.facebook.com/" class="facebook" target="_blank">
+													<span>Facebook</span>
+												</a>
+											</div>
+											<div class="social-networks__item">
+												<a href="https://telegram.org/" class="telegram" target="_blank">
+													<span>Telegram</span>
+												</a>
+											</div>
+											<div class="social-networks__item">
+												<a href="https://www.viber.com/" class="viber" target="_blank">
+													<span>Viber</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="social-networks align-center">
+							<div class="social-networks__list">
+								<div class="social-networks__item">
+									<a href="https://www.facebook.com/" class="facebook" target="_blank">
+										<span>Facebook</span>
+									</a>
+								</div>
+								<div class="social-networks__item">
+									<a href="https://telegram.org/" class="telegram" target="_blank">
+										<span>Telegram</span>
+									</a>
+								</div>
+								<div class="social-networks__item">
+									<a href="https://www.viber.com/" class="viber" target="_blank">
+										<span>Viber</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--===============user form end===============-->
+				<script>
+					'use strict';
+
+	function get_cookie(cookie_name) {
+		var results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+
+		if (results)
+			return ( unescape(results[2]) );
+		else
+			return null;
+	}
+
+	var nav = document.createElement('div');
+	var list = document.createElement('ul');
+	nav.className = "navigationByTypographyElements";
+	document.body.appendChild(nav);
+	nav.appendChild(list);
+
+	var opener = document.createElement('a');
+	opener.innerHTML = "Меню";
+	opener.className = "navigationByTypographyOpener";
+	nav.insertBefore(opener, nav.firstChild);
+
+	var toLeftBtn = document.createElement('a');
+	toLeftBtn.innerHTML = "Прикрепить слева";
+	toLeftBtn.className = "navigationByTypographyToLeft";
+	nav.insertBefore(toLeftBtn, nav.firstChild);
+
+	for(var i = 0; i < document.querySelectorAll('.hashAnchor').length; i++){
+		var elem = document.querySelectorAll('.hashAnchor');
+		var a = document.createElement('a');
+		var li = document.createElement('li');
+
+		a.innerHTML = elem[i].closest('h4, h3').textContent.trim();
+		if(elem[i].closest('h4')){
+//										elem[i].closest('h4').setAttribute("class", "blah");
+			li.className = 'navigationByTypographySubItem';
+		}
+		a.setAttribute('href', '#' + elem[i].id);
+
+		li.appendChild(a);
+		list.appendChild(li);
+	}
+
+	// navigation toggle
+	var cookieNavBTIsHide = "navigationByTypographyIsHide";
+
+	if(get_cookie ( cookieNavBTIsHide ) === 'true') {
+		list.style.display = "none";
+		nav.setAttribute('data-toggle', 'hide');
+	}
+
+	opener.onclick = function() {
+		list.style.display = (list.style.display !== "none") ? "none" : "block";
+		if(list.style.display === "none") {
+			document.cookie = cookieNavBTIsHide + "=true";
+			nav.setAttribute('data-toggle', 'hide');
+		} else {
+			document.cookie = cookieNavBTIsHide + "=false";
+			nav.setAttribute('data-toggle', 'show')
+		}
+	};
+
+	// navigation move to left/right
+	var toLeftAttr = 'data-to-left';
+	var cookieIsLeftPos = "navigationByTypographyIsLeft";
+
+	if(get_cookie ( cookieIsLeftPos ) === 'true') {
+		nav.setAttribute(toLeftAttr, 'true');
+	}
+
+	toLeftBtn.onclick = function() {
+		if(!nav.hasAttribute(toLeftAttr)) {
+			document.cookie = cookieIsLeftPos + "=true";
+			nav.setAttribute(toLeftAttr, 'true');
+		} else {
+			document.cookie = cookieIsLeftPos + "=false";
+			nav.removeAttribute(toLeftAttr);
+		}
+	}
+</script>
+				<style>
+					.navigationByTypographyElements{
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		width: 240px;
+		background-color: white;
+		box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.2);
+		z-index: 99999;
+		font-size: 14px;
+		line-height: 1.4;
+		/*counter-reset: items;*/
+		-webkit-transition-property: transform;
+		transition-property: transform;
+		-webkit-transition-duration: 0.2s;
+		transition-duration: 0.2s;
+		-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		user-select: none;
+	}
+	.navigationByTypographyElements[data-toggle="hide"]{
+		width: 42px;
+	}
+	.navigationByTypographyElements[data-to-left]{
+		transform: translateX(calc(-100vw + 240px + 60px));
+	}
+	.navigationByTypographyElements ul{
+		display: block;
+		list-style: none;
+		margin: 0;
+		height: calc(100vh - 100px);
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding: 0 20px 18px;
+	}
+	.navigationByTypographyElements ul::-webkit-scrollbar {
+		width: 0.4em;
+	}
+	.navigationByTypographyElements ul::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	}
+	.navigationByTypographyElements ul::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		outline: 1px solid slategrey;
+	}
+	.navigationByTypographyElements ul li{
+		margin-bottom: 12px;
+		/*counter-increment: items;*/
+	}
+	.navigationByTypographyElements ul li:last-child{
+		margin: 0;
+	}
+	.navigationByTypographyElements ul li::before{
+		/*content: counter(items) '. ';*/
+		color: tomato;
+		content: '';
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 7px;
+		margin-right: 8px;
+		height: 6px;
+		width: 6px;
+		background-color: tomato;
+	}
+	.navigationByTypographyElements ul .navigationByTypographySubItem{
+		font-size: 0.8em;
+		padding-left: 15px;
+	}
+	.navigationByTypographyElements ul .navigationByTypographySubItem::before{
+		border-radius: 50%;
+		margin-top: 4px;
+	}
+	.navigationByTypographyElements ul a{
+		color: darkslategray;
+		text-decoration: none;
+		padding-top: 5px;
+	}
+	.navigationByTypographyElements ul a:hover{
+		text-decoration: underline;
+	}
+
+	h3, h4{
+		position: relative;
+	}
+	h3 a, h4 a {
+		display: inline-block;
+		vertical-align: top;
+		color: inherit;
+		text-decoration: none;
+		-webkit-transition: border-color 0.2s;
+		transition: border-color 0.2s;
+	}
+	h3 a span, h4 a span {
+		text-decoration: underline;
+	}
+	h4 a{
+		border-bottom-color: #909090;
+	}
+	h4 a .mark{
+		color: #909090;
+	}
+	h4 .hashAnchor::before{
+		width: 18px;
+		height: 18px;
+		top: 6px;
+	}
+	.hashAnchor:hover::before{
+		opacity: 0.5;
+	}
+
+	.navigationByTypographyOpener{
+		position: relative;
+		display: block;
+		padding: 18px 35px 18px 20px;
+		cursor: pointer;
+		font-size: 16px;
+		line-height: 15px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.navigationByTypographyElements[data-toggle="hide"] .navigationByTypographyOpener{
+		font-size: 0;
+		line-height: 0;
+		padding: 11px 5px;
+	}
+	.navigationByTypographyOpener::after{
+		content: '-';
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		width: 16px;
+		height: 16px;
+		font-size: 16px;
+		line-height: 15px;
+		background-color: rgba(0, 0, 0, 0.2);
+		text-align: center;
+		-webkit-transform: translate(0, -50%);
+		-ms-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+	}
+	.navigationByTypographyElements[data-toggle="hide"] .navigationByTypographyOpener::after{
+		right: 3px;
+	}
+	.navigationByTypographyOpener:hover::after{
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+	[data-toggle*="hide"] .navigationByTypographyOpener::after{
+		content: '+';
+	}
+
+	.navigationByTypographyToLeft{
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		font-size: 0;
+		line-height: 0;
+		letter-spacing: -4px;
+		text-align: center;
+		cursor: pointer;
+		width: 16px;
+		height: 16px;
+		background-color: rgba(0, 0, 0, 0.2);
+		z-index: 5;
+	}
+	.navigationByTypographyToLeft:hover{
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+	.navigationByTypographyToLeft:before{
+		content: '<';
+		display: inline-block;
+		font-size: 18px;
+		line-height: 16px;
+		letter-spacing: normal;
+	}
+	[data-to-left] .navigationByTypographyToLeft:before{
+		content: '>';
+	}
+</style>
+			</div>
+			<a href="contacts.html" data-heading="Контакты" class="big-btn pulse"><span>Контакты</span><svg class="svg-ico-arr-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+				</svg></a>
+		</div>
+		<!--MAIN end-->
+		<!--FOOTER-->
+		<footer class="footer layout">
+			<div class="footer__holder">
+				<div class="f-col f-col_nav">
+					<div class="f-box f-box_subs">
+						<div class="f-box__title">Подпишитесь на рассылку</div>
+						<div class="subs-form">
+							<form action="#" method="post" class="validation-form-js">
+								<div class="input-wrap">
+									<label for="subs">Email</label>
+									<div class="input-holder">
+										<input id="subs" name="subs" placeholder="email@mail.com" type="email" required>
+										<div class="error-note">Неправильный Email</div>
+										<div class="success-note">Ждите от нас новостей!</div>
+										<button><svg class="svg-ico-email" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+											</svg></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="f-box f-box_nav">
+						<ul class="f-list">
+							<li><a href="buy.html" data-heading="Покупка облигаций">Алгоритм покупки облигаций</a></li>
+							<li><a href="sell.html" data-heading="Продажа облигаций">Алгоритм продажи облигаций</a></li>
+							<li><a href="https://www.onliner.by/">Узнать об эмитентах</a></li>
+							<li><a href="#">Выбрать облигации</a></li>
+							<li><a href="news.html" data-heading="СМИ о нас">СМИ о нас</a></li>
+						</ul>
+					</div>
+					<div class="f-box f-box_soc">
+						<div class="f-soc">
+							<div class="f-soc__group">
+								<strong>Группа</strong>
+								<div class="f-soc__list">
+									<div class="f-soc__item">
+										<a href="https://www.facebook.com/" class="facebook" target="_blank">
+											<span>Facebook</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="f-soc__group">
+								<strong>Чат-боты</strong>
+								<div class="f-soc__list">
+									<div class="f-soc__item">
+										<a href="https://telegram.org/" class="telegram" target="_blank">
+											<span>Telegram</span>
+										</a>
+									</div>
+									<div class="f-soc__item">
+										<a href="https://www.viber.com/" class="viber" target="_blank">
+											<span>Viber</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="f-col f-col_cont">
+					<div class="f-box f-box_form">
+						<div class="f-box__title single-drop__select-js">
+							Напишите нам
+							<div class="f-box__angle single-drop__angle-js"><i>&nbsp;</i></div>
+						</div>
+						<div class="appeal-form single-drop__panel-js">
+							<form action="#" method="post" class="validation-form-js">
+								<div class="appeal-form__cols">
+									<div class="appeal-form__col">
+										<div class="input-wrap small-field">
+											<label for="f-form-name">Имя</label>
+											<div class="input-holder">
+												<input id="f-form-name" name="f-form-name" placeholder="Введите Ваше имя..." type="text" required />
+												<div class="error-note">Error text</div>
+												<div class="success-note">Success text</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap small-field">
+											<label for="f-form-email">Email</label>
+											<div class="input-holder">
+												<input id="f-form-email" name="f-form-email" placeholder="email@mail.com" type="email" required />
+												<div class="error-note">Error text</div>
+												<div class="success-note">Success text</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap small-field">
+											<label for="f-form-phone">Телефон</label>
+											<div class="input-holder">
+												<input class="has-phone-mask" id="f-form-phone" name="phoneNumber" placeholder="+375 00 111-22-33" type="text" required />
+												<div class="error-note">Error text</div>
+												<div class="success-note">Success text</div>
+											</div>
+										</div>
+										<!--===================================================-->
+									</div>
+									<div class="appeal-form__col">
+										<div class="input-wrap
+	 small-field">
+											<label class="has-select" for="f-form-services">Услуга</label>
+											<div class="input-holder has-select">
+												<select class="cselect" id="f-form-services" name="f-form-services" data-placeholder="Выберите услугу из списка" required>
+													<option value=''>Выберите услугу из списка</option>
+													<option value='1'>Купить облигации</option>
+													<option value='2'>Продать облигации</option>
+													<option value='3'>Консультация</option>
+													<option value='4'>Запросить информацию</option>
+													<option value='5'>Другое</option>
+												</select>
+												<div class="error-note">Error text</div>
+												<div class="success-note">Success text</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<div class="input-wrap small-field">
+											<label for="f-form-message">Ваше сообщение</label>
+											<div class="input-holder">
+												<textarea id="f-form-message" name="f-form-message" placeholder="Введите сообщение..." required></textarea>
+												<div class="error-note">Error text</div>
+												<div class="success-note">Success text</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<button class="btn-def btn-def_icon_right">Отправить<svg class="svg-ico-send" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+											</svg></button>
+									</div>
+								</div>
+								<div class="appeal-form__msg">
+									<strong class="appeal-form__msg__title">Спасибо!</strong>
+									<span class="appeal-form__msg__subtitle">Мы уже получили Ваше сообщение, наши специалисты подготавливают ответ.</span>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="f-box f-box_cont">
+						<div class="f-box__title">Свяжитесь с нами</div>
+						<ul class="f-list f-list_tel">
+							<li><a href="mailto:info@lacerta.by">info@lacerta.by</a></li>
+							<li>
+								<div><a href="tel:+375297767479">+375 29 <strong>776-74-79</strong></a></div>
+								<div><a href="tel:+375172247479">+375 17 <strong>224-74-79</strong></a></div>
+							</li>
+							<li>220062, Республика Беларусь,<br> г. Минск, проспект Победителей, 121</li>
+						</ul>
+					</div>
+					<div class="f-box f-box_req">
+						<div class="req">
+							<p>Расчетный счет: BY23OLMP30121000382090000933 в ОАО «Белгазпромбанк» БИК OLMPBY2X</p>
+							<p>Субсчет для перечисления денежных средств на покупку облигаций <strong>физическими</strong> лицами: BY51OLMP30111000000490000933 в ОАО «Белгазпромбанк»<br> БИК OLMPBY2X</p>
+							<p>Субсчет для перечисления денежных средств на покупку облигаций <strong>юридическими</strong> лицами: BY52OLMP30111000000360000933 в ОАО «Белгазпромбанк»<br> БИК OLMPBY2X</p>
+						</div>
+						<div class="developer">
+							<a href="http://pras.by/" target="_blank"><svg class="svg-ico-prasby" xmlns="http://www.w3.org/2000/svg" width="70" height="15" viewBox="0 0 345 74">
+									<path d="M316.7 74C315.4 74 314.2 73.9 312.9 73.7 313.5 73.5 314.1 73.2 314.6 72.9 315.5 72.4 316.4 71.8 317.3 71.2 318.2 70.5 319.1 69.8 320 69 321.7 67.3 323.3 65.4 324.8 63.3 325.5 62.2 326.2 61.1 326.9 59.9 327.2 59.3 327.6 58.7 327.9 58.1 328.2 57.5 328.6 56.9 328.9 56.2 329.4 55.2 329.8 54.1 330.3 53.1 331.4 52.7 332.5 52.3 333.4 51.9 333.6 51.9 331.8 52.3 330.5 52.6 331.7 49.7 332.8 46.9 334 44.2 334.8 42.3 335.7 40.4 336.7 38.7 337.7 37 338.7 35.5 339.9 34.2 340.3 33.8 340.7 33.4 341.1 33 343 36.8 344 41.2 344 45.8 344 61.4 331.8 74 316.7 74ZM311.9 40C315.1 41.8 314.6 46.1 313.5 48.9 310 58 306.6 47.8 306.3 43.8 306.3 43.4 306.3 42.9 306.3 42.5 307.6 40.3 309.4 38.7 311.9 40ZM331.9 40.7C330.7 42.7 329.6 44.9 328.5 47.2 327.8 48.8 327 50.5 326.3 52.1 324.7 50.9 324 48.4 324 46.4 324 44.8 324.3 43.1 324.7 41.5 324.9 41 325.3 39.4 325.6 38.7 325.5 38.8 322.5 39.4 321.6 39.9 320.7 40.3 320.5 42.2 320.3 43 319.8 45.3 319.5 47.7 319.8 50 320.4 53.4 322.6 54.3 325.3 54.1 325.3 54.2 325.2 54.3 325.2 54.3 324.9 55 324.6 55.5 324.3 56.1 324 56.7 323.7 57.3 323.4 57.9 322.7 59 322.1 60.1 321.5 61.1 320.2 63.2 318.8 65.1 317.4 66.6 315.9 68.2 314.5 69.5 313 70.6 311.6 71.5 310.3 72.3 309 72.8 297.6 69.4 289.4 58.6 289.4 45.8 289.4 33.1 297.4 22.5 308.4 18.8 305.3 25.8 302.5 35.9 302.4 43.5 301.3 44.9 300.5 46.6 300.1 48.3 300.2 48.1 301.5 48 302.6 47.9 303.3 52.3 305.6 54.9 310.1 53.7 312.2 53.1 314.5 52.4 316 50.5 318.3 47.5 321.1 39 314.8 38.1 311.8 37.7 308.8 38.4 306.3 39.9 306.7 33.2 308.7 24.7 312.1 17.9 313.6 17.7 315.1 17.5 316.7 17.5 326.7 17.5 335.4 23 340.1 31.3 340.1 31.3 340 31.4 339.9 31.4 337 33.4 334.3 36.7 331.9 40.7ZM298.2 50.9C297.4 50.9 296.7 51.6 296.7 52.5 296.7 53.3 297.4 54 298.2 54 299.1 54 299.8 53.3 299.8 52.5 299.8 51.6 299.1 50.9 298.2 50.9ZM276.2 45.8C272.3 51.3 265.6 54.1 256.1 54.1L219.4 54.1 219.4 45.7 255.8 45.7C261.4 45.7 265.4 44.8 267.7 43 270.3 41 272.1 37.3 273 31.7L219.1 31.7C219.7 21.3 221.6 13.9 224.8 9.3 228.8 3.7 235.6 1 245 1L281.7 1 281.7 9.4 245.3 9.4C239.7 9.4 235.8 10.3 233.4 12.1 230.8 14.2 229 17.9 228.1 23.3L281.9 23.3C281.3 33.8 279.4 41.3 276.2 45.8ZM201.6 31.7L155.5 31.7 155.5 54.1 147.3 54.1 147.3 27.4C147.3 23.2 147.9 19.5 149 16.3 150.2 13 151.8 10.2 154 8 156.2 5.7 158.9 3.9 162.1 2.7 165.3 1.6 169 1 173 1L187.2 1C190 1.2 192.6 1.7 194.9 2.6 198.1 3.8 200.8 5.5 203 7.8 205.2 10.1 206.9 12.9 208 16.1 209.1 19.4 209.7 23.1 209.7 27.3L209.7 54.1 201.6 54.1 201.6 31.7ZM195.1 11.5C192.6 10.1 187.8 9.3 180.6 9.1 180.3 9.1 180.1 9.1 179.8 9.1 179.4 9.1 178.9 9.1 178.5 9.1 178.1 9.1 177.6 9.1 177.2 9.1 177 9.1 176.8 9.1 176.6 9.1 169.3 9.3 164.4 10.1 161.9 11.5 158.6 13.2 156.6 17.2 156 23.3L201.1 23.3C200.4 17.2 198.4 13.2 195.1 11.5ZM132.7 55.7L103.3 31.7 81.9 31.7 81.9 54.1 73.7 54.1 73.7 27.4C73.7 23.2 74.3 19.5 75.4 16.3 76.6 13 78.2 10.2 80.4 8 82.6 5.7 85.3 3.9 88.5 2.7 91.7 1.6 95.4 1 99.4 1L113.6 1C116.4 1.2 119 1.7 121.3 2.6 124.5 3.8 127.2 5.5 129.4 7.8 131.6 10.1 133.3 12.9 134.4 16.1 135.5 19.4 136.1 23.1 136.1 27.3L136.1 31.7 116.3 31.7 137.7 49.2 132.7 55.7ZM127.5 23.3C126.8 17.2 124.8 13.2 121.5 11.5 119 10.1 114.2 9.3 107 9.1 106.7 9.1 106.5 9.1 106.2 9.1 105.8 9.1 105.3 9.1 104.9 9.1 104.5 9.1 104 9.1 103.6 9.1 103.4 9.1 103.2 9.1 103 9.1 95.7 9.3 90.8 10.1 88.3 11.5 85 13.2 83 17.2 82.4 23.3L127.5 23.3ZM9.1 54.1L1 54.1 1 1 37.7 1C41.7 1 45.4 1.6 48.5 2.7 51.7 3.9 54.4 5.7 56.6 8 58.8 10.2 60.4 13 61.6 16.3 62.7 19.5 63.3 23.2 63.3 27.4L63.3 31.7 9.1 31.7 9.1 54.1ZM54.7 23.3C54.1 17.2 52.1 13.3 48.8 11.5 45.9 9.9 40 9.1 31 9.1 30.1 9.1 28.9 9.1 27.3 9.2 25.7 9.2 23.6 9.2 21.2 9.3 20 9.3 18.8 9.4 17.8 9.4 16.6 9.4 15.5 9.4 14.5 9.4L9.1 9.4 9.1 23.3 54.7 23.3Z"></path>
+								</svg><span>Разработка сайта — компания PRAS</span> </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="popup-default" id="popup-call">
+			<div class="popup-default__layout">
+				<div class="popup-default__holder" data-tc-stop>
+					<button class="popup-default__close popup-default-close-js" title="Закрыть">Закрыть</button>
+					<div class="h3">Желаете приобрести облигации?</div>
+					<div class="form-note">Оставьте ваши контактные данные<br> и наш сотрудник свяжется с вами в ближайшее время</div>
+					<form action="#" method="post" class="validation-form-js">
+						<div class="input-wrap">
+							<label for="form-popup-call-name">Имя</label>
+							<div class="input-holder">
+								<input id="form-popup-call-name" name="name" placeholder="Введите Ваше имя..." type="text" required />
+								<div class="error-note">Error text</div>
+								<div class="success-note">Success text</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<div class="input-wrap">
+							<label for="form-popup-call-phone">Телефон</label>
+							<div class="input-holder">
+								<input class="has-phone-mask" id="form-popup-call-phone" name="phoneNumber" placeholder="+375 29 656-98-25" type="text" required />
+								<div class="error-note">Error text</div>
+								<div class="success-note">Success text</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<div class="input-wrap">
+							<label for="form-popup-call-message">Ваше сообщение</label>
+							<div class="input-holder">
+								<textarea id="form-popup-call-message" name="form-popup-call-message" placeholder="Добрый день" required></textarea>
+								<div class="error-note">Error text</div>
+								<div class="success-note">Success text</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<div class="form-buttons">
+							<button class="btn-def btn-def_icon_right">Отправить запрос<svg class="svg-ico-send" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+									<path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+								</svg></button>
+						</div>
+						<div class="user-form__msg">
+							<div class="user-form__msg__caption">
+								<strong class="user-form__msg__title">Звонок заказан!</strong>
+								<span class="user-form__msg__subtitle">Мы перезвоним Вам на следующий номер:</span>
+							</div>
+							<div class="user-form__msg__tel"><a href="tel:+375296892548">+375 29 689-25-48</a></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="popup-default-overlay popup-default-overlay-js">&nbsp;</div>
+		<!--FOOTER end-->
+	</div>
+	<div class="c-transition">&nbsp;</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/libs.min.js"></script>
+	<script src="js/form-validation.js?rev=@@hash"></script>
+	<!--Map-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnFqiG7GVEuZZeE5XCILGj1Tqz1KOMye8&sensor=false&extension=.js&language=en"></script>
+	<script src="js/common.js?rev=@@hash"></script>
+	<script src="js/smooth-state.js?rev=@@hash"></script>
+</body>
+
+</html>

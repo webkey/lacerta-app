@@ -1,0 +1,13 @@
+
+
+
+
+
+
+@@if(!context.type){<a @@if(!context.href){href="#!"}@@if(context.href){href="@@href"} @@if(!context.classes){class="btn-def@@if(context.iconRight){ btn-def_icon_right}@@if(context.iconLeft){ btn-def_icon_left}"}@@if(context.classes){class="@@classes@@if(context.iconRight){ btn-def_icon_right}@@if(context.iconLeft){ btn-def_icon_left}"}@@if(context.disabled){ @@disabled}>@@if(context.iconLeft){@@iconLeft}@@if(!context.value){Button value}@@if(context.value){@@value}@@if(context.iconRight){@@iconRight}</a>}
+
+
+@@if(context.type && context.type != "" && context.type != "button!"){<input @@if(!context.classes){class="btn-def"}@@if(context.classes){class="@@classes"} type="@@type"@@if(!context.value){ value=""}@@if(context.value){ value="@@value"}@@if(context.disabled){ @@disabled} />}
+
+
+@@if(context.type == "button!"){<button @@if(!context.classes){class="btn-def@@if(context.iconRight){ btn-def_icon_right}@@if(context.iconLeft){ btn-def_icon_left}"}@@if(context.classes){class="@@classes@@if(context.iconRight){ btn-def_icon_right}@@if(context.iconLeft){ btn-def_icon_left}"}@@if(context.disabled){ @@disabled}>@@if(context.iconLeft){@@iconLeft}@@if(!context.value){Button value}@@if(context.value){@@value}@@if(context.iconRight){@@iconRight}</button>}

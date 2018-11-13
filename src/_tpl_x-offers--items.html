@@ -1,0 +1,119 @@
+<div class="x-offers__item offers-rolls__item-js">
+	<div class="x-offers__item__select offers-rolls__header-js">
+		<table>
+			<tbody>
+				<tr>
+					<td class="x-offers__item__caption no-toggle-js" data-label="@@if(context.heads.name){@@heads.name}@@if(context.heads.release){@@heads.release}">
+						@@if(context.src && context.data.name){<a href="single.html" data-heading="Фабрика Ромакс" data-has-logo}@@if(!context.src && !context.data.name){<div} class="t-val">
+							@@if(context.src){<figure class="x-offers__item__img"><img src="img/@@src" alt="@@title"></figure>}
+							<div class="x-offers__item__heading">
+								@@if(context.data.name){<div class="x-offers__item__title">@@data.name</div>}
+								@@if(context.data.release){<div class="x-offers__item__release">@@data.release</div>}
+							</div>
+
+						@@if(context.src && context.data.name){</a>}@@if(!context.src && !context.data.name){</div>}
+					</td>
+					@@if(context.data.currency){<td data-label="@@heads.currency"><div class="t-val">@@data.currency</div></td>}
+					@@if(context.data.rate){<td data-label="@@heads.rate"><div class="t-val">@@data.rate</div></td>}
+					@@if(context.data.nominal){<td data-label="@@heads.nominal"><div class="t-val">@@data.nominal</div></td>}
+					@@if(context.data.begin){<td data-label="@@heads.begin"><div class="t-val">@@data.begin</div></td>}
+					@@if(context.data.term){<td data-label="@@heads.term"><div class="t-val">@@data.term</div></td>}
+					@@if(context.data.pay){<td class="full-width--mob" data-label="@@heads.pay"><div class="t-val">@@data.pay</div></td>}
+					@@if(context.data.size){<td data-label="@@heads.size"><div class="t-val">@@data.size</div></td>}
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="rolls__angle offers-rolls__hand-js"><i>&nbsp;</i></div>
+	</div>
+
+	<div class="x-offers__item__panel offers-rolls__panel-js">
+		<div class="x-offers__item__panel__inner">
+			<div class="detail">
+				<div class="detail__item">
+					<div class="detail__item__label">
+						<h4>Эмиссия</h4>
+					</div>
+					<div class="detail__item__body">
+						<div class="detail__item__box detail__item__box_lg">
+							<div class="detail__item__title">Номер <span class="for-desk">государственной</span><span class="for-mob">гос.</span> регистрации:</div>
+							<div class="detail__item__desc">5-200-02-3273 <span class="nobr"><span class="small">от</span> 02.02.2018</span></div>
+						</div>
+						<div class="detail__item__box detail__item__box_btn">
+							<div class="detail__item__desc">@@include("_tpl_btn.html", {"value": "Проспект эмиссии", "classes": "btn-def-small", "iconRight": "@@include('./includes/svg/icon-pdf.svg')"})</div>
+						</div>
+						<div class="detail__item__box detail__item__box_small">
+							<div class="detail__item__title">Объем выпуска:</div>
+							<div class="detail__item__desc">300 000 USD</div>
+						</div>
+						<div class="detail__item__box detail__item__box_middle">
+							<div class="detail__item__title">Форма выпуска:</div>
+							<div class="detail__item__desc">бездокументарные</div>
+						</div>
+						<div class="detail__item__box detail__item__box_large">
+							<div class="detail__item__title">Обеспечение:</div>
+							<div class="detail__item__desc">обеспечены<br> <small>кредитом и имуществом</small></div>
+						</div>
+					</div>
+				</div>
+				<div class="detail__item">
+					<div class="detail__item__label">
+						<h4>Выплаты</h4>
+					</div>
+					<div class="detail__item__body">
+						<div class="detail__item__box detail__item__box_small">
+							<div class="detail__item__title">Начало эмиссии:</div>
+							<div class="detail__item__desc">22.01.2018</div>
+						</div>
+						<div class="detail__item__box detail__item__box_middle">
+							<div class="detail__item__title">Выплата доходов:</div>
+							<div class="detail__item__desc">каждые три месяца</div>
+						</div>
+						<div class="detail__item__box detail__item__box_large">
+							<div class="detail__item__title">Погашение:</div>
+							<div class="detail__item__desc">22.01.2019</div>
+						</div>
+					</div>
+					<button class="btn-def btn-def_buy popup-opener-js" data-for="#popup-call">Купить</button>
+				</div>
+				<div class="detail__item detail__item-subitem">
+					<div class="detail__item__label">
+						<h4>График выплат</h4>
+					</div>
+					<div class="detail__item__body date-filters-js">
+						<div class="detail__item__box detail__item__box_small">
+							<div class="detail__item__title">Год выплаты:</div>
+							<div class="detail__item__desc">
+								<div class="date-select date-select-js">
+									<a href="#" data-filter="2019">2019</a>
+									<a href="#" class="active" data-filter="2018">2018</a>
+								</div>
+							</div>
+						</div>
+						<div class="detail__item__box detail__item__box_rowspan">
+							<div class="detail__item__title">Дата выплаты:</div>
+							<div class="detail__item__desc">
+								<ul class="date-list date-list-js" data-filter="2018">
+									<li>22.04.2018</li>
+									<li>22.07.2018</li>
+									<li>22.11.2018</li>
+									<li>22.12.2018</li>
+								</ul>
+								<ul class="date-list date-list-js" data-filter="2019">
+									<li>15.02.2019</li>
+									<li>16.03.2019</li>
+									<li>02.05.2019</li>
+									<li>13.08.2019</li>
+									<li>27.09.2019</li>
+									<li>30.11.2019</li>
+									<li>12.12.2019</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

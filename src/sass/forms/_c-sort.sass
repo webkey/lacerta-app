@@ -1,0 +1,270 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* c-sort
+$c-sort-height: 30px
+$c-sort-btn: 26px
+
+.c-sort-wrap
+	position: relative
+	float: left
+	width: 20px
+	margin-left: -11px
+
+.c-sort
+	opacity: 0
+	visibility: hidden
+	float: left
+	min-width: 117px
+
+	.no-js &
+		opacity: 1
+		visibility: visible
+
+.c-sort
+	& ~ .select2
+		margin: 0
+		font-size: 16px
+		line-height: 1
+
+		&::before
+			background-color: $highlight-color
+			height: $c-sort-height
+
+	& ~ .select2-container--default
+		.selection
+			display: block
+
+		.select2-selection
+			display: inline-block
+			vertical-align: top
+			background: rgba(lightblue, 0.1)
+			border: none
+			border-radius: round($c-sort-height / 2)
+			padding: 0
+			height: auto
+			width: auto
+			visibility: hidden
+
+			.select2-selection__rendered
+				+font-normal
+				font-size: 16px
+				line-height: 20px
+				color: $form-text-color
+				letter-spacing: normal
+
+		.select2-selection--single
+			.select2-selection__rendered
+				float: left
+				min-width: 30px
+				border: 1px solid white
+				border-radius: round($c-sort-height / 2)
+				padding: 5px $c-sort-btn 3px 10px
+				visibility: visible
+
+				// transition
+				//$prop: border-color
+				//will-change: $prop
+				//transition:
+					property: $prop
+					duration: $animation-speed
+					timing-function: ease-in-out
+
+			.select2-selection__arrow
+				float: left
+				position: relative
+				right: auto
+				top: auto
+				width: $c-sort-btn
+				height: $c-sort-height
+				margin-left: -#{$c-sort-btn + 1}
+				visibility: visible
+
+				b
+					$size: 22px
+					display: block
+					position: absolute
+					border: none
+					top: 50%
+					left: 50%
+					height: $size
+					width: $size
+					margin: -#{round($size / 2)}
+
+					&::before, &::after
+						width: 8px
+						left: auto
+						right: 50%
+
+					&::before
+						margin-right: -2px
+
+					&::after
+						margin-right: -6px
+
+			.select2-selection__placeholder
+				color: currentColor
+
+		&.select2-container--focus, &.select2-container--open
+			z-index: 5
+
+			.select2-selection--single
+				border: none
+
+		&.select2-container--open
+			.select2-selection--single
+				.select2-selection__rendered
+					border-color: transparent
+
+.c-sort-reset
+	opacity: 0
+	visibility: hidden
+	position: absolute
+	top: 0
+	height: $c-sort-height
+	width: $c-sort-btn
+	margin: 1px 0 0 -#{$c-sort-btn + 1}
+	cursor: pointer
+	z-index: 10
+
+	i
+		$size: 22px
+		display: block
+		position: absolute
+		top: 50%
+		right: 50%
+		height: $size
+		width: $size
+		margin: -#{round($size / 2)}
+		border-radius: #{round($size / 2)}
+		text-indent: -9999px
+		overflow: hidden
+		// transition
+		transition: background-color $animation-speed ease-in-out
+
+		&::before, &::after
+			content: ''
+			display: block
+			position: absolute
+			right: 50%
+			top: 50%
+			width: 12px
+			height: 2px
+			margin: -1px 0-6px 0 0
+			background-color: $base-color-alt
+			z-index: 1
+
+		&::before
+			transform: rotate(45deg)
+
+		&::after
+			transform: rotate(-45deg)
+
+	// hover
+	&:hover
+		i
+			background-color: $highlight-color--hover
+
+.c-sort.input--has-value
+	& ~ .c-sort-reset
+		opacity: 1
+		visibility: visible
+
+	& ~ .select2-container--default
+
+		.select2-selection--single
+			.select2-selection__rendered
+				background-color: $highlight-color
+				border-color: transparent
+
+		.select2-selection__arrow
+			opacity: 0
+			visibility: hidden
+
+// dropdown
+.c-sort-drop
+	&.select2-dropdown
+		border: none
+		background-color: $highlight-color
+		border-radius: round($c-sort-height / 2)
+
+	.select2-results
+		padding: 5px 5px 12px
+		min-height: 177px
+		display: flex
+		align-items: center
+		justify-content: stretch
+
+
+	.select2-results__options
+		width: 100%
+		flex-basis: 100%
+		background-color: $highlight-color
+		border-radius: round($c-sort-height / 2)
+		+font(20px, 24px)
+		//color: $base-color-dark
+
+		+media($form-media--mob)
+			border-radius: round($c-sort-height / 2)
+
+	.select2-results__option
+		border-radius: round($c-sort-height / 2)
+		padding: 3px 10px
+		text-align: center
+		color: $base-color-dark
+		+truncate(100%)
+
+		+media($form-media--mob)
+			border-radius: round($c-sort-height / 2)
+
+		&.select2-results__option--highlighted[aria-selected]:not([aria-selected=true])
+			background-color: $highlight-color--hover
+			color: $base-color-dark
+
+		&[aria-selected=true]
+			background-color: transparent
+			color: white
+
+// border radius
+.c-sort ~ .select2.select2-container--below,
+.c-sort ~ .select2.select2-container--open.select2-container--above .select2-selection--single,
+.c-sort-drop.select2-dropdown--above .select2-results
+	&::before
+		border-top:
+			left-radius: round($c-sort-height / 2)
+			right-radius: round($c-sort-height / 2)
+
+		+media($form-media--mob)
+			border-top:
+				left-radius: round($c-sort-height / 2)
+				right-radius: round($c-sort-height / 2)
+
+.c-sort-drop.select2-dropdown--above
+	&, & .select2-results
+		.select2-container--open &
+			border-bottom:
+				left-radius: 0
+				right-radius: 0
+
+.c-sort ~ .select2.select2-container--above,
+.c-sort ~ .select2.select2-container--open.select2-container--below .select2-selection--single,
+.c-sort-drop.select2-dropdown--below .select2-results
+	&::before
+		border-bottom:
+			left-radius: round($c-sort-height / 2)
+			right-radius: round($c-sort-height / 2)
+
+		+media($form-media--mob)
+			border-bottom:
+				left-radius: round($c-sort-height / 2)
+				right-radius: round($c-sort-height / 2)
+
+.c-sort-drop.select2-dropdown--below
+	&, & .select2-results
+		.select2-container--open &
+			border-top:
+				left-radius: 0
+				right-radius: 0
+
+/* c-sort end

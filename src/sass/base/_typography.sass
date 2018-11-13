@@ -1,0 +1,835 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+html
+	font-size: 62.5%
+
+	// блокировка скролла
+	&.css-scroll-fixed
+		+scroll-blocked()
+
+body
+	position: relative
+	font-family: $font-norm
+	+font-light
+	+font($font-size, $line-height)
+	color: $text-color
+	min-width: $page-layout-min
+	//background: $bg-color url(../../img/empty.png) no-repeat left top fixed
+	background: $bg-color url(../../img/bg-page.png) left top
+
+	+media('<mob-lg')
+		+font($font-size--mob, $line-height--mob)
+
+	// выделение текста
+	//*::selection
+		background-color: white
+		color: $base-color
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+	+font-light
+	padding: 0
+	color: inherit
+	margin: 0 0 $bottom-space--element
+
+	+media('<mob-lg')
+		margin-bottom: $bottom-space--element--mob
+
+	&:last-child
+		margin-bottom: 0
+
+	a
+		text-decoration: none
+		color: inherit
+
+		&:hover
+			text-decoration: underline
+
+h1, .h1
+	+font-h1
+
+h2, .h2
+	+font-h2
+
+h3, .h3
+	margin-bottom: 2.2rem //костыль для подгонки отступов под дизайн
+	margin-top: 7.4rem
+
+	+font-h3
+
+	+media('<mob-lg')
+		margin-top: 2.5rem
+
+	&:first-child
+		margin-top: 0
+
+h4, .h4
+	margin-bottom: $bottom-space
+	+font-h4
+
+	+media('<mob-lg')
+		margin-bottom: 1.3rem
+
+h5, .h5
+	+font($font-size-h5, $line-height-h5)
+
+h6, .h6
+	+font($font-size-h6, $line-height-h6)
+	text-transform: uppercase
+
+p
+	padding: 0
+	margin: 0 0 1.5rem
+
+	+media('<mob-lg')
+		margin-bottom: 1.5rem
+
+	&:last-child
+		margin-bottom: 0
+
+hr
+	line-height: 1px
+	height: 0
+	border: none
+	background: none
+	border-bottom: 1px solid $border-color
+	margin-bottom: $bottom-space
+
+	+media('<mob-lg')
+		margin-bottom: $bottom-space--mob
+
+a
+	color: $link-color
+	text-decoration: none
+	cursor: default
+	// transition
+	transition: color $animation-speed ease-in-out
+
+	.touchevents &
+		outline: none
+		-webkit-tap-highlight-color: transparent
+
+	&:link
+		cursor: pointer
+
+	//&:not([class*="btn-"]):not([href*="javascript:;"]):hover
+	&:hover
+		text-decoration: none
+		color: $link-color--hover
+
+	//&[href^="tel"], .no-touchevents &[href^="tel"]:hover
+	//&[href^="tel:"]
+		text-decoration: none !important
+		color: inherit
+		cursor: default
+
+	&[href^="javascript:"]
+		cursor: default
+
+img
+	border: none
+	vertical-align: top
+	max-width: 100%
+
+	table &
+		max-width: none
+
+b, strong, th
+	+font-medium
+
+i, em
+	+font-italic
+
+i b, i strong, em b, em strong, b i, b em, strong i, strong em
+	+font-bold-italic
+
+.font-light
+	+font-light
+
+.font-normal
+	+font-normal
+
+.font-bold
+	+font-bold
+
+.font-bold-italic
+	+font-bold-italic
+
+.font-black
+	+font-black
+
+.font-alt
+	+font-alt
+
+.font-alt-black
+	+font-alt-black
+
+.highlight, .mark
+	color: $highlight-color
+
+mark
+	background-color: transparent
+	-webkit-tap-highlight-color: transparent
+	color: $highlight-color
+	font-weight: inherit
+	font-style: inherit
+
+.text-color-default
+	color: $text-color
+
+.text-color-light
+	color: $text-color-light
+
+.text-color-alt
+	color: $base-color-alt
+
+.text-color-dark
+	color: $base-color-dark
+
+.align-center
+	text-align: center
+
+.align-left
+	text-align: left
+
+.align-right
+	text-align: right
+
+.float-left
+	float: left
+
+.float-right
+	float: right
+
+.nobr
+	white-space: nowrap
+
+.hide-text
+	+hide-text
+
+.hide
+	display: none !important
+
+.hide-desk
+	+media('>=desk-sm')
+		display: none !important
+
+.show-desk
+	+media('<desk-sm')
+		display: none !important
+
+.for-mob
+	+media('>=mob-lg')
+		display: none
+
+.for-desk
+	+media('<mob-lg')
+		display: none
+
+.section, .bottom-space-section, .#{$user-content} .bottom-space-section
+	margin-bottom: $bottom-space--section
+
+	+media('<mob-lg')
+		margin-bottom: $bottom-space--section--mob
+
+	&:last-child
+		margin-bottom: 0
+
+.article, .bottom-space-article, .#{$user-content} .bottom-space-article
+	margin-bottom: $bottom-space--article
+
+	+media('<mob-lg')
+		margin-bottom: $bottom-space--article--mob
+
+	&:last-child
+		margin-bottom: 0
+
+.bottom-space-element, .#{$user-content} .bottom-space-element
+	margin-bottom: $bottom-space--element
+
+	+media('<mob-lg')
+		margin-bottom: $bottom-space--element--mob
+
+	&:last-child
+		margin-bottom: 0
+
+.bottom-space-row, .#{$user-content} .bottom-space-row
+	margin-bottom: $bottom-space--row
+
+	+media('<mob-lg')
+		margin-bottom: $bottom-space--row--mob
+
+	&:last-child
+		margin-bottom: 0
+
+.enter-text
+	+font-normal
+	+font(2.2rem, 2.6rem)
+	color: rgba($highlight-color, 0.8)
+	margin-bottom: $bottom-space--element
+
+	+media('<mob-lg')
+		+font(1.6rem, 1.9rem)
+		margin-bottom: $bottom-space--element--mob
+
+	&:last-child
+		margin-bottom: 0
+
+.text-intro
+	margin-bottom: 7.4rem
+
+	+media('<mob-lg')
+		margin-bottom: 2.1rem
+
+/* content img
+
+.user-content
+	& > img, .imgc
+		text-align: center
+		display: block
+		margin: 8.1rem auto 4.8rem
+		width: $flood-layout-width
+		max-width: 100%
+		clear: both
+
+		+media('<mob-lg')
+			margin: 5rem auto 3.5rem
+
+	.imgl
+		text-align: left
+		float: left
+		margin: 0 $bottom-space $bottom-space 0
+
+	.imgr
+		text-align: right
+		float: right
+		margin: 0 0 $bottom-space $bottom-space
+
+	.imgl, .imgr
+		max-width: 40%
+
+		+media('<tab-sm')
+			float: none
+			display: block
+			margin-left: auto
+			margin-right: auto
+			max-width: 100%
+
+//.imgc, .imgl, .imgr
+	figcaption
+		display: block
+		padding: $bottom-space 0 0
+		margin: 0
+		+font($font-size--small, $line-height--small)
+
+/* content img end
+
+/* columnize
+//.columnize, .columnize--3, .columnize--4
+	column-count: 2
+	column-gap: 2em
+	margin-bottom: $bottom-space
+	font-size: 0.9em
+
+//.columnize--3
+	column-count: 3
+	font-size: 0.85em
+
+//.columnize--4
+	column-count: 4
+	font-size: 0.8em
+
+	+media('<desk-sm')
+		column-count: 3
+
+//.columnize--3, .columnize--4
+
+	+media('<mob-lg')
+		column-count: 2
+
+//.columnize, .columnize--3, .columnize--4
+
+	+media('<tab-sm')
+		column-count: 1
+
+/* columnize end
+
+//.#{$user-content}
+	@each $tags in h2, h3, h4, h5, ".h2", ".h3", ".h4", ".h5"
+		p + #{$tags},
+		ul + #{$tags},
+		ol + #{$tags}
+			margin-top: round-float($bottom-space--article, 1)
+
+/* list
+.#{$user-content}
+
+	//list
+	ul#{$not-list}, ol#{$not-list}
+		margin: 2.2rem 0
+		padding: 0
+		list-style: none
+
+		//&.list-alt
+			+margin-vertical(2.2rem)
+
+		+media('<mob-lg')
+			+margin-vertical($bottom-space--element--mob)
+
+		li
+			padding-left: $list-space
+			margin: 0 0 1.6rem // для ol другие отступы!
+			position: relative
+
+			+media('<mob-lg')
+				padding-left: $list-space--mob
+				margin-bottom: 1.3rem
+
+	ol#{$not-list} ~ ul li
+		padding-left: $list-space--alt
+
+		+media('<mob-lg')
+			padding-left: $list-space--alt--mob
+
+	ul#{$not-list}
+		li
+			+font-light
+			+font(2.0rem, 3.0rem)
+
+			+media('<mob-lg')
+				+font(14px, 16px)
+
+	ul#{$not-list} > li::before
+		content: ''
+		display: block
+		float: left
+		+size(12px)
+		//margin: 0.55em 0 -0.55em -#{round($list-space - 20)}
+		margin: 0.50em 0 -0.50em -#{$list-space}
+		border-radius: 6px
+		background-color: $highlight-color
+
+		+media('<mob-lg')
+			+size(8px)
+			border-radius: 4px
+			margin: 0.35em 0 -0.35em -22px
+
+	ol#{$not-list}
+		//margin: 5rem 0
+		counter-reset: section
+
+		+media('<mob-lg')
+			margin: 2rem 0
+
+		& > li
+			$size: 32px
+			$space: 51px
+			$size--mob: 20px
+			$space--mob: 35px
+			//===================
+			counter-increment: section
+			height: 1%
+			//overflow: hidden
+			margin-bottom: 2rem
+			padding-left: $space
+			+font-normal
+			line-height: 2.7rem
+
+			+media('<mob-lg')
+				padding-left: $space--mob
+				margin-bottom: 1.1rem
+				+font($font-size--mob, $line-height--mob)
+
+			&::before
+				position: relative
+				display: inline-block
+				content: counter(section)
+				+size($size)
+				margin: -4px calc(#{$space} - #{$size}) -4px -#{$space}
+				+font-bold
+				line-height: $size
+				text-align: center
+				color: $highlight-color
+				background-color: white
+				border-radius: round($size / 2)
+
+				+media('<mob-lg')
+					+size($size--mob)
+					margin: -4px calc(#{$space--mob} - #{$size--mob}) -4px -#{$space--mob}
+					line-height: $size--mob - 2
+					border-radius: round($size--mob / 2)
+					padding-top: 2px
+
+	ul#{$not-list}, ol#{$not-list}
+		ul#{$not-list}, ol#{$not-list}
+			margin: round($bottom-space*0.5) 0
+
+			+media('<mob-lg')
+				+margin-vertical(round($bottom-space--mob*0.5))
+
+/* list reset
+.reset-list,
+.#{$user-content} .reset-list
+	list-style: none
+
+	li
+		&, &:first-child
+			padding: 0
+
+			&::before
+				content: none
+
+/* list reset end
+/* list end
+
+/* table
+table
+	border-collapse: collapse
+	border-spacing: 0
+	width: auto
+
+	//td, th
+		+font($font-size, $line-height)
+		color: inherit
+		padding: 8px 15px
+
+		+media('<mob-lg')
+			+font($font-size--mob, $line-height--mob)
+
+	//&, td, th
+		border-color: $text-color
+
+//.table-auto
+	position: relative
+	overflow: auto
+	max-width: 100%
+	-webkit-overflow-scrolling: touch
+	margin-bottom: $bottom-space
+
+	table
+		margin-bottom: 0
+		width: auto
+		min-width: 100%
+
+//.#{$user-content}
+	table
+		margin-bottom: $bottom-space
+
+		+media('<mob-lg')
+			margin-bottom: $bottom-space--mob
+
+	.table-auto table
+		margin-bottom: 0
+
+	.tbl
+		border: none
+
+		td, th
+			color: $text-color
+			background-color: $bg-color
+			border: 0 solid $base-color
+			+font(1.4rem, 1.5)
+
+			&:first-child, &:first-child
+				border-left-width: 1px
+
+			&:last-child, &:last-child
+				border-right-width: 1px
+
+		tr:last-child
+			td
+				border-bottom-width: 0
+
+		td
+			border-top-width: 1px
+
+		tbody tr:first-child td
+			border-top-width: 0
+
+		tbody tr:nth-child(even) td
+			background: $base-color
+			color: $bg-color
+
+		th, thead td
+			+font-bold
+			font-size: 1.6rem
+			text-align: left
+
+		th, thead td, tfoot td
+			background: $base-color
+			color: $bg-color
+			border-color: $base-color
+			border-top-width: 0
+
+/* table end
+
+/* blockquote
+blockquote
+	display: block
+	position: relative
+	max-width: 52rem
+	margin: 4.7rem auto 4.9rem
+	padding: 0
+
+	+media('<mob-lg')
+		margin: 2rem auto 3rem
+
+	p
+		margin-bottom: 3.6rem
+
+		+media('<mob-lg')
+			margin-bottom: 2.5rem
+
+	q, & > p, & > div
+		display: block
+		position: relative
+		margin: 0
+		padding: 9.4rem 0
+		font-family: inherit
+		+font-medium
+		+font(3.0rem, 3.6rem)
+		color: $text-color
+
+		+media('<mob-lg')
+			padding: 4.5rem 0
+			+font(2.0rem, 2.6rem)
+
+	&, & q, & > p, & > div
+		&::before, &::after
+			content: ""
+			display: block
+			position: absolute
+			left: 50%
+			height: nth($sep-size, 1)
+			width: nth($sep-size, 2)
+			margin: 1.4rem -#{round(nth($sep-size, 2)/2)}
+			background-color: $highlight-color
+			transform: rotate($sep-rotate)
+
+			+media('<mob-lg')
+				height: nth($sep-size--mob, 1)
+				width: nth($sep-size--mob, 2)
+				margin: 0.7rem -#{round(nth($sep-size--mob, 2)/2)}
+
+		&::before
+			top: 0
+
+		&::after
+			bottom: 0
+
+	q, & > p, & > div
+		&::before, &::after
+			margin-top: 3rem
+			margin-bottom: 3rem
+
+			+media('<mob-lg')
+				margin-top: 1.8rem
+				margin-bottom: 1.8rem
+
+	cite
+		//position: absolute
+		//bottom: 5rem
+		//left: 0
+		text-align: left
+		display: block
+		margin: 0 0 3px
+		font-family: inherit
+		+font-light
+		font-style: normal
+		+font($font-size, $line-height)
+		color: $highlight-color
+
+		+media('<mob-lg')
+			+font($font-size--mob, $line-height--mob)
+
+/* blockquote end
+
+/* user spacer
+//.user-spacer
+	display: block
+	height: $bottom-space--section
+	+font(0, 0)
+	+clear
+
+	+media('<desk-lg')
+		height: $bottom-space--element
+
+/* user spacer end
+
+/* datetime
+//.datetime
+	display: block
+	font-style: normal
+	margin-bottom: $bottom-space
+
+/* datetime end
+
+/* view print
+//.view-print
+	+display-inline-block-top
+	padding: 6px 12px
+	margin-bottom: $bottom-space
+	background: #f9f9f9
+	line-height: 1
+	color: black
+	text-decoration: none
+
+	+media('<desk-lg')
+		margin-bottom: $bottom-space--element
+
+	+media('<mob-lg')
+		display: none
+
+	&:last-child
+		margin-bottom: 0
+
+	.no-touchevents &:hover
+		background-color: #eaeaea
+
+	svg
+		display: inline-block
+		vertical-align: middle
+		width: 20px
+		height: 20px
+		margin-right: 5px
+
+	span
+		display: inline-block
+		vertical-align: middle
+
+/* view print end
+
+/* columns
+.cols
+	position: relative
+	+clear
+	margin-top: $bottom-space--article - 0.9 // костыль для подгонки отступов под дизайн
+	margin-bottom: $bottom-space--section + 2.2 //костыль для подгонки отступов под дизайн
+
+	+media('<mob-lg')
+		margin-top: $bottom-space--article--mob
+		margin-bottom: $bottom-space--section--mob
+
+	&::before
+		content: ""
+		display: block
+		position: absolute
+		left: 50%
+		top: 11px
+		bottom: -2px
+		border-right: 1px solid $text-color
+		opacity: 0.2
+
+		+media('<tab-lg')
+			content: none
+
+	.col
+		float: left
+		width: calc(50% - #{nth($page-layout-space, 2)})
+		margin: 0 nth($page-layout-space, 2)
+
+		+media('<desk-lg')
+			width: calc(50% - #{nth($page-layout-space--md, 2)})
+			margin: 0 nth($page-layout-space--md, 2)
+
+		+media('<tab-lg')
+			float: none
+			width: auto
+			max-width: $text-layout-width
+			margin: 0 auto
+			padding: 5rem 0
+			border-top: 1px solid rgba($text-color, 0.2)
+
+		+media('<mob-lg')
+			max-width: none
+			padding: 2.5rem 0
+
+		&:nth-child(odd)
+			margin-left: 0
+
+			+media('<tab-lg')
+				padding-top: 0
+				border: none
+				margin-left: auto
+
+		&:nth-child(even)
+			margin-right: 0
+
+			+media('<tab-lg')
+				padding-bottom: 0
+				margin-right: auto
+
+		h2, .h2, h3, .h3
+			text-align: left
+			margin-top: 0
+			margin-bottom: 4.3rem //костыль для подгонки отступов под дизайн
+			color: $highlight-color
+
+			+media('<tab-lg')
+				text-align: center
+
+			+media('<mob-lg')
+				text-align: left
+				margin-bottom: 1.3rem
+
+		ul
+			margin: 0 0 5.2rem //костыль для подгонки отступов под дизайн
+
+			+media('<mob-lg')
+				margin-bottom: 2rem
+
+			li
+				padding-left: 33px
+
+				+media('<mob-lg')
+					padding-left: 23px
+
+/* columns end
+
+.row
+	+clear
+
+	.col
+		float: left
+		width: 100%
+
+	.col-6
+		width: 50%
+
+/* separator
+.sep
+	position: relative
+	height: 48px
+	+margin-vertical(5rem, 4.5rem)
+	text-indent: -9999px
+	overflow: hidden
+
+	+media('<mob-lg')
+		height: 26px
+		+margin-vertical(3.5rem, 3.6rem)
+
+	&::before, &::after
+		content: ""
+		display: block
+		position: absolute
+		left: 50%
+		height: nth($sep-size, 1)
+		width: nth($sep-size, 2)
+		margin-left: -#{round(nth($sep-size, 2)/2)}
+		background-color: $highlight-color
+		transform: rotate($sep-rotate)
+		+margin-vertical(14px)
+
+		+media('<mob-lg')
+			height: nth($sep-size--mob, 1)
+			width: nth($sep-size--mob, 2)
+			margin-left: -#{round(nth($sep-size--mob, 2)/2)}
+			+margin-vertical(7px)
+
+	&::before
+		top: 0
+
+	&::after
+		bottom: 0

@@ -1,0 +1,52 @@
+[
+  {
+	"src": "",
+	"heads": {
+	  "name": "Компания",
+	  "release": "Выпуск",
+	  "currency": "Валюта",
+	  "rate": "Ставка",
+	  "nominal": "Номинал",
+	  "begin": "Начало эмиссии",
+	  "term": "Срок",
+	  "pay": "",
+	  "size": "Объем выпуска"
+	},
+	"data": {
+	  "name": "",
+	  "release": "2 выпуск",
+	  "currency": "BYN",
+	  "rate": "10%",
+	  "nominal": "150",
+	  "begin": "23.05.18",
+	  "term": "1 год",
+	  "pay": "",
+	  "size": "450 000 USD"
+	}
+  },
+  {
+	"src": "",
+	"heads": {
+	  "name": "Компания",
+	  "release": "Выпуск",
+	  "currency": "Валюта",
+	  "rate": "Ставка",
+	  "nominal": "Номинал",
+	  "begin": "Начало эмиссии",
+	  "term": "Срок",
+	  "pay": "",
+	  "size": "Объем выпуска"
+	},
+	"data": {
+	  "name": "",
+	  "release": "5 выпуск",
+	  "currency": "USD",
+	  "rate": "8%",
+	  "nominal": "100",
+	  "begin": "23.10.18",
+	  "term": "2 года",
+	  "pay": "",
+	  "size": "300 000 USD"
+	}
+  }
+]

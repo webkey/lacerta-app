@@ -1,0 +1,687 @@
+@import ../utils/functions
+@import ../utils/placeholders
+
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+// One hundred percent
+$hundred: 100%
+
+// Medium query
+//$breakpoints: ('mob-sm': 320px, 'mob-md': 480px, 'mob-lg': 640px, 'tab-sm': 768px, 'tab-lg': 992px, 'desk-sm': 1200px, 'desk-md': 1366px, 'desk-lg': 1600px, 'desk-hd': 1920px)
+$breakpoints: ('desk-qhd': 2560px, 'desk-hd': 1920px, 'desk-lg': 1900px, 'desk-ml': 1440px, 'desk-md': 1366px, 'desk-sm': 1280px, 'tab-lg': 992px, 'tab-sm': 768px, 'mob-lg': 640px, 'mob-md': 480px, 'mob-ml': 400px, 'mob-sm': 320px)
+
+// Fonts style
+// ==========================================================================
+$font-norm: 'Roboto', sans-serif !default
+$font-alt: 'Playfair Display', serif !default
+
+// Reset font-weight and font-style
+// Use for font-face
+=font-reset()
+	font:
+		weight: normal
+		style: normal
+
+// Main font
+=font-normal()
+	font-family: $font-norm
+	font-weight: normal
+	font-style: normal
+
+=font-bold()
+	font-weight: 700
+
+=font-black()
+	font-weight: 900
+
+=font-italic()
+	font-weight: 300
+	font-style: italic
+
+=font-bold-italic()
+	font-weight: 700
+	font-style: italic
+
+=font-medium()
+	font-weight: 500
+
+=font-light()
+	font-weight: 300
+
+// Alternative font
+=font-alt()
+	font-family: $font-alt
+	font-weight: 900
+
+=font-alt-black()
+	font-family: $font-alt
+	font-weight: 900
+
+=font-alt-bold()
+	font-family: $font-alt
+
+=font-alt-bold-italic()
+	font-family: $font-alt
+
+
+// Animation
+// ==========================================================================
+$animation-speed: 0.2s !default
+$animation-speed-mouseleave: 0.35s !default
+
+
+// Colors
+// ==========================================================================
+
+// Color of brands
+$base-color: #333399 !default
+$base-color-alt: #2b2b8b !default
+$base-color-dark: #242473 !default
+$mark-color: #f25984 !default
+$highlight-color: #6bdbbc !default
+$highlight-color--hover: #5eb8b2 !default
+// ----------------------------------------------------
+//$bg-color: white !default
+$bg-color: lightblue !default
+$bg-color-alt: $base-color-alt !default
+// ----------------------------------------------------
+$text-color: black !default
+$text-color-alt: white !default
+$text-color-light: #9a9ac6 !default
+$title-color: white !default
+// ----------------------------------------------------
+$link-color: $highlight-color !default
+$link-color--hover: $highlight-color--hover !default
+// ----------------------------------------------------
+$border-color: #666695 !default
+// ----------------------------------------------------
+
+
+// Table
+// ==========================================================================
+$table-slide-border-color: #5b5bac !default
+$table-slide-border-color--alt: #e7e7f5 !default
+
+
+// Fonts
+// ==========================================================================
+
+$font-size: 2.2rem !default
+//$line-height: round-float(3.0rem/$font-size, 2) !default
+$line-height: 3.0rem !default
+$font-size--mob: 1.6rem !default
+//$line-height--mob: round-float(2.0rem/$font-size--mob, 2) !default
+$line-height--mob: 2.0rem !default
+// ----------------------------------------------------
+$font-size--small: 2.0rem !default
+//$line-height--small: round-float(2.8rem/$font-size--small, 2) !default
+$line-height--small: 2.8rem !default
+// ----------------------------------------------------
+$font-size--smallest: 1.8rem !default
+//$line-height--smallest: round-float(2.6rem/$font-size--smallest, 2) !default
+$line-height--smallest: 2.6rem !default
+// ----------------------------------------------------
+$letter-spacing: normal !default
+
+// Heading h1
+$font-size-h1: 8.0rem !default
+$line-height-h1: 8.0rem !default
+// ----------------------------------------------------
+$font-size-h1--md: 6.2rem !default
+$line-height-h1--md: 6.4rem !default
+// ----------------------------------------------------
+$font-size-h1--tablet: 5.0rem !default
+$line-height-h1--tablet: 5.4rem !default
+// ----------------------------------------------------
+$font-size-h1--sm: 3.0rem !default
+$line-height-h1--sm: 3.2rem !default
+// ----------------------------------------------------
+=font-h1()
+	+font-alt-black
+	font-size: $font-size-h1
+	line-height: $line-height-h1
+	text-align: center
+
+	+media('<desk-sm')
+		font-size: $font-size-h1--md
+		line-height: $line-height-h1--md
+
+	+media('<tab-lg')
+		font-size: $font-size-h1--tablet
+		line-height: $line-height-h1--tablet
+
+	+media('<mob-lg')
+		font-size: $font-size-h1--sm
+		line-height: $line-height-h1--sm
+		text-align: left
+
+	.home-page &, [data-heading-align="left"] &
+		text-align: left
+
+	[data-heading-align="right"] &
+		text-align: right
+
+// Heading h2
+$font-size-h2: 3.6rem !default
+$line-height-h2: 4.2rem !default
+// ----------------------------------------------------
+$font-size-h2--md: 3.2rem !default
+$line-height-h2--md: 3.8rem !default
+// ----------------------------------------------------
+$font-size-h2--sm: 2.6rem !default
+$line-height-h2--sm: 3.2rem !default
+// ----------------------------------------------------
+=font-h2()
+	font-family: $font-norm
+	+font-bold
+	font-size: $font-size-h2
+	line-height: $line-height-h2
+	text-align: center
+
+	//+media('<tab-lg')
+		font-size: $font-size-h2--md
+		line-height: $line-height-h2--md
+
+	+media('<mob-lg')
+		font-size: $font-size-h2--sm
+		line-height: $line-height-h2--sm
+		text-align: left
+
+// Heading h3
+$font-size-h3: 2.6rem !default
+$line-height-h3: 3.2rem !default
+// ----------------------------------------------------
+$font-size-h3--sm: 2.0rem !default
+$line-height-h3--sm: 2.8rem !default
+// ----------------------------------------------------
+=font-h3($color: #6bdbbc)
+	+font-bold
+	font-size: $font-size-h3
+	line-height: $line-height-h3
+	text-align: center
+	//color: $color
+
+	+media('<mob-lg')
+		font-size: $font-size-h3--sm
+		line-height: $line-height-h3--sm
+		text-align: left
+
+// Heading h4
+$font-size-h4: $font-size !default
+$line-height-h4: $line-height !default
+// ----------------------------------------------------
+$font-size-h4--sm: $font-size--mob !default
+$line-height-h4--sm: $line-height--mob !default
+// ----------------------------------------------------
+=font-h4($color: null)
+	+font-bold
+	font-size: $font-size-h4
+	line-height: $line-height-h4
+	@if $color
+		color: $color
+
+	+media('<mob-lg')
+		font-size: $font-size-h4--sm
+		line-height: $line-height-h4--sm
+
+// Heading h5
+$font-size-h5: $font-size !default
+$line-height-h5: $line-height !default
+
+// Heading h6
+$font-size-h6: $font-size--small !default
+$line-height-h6: $line-height--small !default
+
+// Small Title Text
+=small-title($color: rgba($text-color, 0.4))
+	+font-normal
+	+font(1.6rem, 2.4rem)
+	color: $color
+
+// Spaces
+$bottom-space: 1.5rem !default
+$bottom-space--mob: 1.1rem !default
+$bottom-space--section: 14rem !default
+$bottom-space--section--mob: 5rem !default
+$bottom-space--article: 7rem !default
+$bottom-space--article--mob: 3rem !default
+$bottom-space--element: 4.5rem !default
+$bottom-space--element--mob: 2rem !default
+$bottom-space--title: 2.4rem !default
+$bottom-space--title--mob: 1.6rem !default
+$bottom-space--row: 1.5rem !default
+$bottom-space--row--mob: 0.9rem !default
+
+
+// Z-indexes
+// ==========================================================================
+$z-high: 40 !default
+$z-middle: 30 !default
+$z-low: 20 !default
+$z-egg: 10 !default
+$z-up: 5 !default
+$z-loader: 1100 !default
+$z-heading: 1200 !default
+
+
+// Layout
+// ==========================================================================
+
+// отступы для всего сайта
+$page-layout-space: 7rem 8rem !default // v h
+$page-layout-space--md: 7rem 4rem !default // v h
+$page-layout-space--mob: 2.7rem 2rem !default // v h
+// максимальная ширина сайта
+$page-layout-width: 192rem !default
+// минимальная ширина сайта
+$page-layout-min: 32rem !default
+// минимальные отступы у текствого блока
+$text-layout-space: 6rem 6rem !default // v h
+$text-layout-space--md: 4rem 4rem !default // v h
+$text-layout-space--mob: 2rem 2rem !default // v h
+// максимальная ширина текстового блока
+$text-layout-width: 68rem !default
+// максимальная ширина текстового блока (альтернативная, например на главной - списки)
+$text-layout-width-alt: 81rem !default
+// максимальная ширина блока выходящего за пределы текста
+$flood-layout-width: 108rem !default
+// максимальная ширина блока с ограниченной шириной
+$wide-layout-width: 124rem !default
+=wide()
+	max-width: $wide-layout-width
+	margin-left: auto
+	margin-right: auto
+
+	+media('<mob-lg')
+		max-width: none
+
+$wide-full-layout-width: 140rem !default
+=wide-full()
+	max-width: $wide-full-layout-width
+	margin-left: auto
+	margin-right: auto
+
+	+media('<tab-lg')
+		max-width: none
+
+// отступы внутри блочных элементов
+$grid-space: 4rem 4rem !default // v h
+$grid-space--md: 3rem 3rem !default // v h
+$grid-space--mob: 2rem 2rem !default // v h
+// отступы в дефолтных списках
+$list-space: 32px !default
+$list-space--mob: 22px !default
+$list-space--alt: 53px !default
+$list-space--alt--mob: 37px !default
+
+
+// Class of typography styles
+// ==========================================================================
+// @example Sass - Использование
+// .#{$user-content}
+//
+// @example css - Вывод CSS
+// .user-content
+$user-content: user-content !default
+
+
+// Header
+// ==========================================================================
+$header-width: 520px !default
+$header-width--md: 100% !default
+$header-height: 100vh !default
+$header-height--md: 120px !default
+$header-height--mob: 60px !default
+//$header-bg: white !default
+$header-bg: #e6897d !default
+$nav-is-open-class: 'nav-is-open'
+
+// Sidebar
+// ==========================================================================
+$sidebar-width: 260px !default
+
+
+// Main
+// ==========================================================================
+//$main-space-v: 0 13.1rem !default
+$main-space-v: 0 21.2rem !default
+$main-space-v--md: 0 8rem !default
+$main-space-v--mob: 0 5.9rem !default
+
+
+// Footer
+// ==========================================================================
+$footer-box-space: 2.5rem 4rem !default // v h
+$footer-box-space--md: 4rem 4rem !default // v h
+$footer-box-space--mob: 2rem 2rem !default // v
+//-----------------------------------
+$f-box--angle-size: 100% 6rem !default // h w
+
+
+// Main Sections
+// ==========================================================================
+$main-sect-heading-width: 280px !default
+
+
+// Buttons
+// ==========================================================================
+
+// Media Query for Forms
+$btn-media--mob: '<mob-lg'
+
+$btn-height: 60px !default
+$btn-height--mob: 39px !default
+$btn-font-size: 18px !default
+$btn-font-size--mob: 16px !default
+$btn-line-height: 22px !default
+$btn-line-height--mob: 20px !default
+//------------------------------------
+$btn-height--small: 44px !default
+$btn-font-size--small: 18px !default
+$btn-line-height--small: 22px !default
+//------------------------------------
+$btn-bg-color: $highlight-color !default
+$btn-bg-hover-color: $highlight-color--hover !default
+$btn-text-color: white !default
+$btn-disabled-bg: #ccc !default
+$btn-disabled-color: #969696 !default
+
+
+// Forms
+// ==========================================================================
+
+// Media Query for Forms
+$form-media--mob: '<mob-lg'
+
+// List of inputs
+$inputs-list: 'input[type="text"]', 'input[type="password"]', 'input[type="email"]', 'input[type="search"]', 'textarea'
+$small-field: 'small-field'
+
+// Colors of forms
+$form-text-color: white !default
+//$form-placeholder-color: $border-color !default
+$form-placeholder-color: rgba($form-text-color, 0.2) !default
+$form-bg-color: $base-color-dark !default
+$form-border-color: $form-bg-color !default
+// validation
+$form-error-color: $mark-color !default
+$form-success-color: $highlight-color !default
+$form-has-value-color: greenyellow !default
+// disabled
+$form-text-color--disabled: #6a6a6a !default
+$form-bg-color--disabled: #535386 !default
+$form-border-color--disabled: #535386 !default
+// focus
+$form-border-color--focus: #4949a7 !default
+
+// Fonts of forms
+$form-font-size: 18px !default
+$form-line-height: 20px !default
+$form-input-height: 60px !default
+$form-letter-spacing: null !default
+//----------------------------------
+$form-font-size--small: 18px !default
+$form-line-height--small: 20px !default
+$form-input-height--small: 44px !default
+$form-letter-spacing--small: null !default
+//----------------------------------
+$form-font-size--mob: 16px !default
+$form-line-height--mob: 20px !default
+$form-input-height--mob: 40px !default
+$form-letter-spacing--mob: null !default
+
+// Font of Labels
+$form-label-font-size: 16px !default
+$form-label-line-height: 24px !default
+$form-label-font-size--small: 14px !default
+$form-label-line-height--small: 20px !default
+$form-label-font-size--mob: 12px !default
+$form-label-line-height--mob: 16px !default
+
+// Space of Labels
+$form-label-vsb: 0.8rem // vertical space bottom
+$form-label-vsb--small: 0.4rem // vertical space bottom
+$form-label-vsb--mob: 0.6rem // vertical space bottom
+
+// @example Sass - Использование
+// @example css - Вывод CSS
+// Inputs Font
+=inputs-font()
+	+font-normal
+	font-size: $form-font-size
+	line-height: $form-line-height
+	//color: $form-text-color
+	color: inherit
+	@if $form-letter-spacing
+		letter-spacing: $form-letter-spacing
+
+=inputs-font--small()
+	font-size: $form-font-size--small
+	line-height: $form-line-height--small
+	@if $form-letter-spacing--small
+		letter-spacing: $form-letter-spacing--small
+
+=inputs-font--mob()
+	font-size: $form-font-size--mob
+	line-height: $form-line-height--mob
+	@if $form-letter-spacing--mob
+		letter-spacing: $form-letter-spacing--mob
+
+// Selects Font
+=selects-font()
+	+inputs-font
+
+=selects-font--small()
+	+inputs-font--small
+
+=selects-font--mob()
+	+inputs-font--mob
+
+// Layout of forms
+$form-border-width: 2px !default
+$form-input-space-vt: floor(($form-input-height - $form-line-height - $form-border-width * 2) / 2) !default // верхний паддинг округляем в нижнюю сторону
+$form-input-space-vb: ceil(($form-input-height - $form-line-height - $form-border-width * 2) / 2) !default // нижний паддинг округляем в верхнюю сторону
+$form-input-space-h: 28px !default
+$form-bottom-space: 2.5rem !default
+$form-gap: 4rem !default
+//--------------------------------
+$form-border-width--small: 2px !default
+$form-input-space-vt--small: floor(($form-input-height--small - $form-line-height--small - $form-border-width--small * 2) / 2) !default // верхний паддинг округляем в нижнюю сторону
+$form-input-space-vb--small: ceil(($form-input-height--small - $form-line-height--small - $form-border-width--small * 2) / 2) !default // нижний паддинг округляем в верхнюю сторону
+$form-input-space-h--small: 20px !default
+$form-bottom-space--small: 2.5rem !default
+$form-gap--small: 3rem !default
+//---------------------------------
+$form-border-width--mob: 2px !default
+$form-input-space-vt--mob: floor(($form-input-height--mob - $form-line-height--mob - $form-border-width--mob * 2) / 2) !default // верхний паддинг округляем в нижнюю сторону
+$form-input-space-vb--mob: ceil(($form-input-height--mob - $form-line-height--mob - $form-border-width--mob * 2) / 2) !default // нижний паддинг округляем в верхнюю сторону
+$form-input-space-h--mob: 18px !default
+$form-bottom-space--mob: 1.5rem !default
+$form-gap--mob: 2rem !default
+
+// Vertical spaces
+=forms-space()
+	margin: 0 0 $form-bottom-space
+
+	+media($form-media--mob)
+		margin: 0 0 $form-bottom-space--mob
+
+=forms-space--small()
+	margin: 0 0 $form-bottom-space--small
+
+	+media($form-media--mob)
+		margin: 0 0 $form-bottom-space--mob
+
+// Checkboxes
+// Radio Buttons
+$checkbox-color: $highlight-color !default
+
+// Select
+$select-arrow-width: 56px !default
+$select-arrow-width--small: 56px !default
+$select-arrow-width--mob: 40px !default
+$select-arrow-height: 100% !default
+$select-arrow-height--small: 100% !default
+$select-arrow-height--mob: 100% !default
+$multiple-item-space: 3px !default
+
+// Style Selection
+=selectSelection()
+	height: $form-input-height
+	width: 100%
+	padding: $form-input-space-vt $select-arrow-width $form-input-space-vb $form-input-space-h
+	background: $form-bg-color
+	@if $form-border-width
+		border: $form-border-width solid $form-border-color
+	border-radius: round($form-input-height / 2)
+	box-shadow: none
+	text-indent: 0
+	outline: none
+	// transition
+	$prop: border-color, color, background-color
+	transition:
+		property: $prop
+		duration: $animation-speed
+		timing-function: ease-in-out
+	user-select: none
+	-webkit-tap-highlight-color: transparent
+
+=selectSelection--small()
+	height: $form-input-height--small
+	padding: $form-input-space-vt--small $select-arrow-width--small $form-input-space-vb--small $form-input-space-h--small
+	border-radius: round($form-input-height--small / 2)
+	@if $form-border-width--small
+		border-width: $form-border-width--small
+
+=selectSelection--mob()
+	height: $form-input-height--mob
+	padding: $form-input-space-vt--mob $select-arrow-width--mob $form-input-space-vb--mob $form-input-space-h--mob
+	border-radius: round($form-input-height--mob / 2)
+	@if $form-border-width--mob
+		border-width: $form-border-width--mob
+
+// Select arrow
+=selectArrow()
+	&::before, &::after
+		content: ''
+		position: absolute
+		right: 27px
+		top: 50%
+		width: 6px
+		height: 2px
+		//background-color: $form-text-color
+		background-color: currentColor
+		margin-top: -1px
+		z-index: 1
+
+		+media($form-media--mob)
+			right: 18px
+
+		//.input-holder.error &, .input-holder.success &
+			display: none
+
+	&::before
+		transform: rotate(45deg)
+
+	&::after
+		transform: rotate(-45deg)
+		right: 23px
+
+		+media($form-media--mob)
+			right: 15px
+
+// States
+=form-success()
+	//color: $form-success-color
+	//border-color: $form-success-color
+
+=form-error()
+	//color: $form-error-color
+	border-color: $form-error-color
+
+=form-has-value()
+	color: $form-has-value-color
+	border-color: $form-has-value-color
+
+=form-on-focus()
+	//color: $form-border-focus-color
+	border-color: $form-border-color--focus
+
+
+// Pop
+// ==========================================================================
+$pop-opener-space: 5px 12px !default
+$pop-opener-space--outline: 2px 12px 4px 10px !default
+$pop-opener-left--outline: 3px !default
+$pop-animation-speed: 0.6s !default
+
+
+// Clients
+// ==========================================================================
+$clients-item-space: 6rem 6rem !default
+
+
+// Separator
+// ==========================================================================
+$sep-size: 5px 44px !default //h w
+$sep-size--mob: 3px 24px !default //h w
+$sep-rotate: -36deg !default
+
+
+// Offers Slider
+// ==========================================================================
+$offers-slider-space: 16px !default
+
+
+// Extended Offers Slider
+// ==========================================================================
+// Media Query for Forms
+$sliders-media--mob: '<tab-lg'
+
+$x-offers-slider-space: 16px !default
+
+
+// Rolls default / Roll up list
+// ==========================================================================
+$rolls-angle-size: 100% 6rem !default // h w
+$rolls-angle-size--md: 100% 4rem !default // h w
+$rolls-angle-size--mob: 4rem 100% !default // h w
+
+
+// Detail
+// ==========================================================================
+$detail-label-width: 20rem !default
+$detail-item-space-v: 3.5rem 1rem !default
+$detail-item-space-v--md: 3.5rem 1rem !default
+$detail-item-space-v--mob: 1.5rem 0.8rem !default
+$detail-box-space-v: 0 2.5rem !default
+$detail-box-space-v--md: 0 2.5rem !default
+$detail-box-space-v--mob: 0 1.2rem !default
+$detail-box-space-h: 1rem 0 !default
+
+
+// Сontacts
+// ==========================================================================
+$cont-map-height: 41.3rem
+$cont-form-width: 46.8rem
+$cont-form-width--sm: 34rem
+$cont-form-width--mob: 26rem
+
+
+// Social
+// ==========================================================================
+$facebook-color: #3a589e !default
+$vkontakte-color: #4b73a4 !default
+$twitter-color: #1da0f2 !default
+$odnoklassniki-color: #f2822e !default
+$youtube-color: #e62117 !default
+$instagram-color-start: #de4f5a !default
+$instagram-color-end: #a43b97 !default
+$viber-color: #574e92 !default
+$telegram-color: #2aa1da !default
+
+// Not list
+// ==========================================================================
+$not-list: ':not(.date-list):not(.slick-dots):not(.breadcrumbs__list):not(.f-list):not(.nav__list):not(.schedule)'

@@ -1,0 +1,46 @@
+@@if(pageWrap === "START")
+{
+
+<div class="wrapper"@@if(!context.noSmooth){ id="page"}>
+
+	<!--HEADER-->
+	@@include('_tpl_layout_header.html', {
+		"currentItem": "@@currentItem",
+		"classes": "@@classes"
+	})
+	<!--HEADER end-->
+
+	<!--MAIN-->
+	<div class="main@@if(context.classes && context.classes != "@@classes"){ @@classes}@@if(context.pageClass){ @@pageClass}">
+		<div class="bg-phone">
+			<div class="bg-phone__img">
+				<img src="img/phone.png" alt="" />
+			</div>
+		</div>
+
+		<div class="layout content user-content">
+			@@if(context.title){
+			<div class="heading">
+				@@if(context.titleImg){<figure><div><img src="@@titleImg" alt="@@title" /></div></figure>}
+				<h1>@@title</h1>
+			</div>
+			}
+
+}
+@@if(pageWrap === "END")
+{
+		</div>
+		@@if(!context.noBigBtn) {
+		<a @@if(context.bigBtn){href="@@bigBtn.href" data-heading="@@bigBtn.title" class="big-btn pulse"><span>@@bigBtn.text</span>}@@if(!context.bigBtn){href="contacts.html" data-heading="Контакты" class="big-btn pulse"><span>Контакты</span>}@@include("./includes/svg/icon-arrow-right.svg")</a>
+		}
+	</div>
+	<!--MAIN end-->
+
+	<!--FOOTER-->
+	@@include("_tpl_layout_footer.html", {"currentItem": "@@currentItem"})
+	<!--FOOTER end-->
+
+</div>
+
+<div class="c-transition">&nbsp;</div>
+}

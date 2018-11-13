@@ -1,0 +1,13 @@
+<article class="news__item@@if(context.classes){ @@classes}">
+	<a href="new-inner.html" class="news__item__inner">
+		@@if(context.src){
+		<figure class="news__item__figure">
+			<img src="@@src" alt="@@title" />
+		</figure>
+		}
+		<div class="news__item__body">
+			<span class="btn-source">@@source</span>
+			<div class="news__item__title">@@title</div>
+		</div>
+	</a>
+</article>

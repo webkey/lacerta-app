@@ -1,0 +1,14 @@
+[
+  {
+	"class": "telegram",
+	"href": "https://telegram.org/",
+	"svg": "@@include('includes/svg/icon-soc-circle--telegram.svg')",
+	"title": "Telegram"
+  },
+  {
+	"class": "viber",
+	"href": "https://www.viber.com/",
+	"svg": "@@include('includes/svg/icon-soc-circle--viber.svg')",
+	"title": "Viber"
+  }
+]

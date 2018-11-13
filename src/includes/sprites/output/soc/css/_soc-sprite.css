@@ -1,0 +1,128 @@
+.soc-icon {
+    font-size: 60px;
+}
+
+.soc-icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../soc-sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 12em 12em;
+}
+
+.no-svg .soc-icon:before {
+    background-image: url("../soc-sprite.png");
+}
+
+
+
+  .soc-icon.facebook:before {
+      background-position: 0em 0em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.facebook--hover:before {
+      background-position: -1em -1em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.facebook-alt-color:before {
+      background-position: -2em -2em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.facebook-alt-color--hover:before {
+      background-position: -3em -3em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.telegram:before {
+      background-position: -4em -4em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.telegram--hover:before {
+      background-position: -5em -5em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.telegram-alt-color:before {
+      background-position: -6em -6em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.telegram-alt-color--hover:before {
+      background-position: -7em -7em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.viber:before {
+      background-position: -8em -8em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.viber--hover:before {
+      background-position: -9em -9em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.viber-alt-color:before {
+      background-position: -10em -10em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+  .soc-icon.viber-alt-color--hover:before {
+      background-position: -11em -11em;
+      width: 1em;
+      height: 1em;
+  }
+
+
+
+
+

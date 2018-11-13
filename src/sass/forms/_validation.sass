@@ -1,0 +1,150 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+.error-note, .success-note
+	float: left
+	position: relative
+	+padding-horizontal($form-input-space-h)
+	margin-top: -#{$form-bottom-space}
+	@if $form-border-width
+		+margin-horizontal($form-border-width)
+	height: $form-label-line-height
+	width: 100%
+	+font-normal
+	+font($form-label-font-size, $form-label-line-height)
+	text-align: right
+	letter-spacing: normal // Важно!
+	+truncate(none)
+	// hide before validation
+	display: none
+
+	.#{$small-field} &
+		+padding-horizontal(round($form-input-height--small/2))
+		//margin-top: -#{$form-bottom-space--small}
+		@if $form-border-width--small
+			+margin-horizontal($form-border-width--small)
+		height: $form-label-line-height--small
+		+font($form-label-font-size--small, $form-label-line-height--small)
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			+padding-horizontal(round($form-input-height--mob/2))
+			@if $form-border-width--mob
+				+margin-horizontal($form-border-width--mob)
+			height: $form-label-line-height--mob
+			+font($form-label-font-size--mob, $form-label-line-height--mob)
+			margin-top: -#{$form-bottom-space--mob}
+
+	.input-wrap &, .input-holder &, .select &
+		float: none
+		position: absolute
+		bottom: 100%
+		right: 0
+		width: auto
+		//max-width: 50%
+		padding-left: 0
+		margin-bottom: $form-label-vsb
+
+		+media($form-media--mob)
+			margin-bottom: $form-label-vsb--mob
+
+	.input-wrap.#{$small-field} &,
+	.#{$small-field} .input-holder &,
+	.#{$small-field} .select &
+		margin-bottom: $form-label-vsb--small
+
+		+media($form-media--mob)
+			margin-bottom: $form-label-vsb--mob
+
+.error-note
+	color: $form-error-color
+
+	// нужно выбрать только ближайший элемент ошибки формы (нельзя использовать ~)
+	form .error + &,
+	form .error + .select2 + &
+		display: block
+
+.success-note
+	color: $form-success-color
+
+	// нужно выбрать тольк ближайший элемент подтверждения формы ((нельзя использовать ~))
+	//form .success + .error-note + &,
+	//form .success + .select2 + .error-note + &
+		display: block
+
+.input-holder
+	$this-icon-lines-width: 18px
+	$this-icon-lines-width-short: 8px
+	$this-icon-lines-height: 2px
+
+	&::before, &::after
+		content: ""
+		display: block
+		position: absolute
+		right: 22px
+		top: round($form-input-height / 2 - 1)
+		height: $this-icon-lines-height
+		width: $this-icon-lines-width
+		max-width: $this-icon-lines-width
+		background-color: $form-bg-color
+		z-index: 5
+		opacity: 0
+		pointer-events: none
+		// transition
+		$prop: transform, background-color, opacity, max-width
+		will-change: $prop
+		transition:
+			property: $prop
+			duration: $animation-speed
+
+		.#{$small-field} &
+			right: 15px
+			top: round($form-input-height--small / 2 - 1)
+
+		.#{$small-field} &, &
+			+media($form-media--mob)
+				right: 15px
+				top: round($form-input-height--mob / 2)
+
+	&::before
+		//+size($this-icon-lines-height, round($this-icon-lines-width*0.44))
+		//transform-origin: bottom right
+		$rotate: 45deg
+		transform: rotate($rotate)
+
+	&::after
+		//+size($this-icon-lines-height, round($this-icon-lines-width))
+		//transform-origin: bottom left
+		$rotate: -45deg
+		transform: rotate($rotate)
+
+	&.success, &.error
+		&::before, &::after
+			opacity: 1
+
+	&.success
+		&::before, &::after
+			background-color: $form-success-color
+
+		&::before
+			$translate: -13px, 4px
+			$rotate: 45deg
+			max-width: $this-icon-lines-width-short
+			transform: translate($translate) rotate($rotate)
+			transform: translate3d($translate, 0) rotate($rotate)
+
+		&::after
+			$translate: 0, 0
+			$rotate: -45deg
+			transform: translate($translate) rotate($rotate)
+			transform: translate3d($translate, 0) rotate($rotate)
+
+
+	&.error
+		&::before, &::after
+			background-color: $form-error-color
+
+	&.has-select
+		&::before, &::after
+			content: none

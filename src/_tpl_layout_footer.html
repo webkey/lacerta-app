@@ -1,0 +1,204 @@
+<footer class="footer layout">
+	<div class="footer__holder">
+		<div class="f-col f-col_nav">
+			<div class="f-box f-box_subs">
+				<div class="f-box__title">Подпишитесь на рассылку</div>
+				<div class="subs-form">
+					<form action="#" method="post" class="validation-form-js">
+						<div class="input-wrap">
+							<label for="subs">Email</label>
+							<div class="input-holder">
+								<input id="subs" name="subs" placeholder="email@mail.com" type="email" required>
+								<div class="error-note">Неправильный Email</div>
+								<div class="success-note">Ждите от нас новостей!</div>
+								<button>@@include("./includes/svg/icon-email.svg")</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="f-box f-box_nav">
+				<ul class="f-list">
+					<li@@if(context.currentItem == 'Купить облигации'){ class="current"}><a href="@@if(context.currentItem == 'Купить облигации'){javascript:;}@@if(context.currentItem != 'Купить облигации'){buy.html}" data-heading="Покупка облигаций">Алгоритм покупки облигаций</a></li>
+					<li@@if(context.currentItem == 'Продать облигации'){ class="current"}><a href="@@if(context.currentItem == 'Продать облигации'){javascript:;}@@if(context.currentItem != 'Продать облигации'){sell.html}" data-heading="Продажа облигаций">Алгоритм продажи облигаций</a></li>
+					<li><a href="https://www.onliner.by/">Узнать об эмитентах</a></li>
+					<li><a href="#">Выбрать облигации</a></li>
+					<li@@if(context.currentItem == 'СМИ о нас'){ class="current"}><a href="@@if(context.currentItem == 'СМИ о нас'){javascript:;}@@if(context.currentItem != 'СМИ о нас'){news.html}" data-heading="СМИ о нас">СМИ о нас</a></li>
+				</ul>
+			</div>
+
+			<div class="f-box f-box_soc">
+				<div class="f-soc">
+					<div class="f-soc__group">
+						<strong>Группа</strong>
+						<div class="f-soc__list">
+							@@loop('_tpl_social-items--f-soc.html', 'includes/json/social-items--group.json')
+						</div>
+					</div>
+					<div class="f-soc__group">
+						<strong>Чат-боты</strong>
+						<div class="f-soc__list">
+							@@loop('_tpl_social-items--f-soc.html', 'includes/json/social-items--bots.json')
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="f-col f-col_cont">
+			<div class="f-box f-box_form">
+				<div class="f-box__title single-drop__select-js">
+					Напишите нам
+					<div class="f-box__angle single-drop__angle-js"><i>&nbsp;</i></div>
+				</div>
+				<div class="appeal-form single-drop__panel-js">
+					<form action="#" method="post" class="validation-form-js">
+						<div class="appeal-form__cols">
+							<div class="appeal-form__col">
+								@@loop("_tpl_forms_field.html", [
+								{
+									"wrap": "small-field",
+									"type": "text",
+									"ph": "Введите Ваше имя...",
+									"id": "f-form-name",
+									"label": "Имя",
+									"valid": "true",
+									"required": "required"
+								}, {
+									"wrap": "small-field",
+									"type": "email",
+									"ph": "email@mail.com",
+									"id": "f-form-email",
+									"label": "Email",
+									"valid": "true",
+									"required": "required"
+								}, {
+									"wrap": "small-field",
+									"type": "text",
+									"name": "phoneNumber",
+									"ph": "+375 00 111-22-33",
+									"classes": "has-phone-mask",
+									"id": "f-form-phone",
+									"label": "Телефон",
+									"valid": "true",
+									"required": "required"
+								}
+								])
+							</div>
+							<div class="appeal-form__col">
+								@@loop("_tpl_forms_field.html", [
+								{
+									"wrap": "small-field",
+									"type": "select",
+									"id": "f-form-services",
+									"classes": "cselect",
+									"ph": "Выберите услугу из списка",
+									"label": "Услуга",
+									"labelClasses": "has-select",
+									"valid": "true",
+									"required": "required",
+									"options": "<option value=''>Выберите услугу из списка</option><option value='1'>Купить облигации</option><option value='2'>Продать облигации</option><option value='3'>Консультация</option><option value='4'>Запросить информацию</option><option value='5'>Другое</option>"
+								}, {
+									"wrap": "small-field",
+									"type": "textarea",
+									"ph": "Введите сообщение...",
+									"id": "f-form-message",
+									"label": "Ваше сообщение",
+									"valid": "true",
+									"required": "required"
+								}
+								])
+								@@include("_tpl_btn.html", {"type": "button!", "value": "Отправить", "iconRight": "@@include('./includes/svg/icon-send.svg')"})
+							</div>
+						</div>
+
+						<div class="appeal-form__msg">
+							<strong class="appeal-form__msg__title">Спасибо!</strong>
+							<span class="appeal-form__msg__subtitle">Мы уже получили Ваше сообщение, наши специалисты подготавливают ответ.</span>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="f-box f-box_cont">
+				<div class="f-box__title">Свяжитесь с нами</div>
+				<ul class="f-list f-list_tel">
+					<li><a href="mailto:info@lacerta.by">info@lacerta.by</a></li>
+					<li>
+						<div><a href="tel:+375297767479">+375 29 <strong>776-74-79</strong></a></div>
+						<div><a href="tel:+375172247479">+375 17 <strong>224-74-79</strong></a></div>
+					</li>
+					<li>220062, Республика Беларусь,<br> г. Минск, проспект Победителей, 121</li>
+				</ul>
+			</div>
+
+			<div class="f-box f-box_req">
+				<div class="req">
+					<p>Расчетный счет: BY23OLMP30121000382090000933 в ОАО «Белгазпромбанк» БИК OLMPBY2X</p>
+					<p>Субсчет для перечисления денежных средств на покупку облигаций <strong>физическими</strong> лицами: BY51OLMP30111000000490000933 в ОАО «Белгазпромбанк»<br> БИК OLMPBY2X</p>
+					<p>Субсчет для перечисления денежных средств на покупку облигаций <strong>юридическими</strong> лицами: BY52OLMP30111000000360000933 в ОАО «Белгазпромбанк»<br> БИК OLMPBY2X</p>
+				</div>
+
+				<div class="developer">
+					<a href="http://pras.by/" target="_blank">@@include("./includes/svg/icon-prasby.svg")<span>Разработка сайта — компания PRAS</span> </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup-default" id="popup-call">
+	<div class="popup-default__layout">
+		<div class="popup-default__holder" data-tc-stop>
+			<button class="popup-default__close popup-default-close-js" title="Закрыть">Закрыть</button>
+			<div class="h3">Желаете приобрести облигации?</div>
+			<div class="form-note">Оставьте ваши контактные данные<br> и наш сотрудник свяжется с вами в ближайшее время</div>
+			<form action="#" method="post" class="validation-form-js">
+				@@loop("_tpl_forms_field.html", [{
+						"wrap": "true",
+						"type": "text",
+						"name": "name",
+						"ph": "Введите Ваше имя...",
+						"id": "form-popup-call-name",
+						"label": "Имя",
+						"labelClasses": "",
+						"valid": "true",
+						"required": "true"
+					}, {
+						"wrap": "true",
+						"type": "text",
+						"name": "phoneNumber",
+						"ph": "+375 29 656-98-25",
+						"classes": "has-phone-mask",
+						"id": "form-popup-call-phone",
+						"label": "Телефон",
+						"labelClasses": "",
+						"valid": "true",
+						"required": "true"
+					}, {
+						"wrap": "true",
+						"type": "textarea",
+						"ph": "Добрый день",
+						"id": "form-popup-call-message",
+						"label": "Ваше сообщение",
+						"valid": "true",
+						"required": "required"
+					}
+				])
+				<div class="form-buttons">
+					@@include("_tpl_btn.html", {"type": "button!", "value": "Отправить запрос", "iconRight": "@@include('./includes/svg/icon-send.svg')"})
+				</div>
+
+				<div class="user-form__msg">
+					<div class="user-form__msg__caption">
+						<strong class="user-form__msg__title">Звонок заказан!</strong>
+						<span class="user-form__msg__subtitle">Мы перезвоним Вам на следующий номер:</span>
+					</div>
+					<div class="user-form__msg__tel"><a href="tel:+375296892548">+375 29 689-25-48</a></div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup-default-overlay popup-default-overlay-js">&nbsp;</div>

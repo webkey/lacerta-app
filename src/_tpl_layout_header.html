@@ -1,0 +1,30 @@
+<header class="header@@if(context.classes && context.classes != "@@classes"){ @@classes}">
+	<div class="header__layout max-wrap">
+		<div class="header__holder">
+			<div class="header__top">
+				<strong class="logo">
+					<@@if(currentItem == "Главная"){span}@@if(currentItem != "Главная"){a href="index.html" data-heading-align="left"}><em>Покупка и<br> продажа облигаций</em></span></@@if(currentItem == "Главная"){span}@@if(currentItem != "Главная"){a}>
+				</strong>
+				<ul class="header-menu">
+					<li class="small@@if(currentItem === 'Компания Lacerta'){ current}"><a href="@@if(currentItem === 'Компания Lacerta'){javascript:;}@@if(currentItem !== 'Компания Lacerta'){about.html}" data-heading="Скажите:<br> “Здравствуйте, деньги”">Компания Lacerta</a></li>
+					<li@@if(currentItem === 'Купить облигации'){ class="current"}><a href="@@if(currentItem === 'Купить облигации'){javascript:;}@@if(currentItem !== 'Купить облигации'){buy.html}" data-heading="Покупка облигаций">Купить</a></li>
+					<li@@if(currentItem === 'Продать облигации'){ class="current"}><a href="@@if(currentItem === 'Продать облигации'){javascript:;}@@if(currentItem !== 'Продать облигации'){sell.html}" data-heading="Продажа облигаций">Продать</a></li>
+				</ul>
+			</div>
+
+			<div class="nav-wrap shutter--nav-js" data-tc-stop>
+				<div class="max-wrap-text push-auto">
+					<nav class="nav">
+						@@include('_tpl_nav-constructor.html', {
+							"currentItem": "@@currentItem",
+							"bsKey": "nav"
+						})
+					</nav>
+				</div>
+			</div>
+
+			<div class="overlay nav-overlay nav-overlay-js">&nbsp;</div>
+			<a href="#" class="nav-opener nav-opener-js"><i>&nbsp;</i><span>Меню</span></a>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,34 @@
+
+
+<ul class="@@bsKey__list">
+	<li class="@@if(currentItem === 'Компания Lacerta'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Компания Lacerta", "href": "@@if(currentItem === 'Компания Lacerta'){javascript:;}@@if(currentItem !== 'Компания Lacerta'){about.html}", "key": "@@bsKey", "title": "Скажите:&lt;br&gt; “Здравствуйте, деньги”" })
+	</li>
+	<li class="@@if(currentItem === 'Юридические документы'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Юридические документы", "href": "@@if(currentItem === 'Юридические документы'){javascript:;}@@if(currentItem !== 'Юридические документы'){docs.html}", "key": "@@bsKey", "title": "Юридические документы" })
+	</li>
+</ul>
+<ul class="@@bsKey__list">
+	<li class="@@if(currentItem === 'Вторичный рынок облигаций'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Вторичный рынок облигаций", "href": "secondary.html", "key": "@@bsKey", "title": "Вторичный - значит&lt;br&gt; “на бис!”" })
+	</li>
+	<li class="@@if(currentItem === 'Выпустить и разместить облигации'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Выпустить и разместить облигации", "href": "@@if(currentItem === 'Выпустить и разместить облигации'){javascript:;}@@if(currentItem !== 'Выпустить и разместить облигации'){place-bonds.html}", "key": "@@bsKey", "title": "Будет лучше их выпустить!" })
+	</li>
+	<li class="@@if(currentItem === 'Выплаты доходов'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Выплаты доходов", "href": "@@if(currentItem === 'Выплаты доходов'){javascript:;}@@if(currentItem !== 'Выплаты доходов'){payments.html}", "key": "@@bsKey", "title": "Утром деньги -&lt;br&gt; вечером дивиденты" })
+	</li>
+</ul>
+<ul class="@@bsKey__list">
+	<li class="high @@if(currentItem === 'Купить облигации'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Купить облигации", "href": "@@if(currentItem === 'Купить облигации'){javascript:;}@@if(currentItem !== 'Купить облигации'){buy.html}", "key": "@@bsKey", "title": "Покупка облигаций" })
+	</li>
+	<li class="high @@if(currentItem === 'Продать облигации'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "txt": "Продать облигации", "href": "@@if(currentItem === 'Продать облигации'){javascript:;}@@if(currentItem !== 'Продать облигации'){sell.html}", "key": "@@bsKey", "title": "Продажа облигаций" })
+	</li>
+</ul>
+<ul class="@@bsKey__list">
+	<li class="@@if(currentItem === 'Контакты'){current}">
+		@@include('_tpl_nav-LINK--short.html', { "tel": "true", "txt": "Контакты", "href": "@@if(currentItem === 'Контакты'){javascript:;}@@if(currentItem !== 'Контакты'){contacts.html}", "key": "@@bsKey", "title": "Контакты" })
+	</li>
+</ul>

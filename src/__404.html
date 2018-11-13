@@ -1,0 +1,22 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Страница не найдена",
+	"pageClass": "error-page"
+})
+
+@@include('_tpl_PAGE_WRAP.html', {
+	"pageWrap": "START",
+	"currentItem": "",
+	"title": ""
+})
+
+<div class="error-404 layout-text">
+	<figure>
+		<img src="img/404.png" alt="Страница не найдена" />
+	</figure>
+	<h1 class="h2">Страница не найдена</h1>
+	<p>Зато мы нашли для Вас несколько выгодных облигаций!</p>
+</div>
+
+@@include('_tpl_PAGE_WRAP.html', {"pageWrap": "END", "currentItem": "Выпустить и разместить облигации", "bigBtn": { "href": "buy.html", "text": "Купить облигации", "title": "Покупка облигаций" } })
+
+@@include('_tpl_layout_foot.html')

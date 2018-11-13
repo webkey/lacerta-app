@@ -1,0 +1,455 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* select2
+.cselect
+	opacity: 0
+	visibility: hidden
+
+	.no-js &
+		opacity: 1
+		visibility: visible
+
+.select2
+	+forms-space
+
+	//.#{$small-field} &
+		+forms-space--small
+
+	.input-wrap &, &:last-child
+		margin-bottom: 0
+
+.select2-container
+	&::before
+		content: ""
+		display: none
+		position: absolute
+		left: 0
+		width: 100%
+		height: $form-input-height + 5
+		background-color: $form-border-color--focus
+		z-index: -1
+
+	.#{$small-field} &
+		&::before
+			height: $form-input-height--small + 5
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			&::before
+				height: $form-input-height--mob + 5
+
+	&.select2-container--below
+		&::before
+			top: 0
+			border-top:
+				left-radius: round($form-input-height / 2)
+				right-radius: round($form-input-height / 2)
+
+			.#{$small-field} &
+				border-top:
+					left-radius: round($form-input-height--small / 2)
+					right-radius: round($form-input-height--small / 2)
+
+			.#{$small-field} &, &
+				+media($form-media--mob)
+					border-top:
+						left-radius: round($form-input-height--mob / 2)
+						right-radius: round($form-input-height--mob / 2)
+
+	&.select2-container--above
+		&::before
+			bottom: 0
+			border-bottom:
+				left-radius: round($form-input-height / 2)
+				right-radius: round($form-input-height / 2)
+
+			.#{$small-field} &
+				border-bottom:
+					left-radius: round($form-input-height--small / 2)
+					right-radius: round($form-input-height--small / 2)
+
+			.#{$small-field} &, &
+				+media($form-media--mob)
+					border-bottom:
+						left-radius: round($form-input-height--mob / 2)
+						right-radius: round($form-input-height--mob / 2)
+
+	&.select2-container--open
+		&::before
+			display: block
+
+.select2-container--default .select2-selection
+	+selectSelection
+
+	.#{$small-field} &
+		+selectSelection--small
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			+selectSelection--mob
+
+.select2-container--default .select2-selection .select2-selection__rendered
+	+selects-font
+
+	.#{$small-field} &
+		+selects-font--small
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			+selects-font--mob
+
+.select2-container--default
+	.select2-selection--single
+		.select2-selection__rendered
+			padding-left: 0
+			padding-right: 0
+
+		.select2-selection__arrow
+			position: absolute
+			right: 0
+			top: 0
+			+size($select-arrow-height, $select-arrow-width)
+			background: none
+			z-index: 2
+			pointer-events: none
+			transform: translateZ(0)
+			// transition
+			$prop: transform
+			will-change: $prop
+			transition: $prop $animation-speed ease-in-out
+
+			.#{$small-field} &
+				+size($select-arrow-height--small, $select-arrow-width--small)
+				
+			.#{$small-field} &, &
+				+media($form-media--mob)
+					+size($select-arrow-height--mob, $select-arrow-width--mob)
+
+			b
+				border: none
+				+cover()
+				margin: 0
+
+				&
+					+selectArrow
+
+	&.select2-container--open
+		.select2-selection__arrow
+			transform: translateZ(0) rotate(0.5turn)
+
+	.select2-search--inline .select2-search__field
+		height: auto
+		margin: 0
+
+	// multiple
+	.select2-selection--multiple
+		height: auto
+		padding: #{$form-input-space-vt - $multiple-item-space} $form-input-space-h #{$form-input-space-vb - $multiple-item-space}
+		//if has arrow
+		//padding: #{$form-input-space-vt - $multiple-item-space} #{$select-arrow-width} #{$form-input-space-vb - $multiple-item-space} #{$select-space-h}
+
+		.select2-selection__rendered
+			padding-left: 0
+			padding-right: 0
+			margin: 0
+			vertical-align: top
+			max-width: none
+
+			li
+				padding: 0 4px
+				margin: #{$multiple-item-space} 8px #{$multiple-item-space} 0
+				border: none
+
+				&::before
+					content: none
+
+		.select2-selection__choice
+			background-color: #f3f3f3
+			border: 1px solid #f3f3f3
+			border-radius: 0
+			color: $text-color
+
+		.select2-selection__choice__remove
+			color: $text-color
+
+			&:hover
+				color: $link-color
+
+	&.#{$small-field}
+		.select2-selection--multiple
+			padding: #{$form-input-space-vt--small - $multiple-item-space} $form-input-space-h--small #{$form-input-space-vb--small - $multiple-item-space}
+			
+	&.#{$small-field} .select2-selection--multiple, .select2-selection--multiple
+		+media($form-media--mob)
+			padding: #{$form-input-space-vt--mob - $multiple-item-space} $form-input-space-h--mob #{$form-input-space-vb--mob - $multiple-item-space}
+
+	.select2-selection--single,
+	.select2-selection--multiple
+		.select2-selection__placeholder
+			color: $form-placeholder-color
+
+	// border radius reset for open
+	&.select2-container--open
+		&.select2-container--below
+			.select2-selection--multiple, .select2-selection--single
+				border-bottom:
+					left-radius: round($form-input-height/2)
+					right-radius: round($form-input-height/2)
+
+				.#{$small-field} &
+					border-bottom:
+						left-radius: round($form-input-height--small/2)
+						right-radius: round($form-input-height--small/2)
+
+				.#{$small-field} &, &
+					+media($form-media--mob)
+						border-bottom:
+							left-radius: round($form-input-height--mob/2)
+							right-radius: round($form-input-height--mob/2)
+
+		&.select2-container--above
+			.select2-selection--multiple, .select2-selection--single
+				border-top:
+					left-radius: round($form-input-height/2)
+					right-radius: round($form-input-height/2)
+
+				.#{$small-field} &
+					border-top:
+						left-radius: round($form-input-height--small/2)
+						right-radius: round($form-input-height--small/2)
+
+				.#{$small-field} &, &
+					+media($form-media--mob)
+						border-top:
+							left-radius: round($form-input-height--mob/2)
+							right-radius: round($form-input-height--mob/2)
+
+	&.select2-container--focus, &.select2-container--open
+		.select2-selection--multiple, .select2-selection--single
+			border: #{$form-border-width} solid #{$form-border-color--focus}
+
+			.#{$small-field} &
+				@if $form-border-width--small
+					border-width: #{$form-border-width--small}
+
+			.#{$small-field} &, &
+				+media($form-media--mob)
+					@if $form-border-width--mob
+						border-width: #{$form-border-width--mob}
+
+	.select2-search--dropdown
+		.select2-search__field
+			margin: 0
+			height: 34px
+			padding: 4px
+			border-color: $form-border-color
+			border-width: 1px
+			line-height: 24px
+
+			&:focus
+				border-color: $form-border-color--focus
+				//box-shadow: inset 0 0 0 1px $form-border-focus-color
+				box-shadow: none
+
+	.select2-results>.select2-results__options
+		max-height: $form-input-height * 6
+
+		&::-webkit-scrollbar
+			width: 3px
+
+		&::-webkit-scrollbar-track
+			-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0)
+
+		&::-webkit-scrollbar-thumb
+			background-color: $form-bg-color
+			outline: 1px solid transparent
+
+	&.#{$small-field}
+		.select2-results>.select2-results__options
+			max-height: $form-input-height--small * 6
+			
+	&.#{$small-field} .select2-results>.select2-results__options, .select2-results>.select2-results__options
+		+media($form-media--mob)
+			max-height: $form-input-height--mob * 6
+
+	.select2-results__option[aria-selected=true]
+		background-color: $highlight-color
+		color: $text-color
+
+	.select2-results__option--highlighted[aria-selected]
+		background-color: $highlight-color--hover
+		color: $text-color
+
+// dropdown
+.select2-dropdown
+	@if $form-border-width
+		border: #{$form-border-width} solid #{$form-border-color--focus}
+	background-color: $form-border-color--focus
+	border-radius: round($form-input-height / 2)
+	//z-index: 9999
+	z-index: $z-high
+	opacity: 0
+	// transition
+	$prop: transform, opacity
+	will-change: $prop
+	transition:
+		property: $prop
+		duration: $animation-speed
+		timing-function: ease-in-out
+
+	+media('<desk-lg')
+		z-index: $z-high - 1
+
+	.#{$small-field} &
+		@if $form-border-width--small
+			border: $form-border-width--small
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			@if $form-border-width--mob
+				border: $form-border-width--mob
+
+	.select2-container--open &
+		opacity: 1
+
+	&.select2-dropdown--below
+		&.#{$small-field}
+			border-bottom:
+				left-radius: round($form-input-height--small / 2)
+				right-radius: round($form-input-height--small / 2)
+
+		&.#{$small-field}, &
+			+media($form-media--mob)
+				border-bottom:
+					left-radius: round($form-input-height--mob / 2)
+					right-radius: round($form-input-height--mob / 2)
+
+	&.select2-dropdown--above
+		&.#{$small-field}
+			border-top:
+				left-radius: round($form-input-height--small / 2)
+				right-radius: round($form-input-height--small / 2)
+
+		&.#{$small-field}, &
+			+media($form-media--mob)
+				border-top:
+					left-radius: round($form-input-height--mob / 2)
+					right-radius: round($form-input-height--mob / 2)
+
+.select2-results
+	overflow: hidden
+
+.select2-dropdown--below
+	&
+		.select2-results
+			border-bottom:
+				left-radius: round($form-input-height / 2)
+				right-radius: round($form-input-height / 2)
+
+	&.#{$small-field}
+		.select2-results
+			border-bottom:
+				left-radius: round($form-input-height--small / 2)
+				right-radius: round($form-input-height--small / 2)
+				
+	&.#{$small-field} .select2-results, .select2-results
+		+media($form-media--mob)
+			border-bottom:
+				left-radius: round($form-input-height--mob / 2)
+				right-radius: round($form-input-height--mob / 2)
+
+.select2-dropdown--above
+	&
+		.select2-results
+			border-top:
+				left-radius: round($form-input-height / 2)
+				right-radius: round($form-input-height / 2)
+
+	&.#{$small-field}
+		.select2-results
+			border-top:
+				left-radius: round($form-input-height--small / 2)
+				right-radius: round($form-input-height--small / 2)
+			
+	&.#{$small-field} .select2-results, .select2-results
+		+media($form-media--mob)
+			border-top:
+				left-radius: round($form-input-height--mob / 2)
+				right-radius: round($form-input-height--mob / 2)
+
+.select2-results__options
+	position: relative
+	+font-normal
+	+font($form-font-size, $form-line-height)
+	background-color: $form-border-color--focus
+	border-radius: round($form-input-height/2)
+
+	.#{$small-field} &
+		+font($form-font-size--small, $form-line-height--small)
+		border-radius: round($form-input-height--small/2)
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			+font($form-font-size--mob, $form-line-height--mob)
+			border-radius: round($form-input-height--mob/2)
+
+.select2-results__option
+	padding: floor(($form-input-height - $form-line-height) / 2) $form-input-space-h ceil(($form-input-height - $form-line-height) / 2)
+	border-radius: round($form-input-height / 2)
+	// transition
+	$prop: background-color, color
+	will-change: $prop
+	transition:
+		property: $prop
+		duration: $animation-speed
+
+	.#{$small-field} &
+		padding: floor(($form-input-height--small - $form-line-height--small) / 2) $form-input-space-h--small ceil(($form-input-height--small - $form-line-height--small) / 2)
+		border-radius: round($form-input-height--small / 2)
+
+	.#{$small-field} &, &
+		+media($form-media--mob)
+			padding: floor(($form-input-height--mob - $form-line-height--mob) / 2) $form-input-space-h--mob ceil(($form-input-height--mob - $form-line-height--mob) / 2)
+			border-radius: round($form-input-height--mob / 2)
+
+// State
+.select2
+	.select2-selection, .select2-selection__rendered, .select2-selection__placeholder
+		&:hover
+			border-color: $form-border-color--focus
+
+		.input--has-value + &
+			+form-has-value
+
+		.success + &
+			+form-success
+
+		.error + &
+			+form-error
+
+		.input--focus + &
+			+form-on-focus
+
+	.select2-search__field
+		.success + &
+			+placeholder
+				color: $form-success-color
+
+		.error + &
+			+placeholder
+				color: $form-error-color
+
+	//&.select2-container--default .select2-selection--single .select2-selection__arrow b
+		&::before, &::after
+			.input--has-value + &
+				background-color: $form-has-value-color
+
+			.success + &
+				background-color: $form-success-color
+
+			.error + &
+				background-color: $form-error-color
+
+/* select2 end

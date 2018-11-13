@@ -1,0 +1,77 @@
+[
+  {
+	"src": "img-clients-01.png",
+	"heads": {
+	  "name": "Компания",
+	  "release": "",
+	  "currency": "Валюта",
+	  "rate": "Ставка",
+	  "nominal": "Номинал",
+	  "begin": "",
+	  "term": "Срок",
+	  "pay": "",
+	  "size": ""
+	},
+	"data": {
+	  "name": "Хольцгрупп",
+	  "release": "1 выпуск",
+	  "currency": "USD",
+	  "rate": "СР НБРБ",
+	  "nominal": "100",
+	  "begin": "",
+	  "term": "2 года",
+	  "pay": "",
+	  "size": ""
+	}
+  },
+  {
+	"src": "img-clients-03.png",
+	"heads": {
+	  "name": "Компания",
+	  "release": "",
+	  "currency": "Валюта",
+	  "rate": "Ставка",
+	  "nominal": "Номинал",
+	  "begin": "",
+	  "term": "Срок",
+	  "pay": "",
+	  "size": ""
+	},
+	"data": {
+	  "name": "Простормаркет",
+	  "release": "5 выпуск",
+	  "currency": "BYN",
+	  "rate": "12%",
+	  "nominal": "300",
+	  "begin": "",
+	  "term": "3 года",
+	  "pay": "",
+	  "size": ""
+	}
+  },
+  {
+	"src": "img-clients-02.png",
+	"heads": {
+	  "name": "Компания",
+	  "release": "",
+	  "currency": "Валюта",
+	  "rate": "Ставка",
+	  "nominal": "Номинал",
+	  "begin": "",
+	  "term": "Срок",
+	  "pay": "",
+	  "size": ""
+	},
+	"data": {
+	  "name": "Активлизинг",
+	  "release": "3 выпуск",
+	  "currency": "USD",
+	  "rate": "7%",
+	  "nominal": "100",
+	  "begin": "",
+	  "term": "2 года",
+	  "pay": "",
+	  "size": ""
+	}
+  }
+]

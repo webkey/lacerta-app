@@ -1,0 +1,245 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+[class|="btn"], [class*=" btn-"], input[type="submit"], input[type="button"], input[type="reset"], button
+	display: inline-block
+	vertical-align: top
+	position: relative
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+
+[class|="btn"], [class*=" btn-"]
+	& input[type="submit"], & input[type="button"], & input[type="reset"]
+		background: url("../../img/empty.png") repeat
+		display: block
+		+cover-abs()
+		padding: 0
+		border: none
+		z-index: 99
+		opacity: 0
+
+/* btn-default
+[class*="btn-def"]
+	position: relative
+	padding: floor(($btn-height - $btn-line-height)/2) 46px ceil(($btn-height - $btn-line-height)/2) 32px
+	margin: 0
+	border: none
+	border-radius: round($btn-height/2)
+	background: $btn-bg-color
+	box-shadow: none
+	+font-normal
+	color: $btn-text-color
+	text-align: left
+	// transition
+	$prop: color, background-color, border-color
+	transition:
+		property: $prop
+		duration: $animation-speed
+
+	.touchevents &
+		user-select: none
+		-webkit-tap-highlight-color: transparent
+
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		+size(6px)
+		right: 32px
+		top: 50%
+		border: solid $base-color
+		border-width: 0 1px 1px 0
+		transform: rotate(-0.125turn)
+		margin: -2px 0
+
+		+media($btn-media--mob)
+			right: 16px
+			+size(5px)
+
+	//&::before, &::after
+		content: ""
+		display: block
+		position: absolute
+		right: 32px
+		width: 6px
+		height: 1px
+		margin: 2px -1px
+		background-color: $base-color
+
+		+media($btn-media--mob)
+			right: 16px
+			width: 5px
+			margin: 1px 0
+
+	//&::before
+		bottom: 50%
+		transform: rotate(45deg)
+
+	//&::after
+		top: 50%
+		transform: rotate(-45deg)
+
+	&, & > span
+		+font($btn-font-size, $btn-line-height)
+
+	// hover
+	&:hover:not(:disabled):not(.disabled)
+		background-color: $btn-bg-hover-color
+		color: $btn-text-color
+
+	// disabled
+	&:disabled, &.disabled
+		cursor: default
+		color: $btn-disabled-color
+		background-color: $btn-disabled-bg
+
+		&::before, &::after
+			//background-color: currentColor
+			border-color: currentColor
+
+		path
+			fill: currentColor
+
+/* btn-default end
+
+/* btn-default large
+.btn-def_large
+	min-width: 185px
+	font-size: 2.6rem
+	text-align: center
+	+font-bold
+	+padding-horizontal(40px)
+
+	&::before, &::after
+		display: none
+
+/* btn-default large end
+
+/* btn-def_outline
+.btn-def-outline
+	background: none
+	border: 1px solid currentColor
+	//padding: 10px 68px 10px 28px
+	padding: floor(($btn-height--small - $btn-line-height--small)/2) 46px ceil(($btn-height--small - $btn-line-height--small)/2) 32px
+	border-radius: round($btn-height--small/2)
+
+	//+media($btn-media--mob)
+		padding: 10px 40px 10px 20px
+
+	svg
+		right: 39px
+
+		//+media($btn-media--mob)
+			right: 22px
+
+	// hover
+	&:hover:not(:disabled):not(.disabled)
+		background: none
+		border-color: $highlight-color
+		color: $highlight-color
+
+	// disabled
+	&:disabled, &.disabled
+		cursor: default
+		color: $btn-disabled-color
+		background: none
+		border-color: currentColor
+
+		&::before, &::after
+			//background-color: currentColor
+			border-color: currentColor
+
+		svg
+			filter: grayscale(1)
+			opacity: 0.5
+
+/* btn-def_outline end
+
+/* btn-default-small
+.btn-def-small
+	padding: floor(($btn-height--small - $btn-line-height--small)/2) 46px ceil(($btn-height--small - $btn-line-height--small)/2) 32px
+	border-radius: round($btn-height--small/2)
+
+/* btn-default-small end
+
+/* btn for mobile
+[class*="btn-def"], .btn-def-small, .btn-def-outline
+	&
+		+media($btn-media--mob)
+			padding: floor(($btn-height--mob - $btn-line-height--mob)/2) 30px ceil(($btn-height--mob - $btn-line-height--mob)/2) 15px
+			border-radius: round($btn-height--mob/2)
+
+	&, & > span
+		+media($btn-media--mob)
+			+font($btn-font-size--mob, $btn-line-height--mob)
+
+.btn-def_large
+	+media($btn-media--mob)
+		+padding-horizontal(20px)
+		font-size: 2.2rem
+		min-width: 140px
+
+/* btn for mobile end
+
+/* btn-default-alt
+.btn-default-alt
+	color: $btn-bg-color
+	border: 2px solid $btn-bg-color
+	background: $btn-text-color
+
+	.no-touchevents &:hover
+		background: $btn-bg-color
+		color: $btn-text-color
+
+	&:disabled, &.disabled, &[data-disabled]
+		cursor: default
+		background-color: white !important
+		border-color: $btn-disabled-bg !important
+		color: $btn-disabled-bg !important
+
+		&::before, &::after
+			display: none
+
+		& > i
+			&::before, &::after
+				border-color: $btn-disabled-bg !important
+
+/* btn-default-alt end
+
+/* btn with icon
+.btn-def_icon_right, .btn-def_icon_left
+	&::before, &::after
+		display: none
+
+	svg
+		position: absolute
+		display: block
+		top: 50%
+
+		path
+			fill: $base-color
+
+.btn-def_icon_right
+	padding-right: 60px
+
+	svg
+		right: 34px
+		transform: translate(50%, -50%)
+
+		+media($btn-media--mob)
+			//right: 20px
+			right: 27px
+
+.btn-def_icon_left
+	padding-left: 60px
+
+	svg
+		left: 34px
+		transform: translate(-50%, -50%)
+
+		+media($btn-media--mob)
+			left: 20px
+
+/* btn with icon end

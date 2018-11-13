@@ -1,0 +1,342 @@
+<form action="#" method="post">
+	<div>
+		@@include('_tpl_title-anchor.html', {
+			"taTag": "h4",
+			"taId": "fcSelectCustom",
+			"taText": "Select2",
+			"openerId": "0_04_01"
+		})
+
+		<p>На <code class="mark">select</code> добавляем класс <code class="mark">.cselect</code></p>
+		<div class="cols">
+			<div class="col">
+				<p><b>Without a wrapper</b></p>
+
+				@@loop("_tpl_forms_field.html", [
+					{
+						"type": "select",
+						"id": "sc-base",
+						"classes": "cselect",
+						"ph": "-Choose-",
+						"label": "Select - no js states - placeholder:",
+						"options": ""
+					}, {
+						"type": "select",
+						"id": "sc-ph",
+						"classes": "cselect field-js",
+						"ph": "-Choose-",
+						"label": "Select - placeholder:",
+						"options": ""
+					}, {
+						"type": "select",
+						"id": "sc-no-ph",
+						"classes": "cselect field-js",
+						"placeholder": "false",
+						"label": "Select - no placeholder:",
+						"options": ""
+					}, {
+						"type": "select",
+						"id": "sc-ph-error",
+						"classes": "cselect field-js error",
+						"ph": "-Choose-",
+						"label": "Select - error - placeholder:",
+						"labelClasses": "error",
+						"valid": "true"
+					}, {
+						"type": "select",
+						"id": "sc-no-ph-error",
+						"classes": "cselect field-js error",
+						"placeholder": "false",
+						"label": "Select - error - no placeholder:",
+						"labelClasses": "error",
+						"valid": "true"
+					}, {
+						"type": "select",
+						"id": "sc-ph-success",
+						"classes": "cselect field-js success",
+						"ph": "-Choose-",
+						"label": "Select - success - placeholder:",
+						"labelClasses": "success",
+						"valid": "true"
+					}, {
+						"type": "select",
+						"id": "sc-no-ph-success",
+						"classes": "cselect field-js success",
+						"placeholder": "false",
+						"label": "Select - success - no placeholder:",
+						"labelClasses": "success",
+						"valid": "true"
+					}
+				])
+			</div>
+
+			<!--===================================================-->
+			<!--===================================================-->
+
+			<div class="col">
+				<p><b>With a wrapper</b></p>
+
+				@@loop("_tpl_forms_field.html", [
+					{
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-base",
+						"classes": "cselect",
+						"ph": "-Choose-",
+						"label": "Select - no js states - placeholder:",
+						"options": ""
+					}, {
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-ph",
+						"classes": "cselect field-js",
+						"ph": "-Choose-",
+						"label": "Select - placeholder:",
+						"options": ""
+					}, {
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-no-ph",
+						"classes": "cselect field-js",
+						"placeholder": "false",
+						"label": "Select - no placeholder:",
+						"options": ""
+					}, {
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-ph-error",
+						"classes": "cselect field-js error",
+						"ph": "-Choose-",
+						"label": "Select - error - placeholder:",
+						"labelClasses": "error",
+						"valid": "true"
+					}, {
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-no-ph-error",
+						"classes": "cselect field-js error",
+						"placeholder": "false",
+						"label": "Select - error - no placeholder:",
+						"labelClasses": "error",
+						"valid": "true"
+					}, {
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-ph-success",
+						"classes": "cselect field-js success",
+						"ph": "-Choose-",
+						"label": "Select - success - placeholder:",
+						"labelClasses": "success",
+						"valid": "true"
+					}, {
+						"wrap": "true",
+						"type": "select",
+						"id": "swc-no-ph-success",
+						"classes": "cselect field-js success",
+						"placeholder": "false",
+						"label": "Select - success - no placeholder:",
+						"labelClasses": "success",
+						"valid": "true"
+					}
+				])
+			</div>
+		</div>
+	</div>
+	<div>
+		@@include('_tpl_title-anchor.html', {
+			"taTag": "h4",
+			"taId": "fcSelectCustomSmall",
+			"taText": "Select2 .small-field",
+			"openerId": "0_04_01_small-field"
+		})
+
+		<div class="cols">
+			<div class="col">
+				<p><b>With a wrapper</b></p>
+
+				@@loop("_tpl_forms_field.html", [
+					{
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-base",
+						"classes": "cselect",
+						"ph": "-Choose-",
+						"label": "Select - no js states - placeholder:",
+						"options": ""
+					}, {
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-ph",
+						"classes": "cselect field-js",
+						"ph": "-Choose-",
+						"label": "Select - placeholder:",
+						"options": ""
+					}, {
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-no-ph",
+						"classes": "cselect field-js",
+						"placeholder": "false",
+						"label": "Select - no placeholder:",
+						"options": ""
+					}, {
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-ph-error",
+						"classes": "cselect field-js error",
+						"ph": "-Choose-",
+						"label": "Select - error - placeholder:",
+						"labelClasses": "error",
+						"valid": "true"
+					}, {
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-no-ph-error",
+						"classes": "cselect field-js error",
+						"placeholder": "false",
+						"label": "Select - error - no placeholder:",
+						"labelClasses": "error",
+						"valid": "true"
+					}, {
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-ph-success",
+						"classes": "cselect field-js success",
+						"ph": "-Choose-",
+						"label": "Select - success - placeholder:",
+						"labelClasses": "success",
+						"valid": "true"
+					}, {
+						"wrap": "small-field",
+						"type": "select",
+						"id": "swc-no-ph-success",
+						"classes": "cselect field-js success",
+						"placeholder": "false",
+						"label": "Select - success - no placeholder:",
+						"labelClasses": "success",
+						"valid": "true"
+					}
+				])
+			</div>
+		</div>
+	</div>
+
+	<!--===================================================-->
+	<!--===================================================-->
+
+	<div>
+		@@include('_tpl_title-anchor.html', {
+			"taTag": "h4",
+			"taId": "fcMultiselectCustom",
+			"taText": "Select2. Multiselect",
+			"openerId": "0_04_02"
+		})
+
+		<div class="cols">
+			<div class="col">
+				<p><b>Without a wrapper</b></p>
+
+				<label for="form-clear-c-mSelect-base">Селект - без js-классов:</label>
+				<select class="cselect" data-placeholder="- Выберите несколько вариантов -" name="select-name" multiple id="form-clear-c-mSelect-base">
+					@@include('_tpl_forms_options.html')
+				</select>
+				@@include('_tpl_forms_valid.html')
+				<!--===================================================-->
+				<label for="form-clear-c-mSelect">Селект - значение не выбрано:</label>
+				<select class="cselect field-js" data-placeholder="- Выбрать -" name="select-name" multiple id="form-clear-c-mSelect">
+					@@include('_tpl_forms_options.html')
+				</select>
+				@@include('_tpl_forms_valid.html')
+				<!--===================================================-->
+				<label for="form-clear-c-mSelect-fit">Селект - значение выбрано по умолчанию:</label>
+				<select class="cselect field-js" name="select-name" multiple id="form-clear-c-mSelect-fit">
+					<option value="1">Размер</option>
+					<option value="2" selected>Вес</option>
+					<option value="3">Цвет</option>
+					<option value="4">Позицию (расположение)</option>
+					<option value="5">Опшин очень-очень-очень-очень длинный</option>
+					<option value="6">Контраст</option>
+					<option value="7">Сочетание</option>
+					<option value="8">Расстояние</option>
+				</select>
+				@@include('_tpl_forms_valid.html')
+				<!--===================================================-->
+				<label class="error" for="form-clear-c-mSelect-err">Селект - невалидный :</label>
+				<select class="cselect field-js error" data-placeholder="- Выбрать -" name="select-name" multiple id="form-clear-c-mSelect-err">
+					@@include('_tpl_forms_options.html')
+				</select>
+				@@include('_tpl_forms_valid.html')
+				<!--===================================================-->
+				<label class="success" for="form-clear-c-mSelect-suc">Селект - валидный:</label>
+				<select class="cselect field-js success" data-placeholder="- Выбрать -" name="select-name" multiple id="form-clear-c-mSelect-suc">
+					@@include('_tpl_forms_options.html')
+				</select>
+				@@include('_tpl_forms_valid.html')
+			</div>
+
+			<!--===================================================-->
+			<!--===================================================-->
+
+			<div class="col">
+				<p><b>With a wrapper</b></p>
+
+				<div class="input-wrap">
+					<label for="form-cover-c-mSelect-base">Селект - без js-классов:</label>
+					<div class="input-holder">
+						<select class="cselect" data-placeholder="- Выберите несколько вариантов -" name="select-name" multiple id="form-cover-c-mSelect-base">
+							@@include('_tpl_forms_options.html')
+						</select>
+						@@include('_tpl_forms_valid.html')
+					</div>
+				</div>
+				<!--===================================================-->
+				<div class="input-wrap">
+					<label for="form-cover-c-mSelect">Селект - значение не выбрано:</label>
+					<div class="input-holder">
+						<select class="cselect field-js" data-placeholder="- Выбрать -" name="select-name" multiple id="form-cover-c-mSelect">
+							@@include('_tpl_forms_options.html')
+						</select>
+						@@include('_tpl_forms_valid.html')
+					</div>
+				</div>
+				<!--===================================================-->
+				<div class="input-wrap">
+					<label for="form-cover-c-mSelect-fit">Селект - значение выбрано по умолчанию:</label>
+					<div class="input-holder">
+						<select class="cselect field-js" name="select-name" multiple id="form-cover-c-mSelect-fit">
+							<option value="1">Размер</option>
+							<option value="2" selected>Вес</option>
+							<option value="3">Цвет</option>
+							<option value="4">Позицию (расположение)</option>
+							<option value="5">Опшин очень-очень-очень-очень длинный</option>
+							<option value="6">Контраст</option>
+							<option value="7">Сочетание</option>
+							<option value="8">Расстояние</option>
+						</select>
+						@@include('_tpl_forms_valid.html')
+					</div>
+				</div>
+				<!--===================================================-->
+				<div class="input-wrap">
+					<label class="error" for="form-cover-c-mSelect-err">Селект - невалидный :</label>
+					<div class="input-holder error">
+						<select class="cselect field-js error" data-placeholder="- Выбрать -" name="select-name" multiple id="form-cover-c-mSelect-err">
+							@@include('_tpl_forms_options.html')
+						</select>
+						@@include('_tpl_forms_valid.html')
+					</div>
+				</div>
+				<!--===================================================-->
+				<div class="input-wrap">
+					<label class="success" for="form-cover-c-mSelect-suc">Селект - валидный:</label>
+					<div class="input-holder success">
+						<select class="cselect field-js success" data-placeholder="- Выбрать -" name="select-name" multiple id="form-cover-c-mSelect-suc">
+							@@include('_tpl_forms_options.html')
+						</select>
+						@@include('_tpl_forms_valid.html')
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

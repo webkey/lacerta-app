@@ -1,0 +1,8 @@
+[
+  {
+	"class": "facebook",
+	"href": "https://www.facebook.com/",
+	"svg": "@@include('includes/svg/icon-soc-circle--facebook.svg')",
+	"title": "Facebook"
+  }
+]
