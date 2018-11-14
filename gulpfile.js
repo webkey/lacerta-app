@@ -128,8 +128,8 @@ gulp.task('createCustomModernizr', function (done) { // Таск для форм
 
 gulp.task('copyLibsScriptsToJs', ['copyJqueryToJs'], function () { // Таск для мержа js библиотек
 	return gulp.src([
-		'src/js/temp/smoothState.js' // https://github.com/miguel-perez/smoothState.js
-		, 'src/libs/jquery-smartresize/jquery.debouncedresize.js' // "умный" ресайз
+		// 'src/js/temp/smoothState.js' // https://github.com/miguel-perez/smoothState.js
+		'src/libs/jquery-smartresize/jquery.debouncedresize.js' // "умный" ресайз
 		, 'src/libs/jquery-placeholder/jquery.placeholder.min.js' // поддержка плейсхолдера в старых браузерах
 		, 'src/libs/select2/dist/js/select2.full.min.js' // кастомный селект
 		, 'src/libs/select2/dist/js/i18n/ru.js' // локализация для кастомного селекта

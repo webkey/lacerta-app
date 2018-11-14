@@ -375,14 +375,14 @@ function slidersInit() {
 					byRow: false, property: 'height', target: null, remove: false
 				});
 			}).slick({
-				vertical: true,
+				// vertical: true,
 				speed: 330,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				// lazyLoad: 'ondemand',
 				// autoplay: false,
 				// autoplaySpeed: 8000,
-				infinite: false,
+				infinite: true,
 				dots: true,
 				arrows: false
 			});
@@ -583,6 +583,7 @@ function toggleNav() {
 	if ($navOpener.length) {
 		$navOpener.tClass({
 			toggleClassTo: $('html').add('.nav-overlay-js').add('.shutter--nav-js')
+			, switcher: '.nav-switcher-js'
 			, modifiers: {
 				currentClass: 'nav-is-open'
 			}
@@ -1583,8 +1584,8 @@ $(document).ready(function () {
 	accordionInit();
 	offersAccordionInit();
 	singleDrop();
-	locationsMap();
-	contactsMap();
+	// locationsMap();
+	// contactsMap();
 	scrollToSection();
 	filterYears();
 });

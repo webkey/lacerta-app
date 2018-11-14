@@ -2,6 +2,19 @@
 {
 
 <div class="wrapper"@@if(!context.noSmooth){ id="page"}>
+	<div class="bg-phone">
+		<div class="bg-phone__img">
+			<img src="img/phone.png" alt="" />
+		</div>
+	</div>
+
+	<!--TOP PANEL-->
+	<div class="top-panel">
+		<strong class="logo">
+			<@@if(currentItem == "Главная"){span}@@if(currentItem != "Главная"){a href="index.html" data-heading-align="left"}></span></@@if(currentItem == "Главная"){span}@@if(currentItem != "Главная"){a}>
+		</strong>
+	</div>
+	<!--TOP PANEL end-->
 
 	<!--HEADER-->
 	@@include('_tpl_layout_header.html', {
@@ -10,15 +23,12 @@
 	})
 	<!--HEADER end-->
 
+	<a href="#" class="nav-opener nav-opener-desk nav-switcher-js"><i>&nbsp;</i><span>Меню</span></a>
+
 	<!--MAIN-->
 	<div class="main@@if(context.classes && context.classes != "@@classes"){ @@classes}@@if(context.pageClass){ @@pageClass}">
-		<div class="bg-phone">
-			<div class="bg-phone__img">
-				<img src="img/phone.png" alt="" />
-			</div>
-		</div>
-
 		<div class="layout content user-content">
+
 			@@if(context.title){
 			<div class="heading">
 				@@if(context.titleImg){<figure><div><img src="@@titleImg" alt="@@title" /></div></figure>}

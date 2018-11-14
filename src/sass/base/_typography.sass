@@ -137,7 +137,8 @@ img
 		max-width: none
 
 b, strong, th
-	+font-medium
+	//+font-medium
+	+font-bold
 
 i, em
 	+font-italic
@@ -175,6 +176,12 @@ mark
 	color: $highlight-color
 	font-weight: inherit
 	font-style: inherit
+
+	& strong
+		color: $bg-color-alt
+
+		a
+			color: inherit
 
 .text-color-default
 	color: $text-color
@@ -409,7 +416,7 @@ mark
 		//margin: 0.55em 0 -0.55em -#{round($list-space - 20)}
 		margin: 0.50em 0 -0.50em -#{$list-space}
 		border-radius: 6px
-		background-color: $highlight-color
+		background-color: $base-color-alt
 
 		+media('<mob-lg')
 			+size(8px)
@@ -451,7 +458,7 @@ mark
 				+font-bold
 				line-height: $size
 				text-align: center
-				color: $highlight-color
+				color: $base-color-alt
 				background-color: white
 				border-radius: round($size / 2)
 

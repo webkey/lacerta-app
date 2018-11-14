@@ -18,7 +18,7 @@
 				</div>
 			</div>
 
-			<div class="f-box f-box_nav">
+			<!--<div class="f-box f-box_nav">
 				<ul class="f-list">
 					<li@@if(context.currentItem == 'Купить облигации'){ class="current"}><a href="@@if(context.currentItem == 'Купить облигации'){javascript:;}@@if(context.currentItem != 'Купить облигации'){buy.html}" data-heading="Покупка облигаций">Алгоритм покупки облигаций</a></li>
 					<li@@if(context.currentItem == 'Продать облигации'){ class="current"}><a href="@@if(context.currentItem == 'Продать облигации'){javascript:;}@@if(context.currentItem != 'Продать облигации'){sell.html}" data-heading="Продажа облигаций">Алгоритм продажи облигаций</a></li>
@@ -26,7 +26,7 @@
 					<li><a href="#">Выбрать облигации</a></li>
 					<li@@if(context.currentItem == 'СМИ о нас'){ class="current"}><a href="@@if(context.currentItem == 'СМИ о нас'){javascript:;}@@if(context.currentItem != 'СМИ о нас'){news.html}" data-heading="СМИ о нас">СМИ о нас</a></li>
 				</ul>
-			</div>
+			</div>-->
 
 			<div class="f-box f-box_soc">
 				<div class="f-soc">
@@ -87,19 +87,7 @@
 								])
 							</div>
 							<div class="appeal-form__col">
-								@@loop("_tpl_forms_field.html", [
-								{
-									"wrap": "small-field",
-									"type": "select",
-									"id": "f-form-services",
-									"classes": "cselect",
-									"ph": "Выберите услугу из списка",
-									"label": "Услуга",
-									"labelClasses": "has-select",
-									"valid": "true",
-									"required": "required",
-									"options": "<option value=''>Выберите услугу из списка</option><option value='1'>Купить облигации</option><option value='2'>Продать облигации</option><option value='3'>Консультация</option><option value='4'>Запросить информацию</option><option value='5'>Другое</option>"
-								}, {
+								@@loop("_tpl_forms_field.html", [{
 									"wrap": "small-field",
 									"type": "textarea",
 									"ph": "Введите сообщение...",

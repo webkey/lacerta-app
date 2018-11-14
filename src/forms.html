@@ -46,6 +46,18 @@
 	<!--[if lt IE 10]> <div class="browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div> <![endif]-->
 	<!-- >>> head.tpl END <<< -->
 	<div class="wrapper" id="page">
+		<div class="bg-phone">
+			<div class="bg-phone__img">
+				<img src="img/phone.png" alt="" />
+			</div>
+		</div>
+		<!--TOP PANEL-->
+		<div class="top-panel">
+			<strong class="logo">
+				<a href="index.html" data-heading-align="left"></span></a>
+			</strong>
+		</div>
+		<!--TOP PANEL end-->
 		<!--HEADER-->
 		<header class="header formPage">
 			<div class="header__layout max-wrap">
@@ -99,19 +111,15 @@
 							</nav>
 						</div>
 					</div>
-					<div class="overlay nav-overlay nav-overlay-js">&nbsp;</div>
 					<a href="#" class="nav-opener nav-opener-js"><i>&nbsp;</i><span>Меню</span></a>
 				</div>
 			</div>
 		</header>
+		<div class="overlay nav-overlay nav-overlay-js">&nbsp;</div>
 		<!--HEADER end-->
+		<a href="#" class="nav-opener nav-opener-desk nav-switcher-js"><i>&nbsp;</i><span>Меню</span></a>
 		<!--MAIN-->
 		<div class="main formPage">
-			<div class="bg-phone">
-				<div class="bg-phone__img">
-					<img src="img/phone.png" alt="" />
-				</div>
-			</div>
 			<div class="layout content user-content">
 				<div class="heading">
 					<h1>Forms</h1>
@@ -2990,15 +2998,15 @@
 							</form>
 						</div>
 					</div>
-					<div class="f-box f-box_nav">
-						<ul class="f-list">
-							<li><a href="buy.html" data-heading="Покупка облигаций">Алгоритм покупки облигаций</a></li>
-							<li><a href="sell.html" data-heading="Продажа облигаций">Алгоритм продажи облигаций</a></li>
-							<li><a href="https://www.onliner.by/">Узнать об эмитентах</a></li>
-							<li><a href="#">Выбрать облигации</a></li>
-							<li><a href="news.html" data-heading="СМИ о нас">СМИ о нас</a></li>
-						</ul>
-					</div>
+					<!--<div class="f-box f-box_nav">
+				<ul class="f-list">
+					<li><a href="buy.html" data-heading="Покупка облигаций">Алгоритм покупки облигаций</a></li>
+					<li><a href="sell.html" data-heading="Продажа облигаций">Алгоритм продажи облигаций</a></li>
+					<li><a href="https://www.onliner.by/">Узнать об эмитентах</a></li>
+					<li><a href="#">Выбрать облигации</a></li>
+					<li><a href="news.html" data-heading="СМИ о нас">СМИ о нас</a></li>
+				</ul>
+			</div>-->
 					<div class="f-box f-box_soc">
 						<div class="f-soc">
 							<div class="f-soc__group">
@@ -3068,23 +3076,6 @@
 										<!--===================================================-->
 									</div>
 									<div class="appeal-form__col">
-										<div class="input-wrap
-	 small-field">
-											<label class="has-select" for="f-form-services">Услуга</label>
-											<div class="input-holder has-select">
-												<select class="cselect" id="f-form-services" name="f-form-services" data-placeholder="Выберите услугу из списка" required>
-													<option value=''>Выберите услугу из списка</option>
-													<option value='1'>Купить облигации</option>
-													<option value='2'>Продать облигации</option>
-													<option value='3'>Консультация</option>
-													<option value='4'>Запросить информацию</option>
-													<option value='5'>Другое</option>
-												</select>
-												<div class="error-note">Error text</div>
-												<div class="success-note">Success text</div>
-											</div>
-										</div>
-										<!--===================================================-->
 										<div class="input-wrap small-field">
 											<label for="f-form-message">Ваше сообщение</label>
 											<div class="input-holder">
@@ -3189,10 +3180,8 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/libs.min.js"></script>
 	<script src="js/form-validation.js?rev=@@hash"></script>
-	<!--Map-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnFqiG7GVEuZZeE5XCILGj1Tqz1KOMye8&sensor=false&extension=.js&language=en"></script>
 	<script src="js/common.js?rev=@@hash"></script>
-	<script src="js/smooth-state.js?rev=@@hash"></script>
+	<!--<script src="js/smooth-state.js?rev=@@hash"></script>-->
 </body>
 
 </html>

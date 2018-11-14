@@ -2820,6 +2820,7 @@ input, button, [class|="btn"], [class*=" btn-"],
 	button
 		display: block
 		width: 100%
+		text-align: center
 
 		+media('<tab-sm')
 			+push-auto
@@ -2854,6 +2855,17 @@ input, button, [class|="btn"], [class*=" btn-"],
 
 	&:last-child
 		margin-bottom: 0
+
+		textarea
+			$length: 230px
+			min-height: $length
+			height: $length
+
+			+media('<desk-lg')
+				$length: 145px
+				min-height: $length
+				height: $length
+
 
 .appeal-form__msg
 	position: absolute
@@ -4504,12 +4516,87 @@ a.news-heading
 /* promo end
 
 /* ==== app =====
+
 /* phone on bg
 .bg-phone
 	position: absolute
-	right: 0
+	right: 11px
 	top: 0
 	z-index: -1
+	+size(912px)
+	transform: translate(0, -198px)
+
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		+size(912px)
+		left: 0
+		top: 0
+		background-color: #2f2f9f
+		border-radius: 50%
+		z-index: -1
+
+.bg-phone__img
+	position: absolute
+	left: 136px
+	top: 248px
+	width: 677px
+
+	&::before
+		content: ''
+		display: block
+		+ratio(677, 856)
+
+	img
+		position: absolute
+		left: 0
+		top: 0
+		+size(100%)
+		max-width: none
+		+object-fit(contain)
 
 /* phone on bg end
+
+/* top panel
+.top-panel
+	display: flex
+	align-items: center
+	height: $header-height--md
+	background-color: rgba(lightgreen, 0.5)
+	padding: 0 15rem
+
+	+media('<desk-lg')
+		display: none
+
+	//z-index: $z-high
+
+/* top panel end
+
+/* caption
+.caption
+	text-align: left
+	min-height: 815px // отодвинуть контент от телефона на фоне
+
+	h1, .h1
+		text-align: left
+
+	.section__holder
+		padding-right: 30rem
+
+.caption__content
+	max-width: 60rem
+
+	margin-bottom: 2.5rem
+
+	&:last-child
+		margin-bottom: 0
+
+/* caption end
+
+/* app
+.app
+	text-align: center
+
+/* app end
 /* ==== app end =====
