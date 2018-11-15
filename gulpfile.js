@@ -26,7 +26,7 @@ var gulp = require('gulp'), // Подключаем Gulp
 ;
 
 var path = {
-	'dist': 'dist'
+	'dist': 'app'
 };
 
 // create svg sprites

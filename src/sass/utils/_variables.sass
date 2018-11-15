@@ -83,8 +83,8 @@ $mark-color: #f25984 !default
 $highlight-color: #6bdbbc !default
 $highlight-color--hover: #5eb8b2 !default
 // ----------------------------------------------------
-//$bg-color: white !default
-$bg-color: lightblue !default
+$bg-color: white !default
+//$bg-color: lightblue !default
 $bg-color-alt: $base-color-alt !default
 // ----------------------------------------------------
 $text-color: black !default
@@ -196,12 +196,12 @@ $line-height-h3: 3.2rem !default
 $font-size-h3--sm: 2.0rem !default
 $line-height-h3--sm: 2.8rem !default
 // ----------------------------------------------------
-=font-h3($color: #6bdbbc)
+=font-h3($color: $base-color-alt)
 	+font-bold
 	font-size: $font-size-h3
 	line-height: $line-height-h3
 	//text-align: center
-	color: $base-color-alt
+	color: $color
 
 	+media('<mob-lg')
 		font-size: $font-size-h3--sm
@@ -346,14 +346,14 @@ $sidebar-width: 260px !default
 // Main
 // ==========================================================================
 //$main-space-v: 0 13.1rem !default
-$main-space-v: 0 21.2rem !default
+$main-space-v: 0 16.2rem !default
 $main-space-v--md: 0 8rem !default
 $main-space-v--mob: 0 5.9rem !default
 
 
 // Footer
 // ==========================================================================
-$footer-box-space: 2.5rem 4rem !default // v h
+$footer-box-space: 2.5rem 4rem 2.7rem !default // v h
 $footer-box-space--md: 4rem 4rem !default // v h
 $footer-box-space--mob: 2rem 2rem !default // v
 //-----------------------------------

@@ -101,16 +101,6 @@ function placeholderInit() {
 }
 
 /**
- * !Show print page by click on the button
- * */
-function printShow() {
-	$('.view-print').on('click', function (e) {
-		e.preventDefault();
-		window.print();
-	})
-}
-
-/**
  * !Toggle class on a form elements on focus
  * */
 function inputFocusClass() {
@@ -251,12 +241,12 @@ function equalHeight() {
 		});
 	}
 
-	// table resp
-	var $tableResp = $('.table-resp').find('tbody');
+	// advantage
+	var $advantage = $('.advantage-list-js');
 
-	if($tableResp.length) {
-		$tableResp.children().matchHeight({
-			byRow: true, property: 'height', target: null, remove: false
+	if($advantage.length) {
+		$advantage.children().matchHeight({
+			byRow: false, property: 'height', target: null, remove: false
 		});
 	}
 }
@@ -265,126 +255,51 @@ function equalHeight() {
  * !Initial sliders on the project
  * */
 function slidersInit() {
-	/**Offers slider*/
-	var $offersSlider = $('.offers-slider-js');
+	/**app promo slider*/
+	var p = 'current-p',
+		pp = 'current-pp',
+		n = 'current-n',
+		nn = 'current-nn';
 
-	if($offersSlider.length){
-		$offersSlider.each(function () {
-			var $curSlider = $(this);
-			var dur = 200;
-
-			$curSlider.slick({
-				speed: dur,
-				slidesToShow: 2,
-				slidesToScroll: 2,
-				lazyLoad: 'ondemand',
-				infinite: true,
-				dots: true,
-				arrows: false,
-				// remove touch events
-				accessibility: false,
-				draggable: false,
-				swipe: false,
-				touchMove: false,
-				responsive:[
-					{
-						breakpoint: 640,
-						settings: {
-							// add touch events
-							accessibility: true,
-							draggable: true,
-							swipe: true,
-							touchMove: true
-						}
-					},
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							// add touch events
-							accessibility: true,
-							draggable: true,
-							swipe: true,
-							touchMove: true
-						}
-					}
-				]
-			});
-
-		});
+	function setSiblingsClass($slide, $curSlider) {
+		$slide.removeClass(p + ' ' + pp + ' ' + n + ' ' + nn);
+		$curSlider.prev().addClass(p).prev().addClass(pp);
+		$curSlider.next().addClass(n).next().addClass(nn);
 	}
 
-	/**Extended Offers slider*/
-	var $xOffersSlider = $('.x-offers-slider-js');
-
-	if($xOffersSlider.length){
-		$xOffersSlider.each(function () {
-			var $curSlider = $(this);
-			var dur = 200;
-
-			$curSlider.slick({
-				speed: dur,
-				slidesToShow: 2,
-				slidesToScroll: 2,
-				lazyLoad: 'ondemand',
-				infinite: false,
-				dots: true,
-				arrows: false,
-				// remove touch events
-				accessibility: false,
-				draggable: false,
-				swipe: false,
-				touchMove: false,
-				responsive:[
-					{
-						breakpoint: 992,
-						settings: {
-							// add touch events
-							accessibility: true,
-							draggable: true,
-							swipe: true,
-							touchMove: true
-						}
-					},
-					{
-						breakpoint: 640,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							// add touch events
-							accessibility: true,
-							draggable: true,
-							swipe: true,
-							touchMove: true
-						}
-					}
-				]
-			});
-		});
-	}
-
-	/**about promo slider*/
 	var $promoSlider = $('.promo-slider-js');
 	if ($promoSlider.length) {
 		$.each($promoSlider, function () {
-			var $currentSlider = $(this);
+			var $currentSlider = $(this),
+				initialSlide = 2;
 
 			$currentSlider.on('init', function (event, slick) {
-				$(slick.$slides).matchHeight({
-					byRow: false, property: 'height', target: null, remove: false
-				});
+				var $slide = $(slick.$slides),
+					$curSlide = $(slick.$slides).eq(initialSlide);
+
+				setSiblingsClass($slide, $curSlide)
 			}).slick({
-				// vertical: true,
 				speed: 330,
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				// lazyLoad: 'ondemand',
-				// autoplay: false,
-				// autoplaySpeed: 8000,
-				infinite: true,
+				initialSlide: initialSlide,
+				centerMode: true,
+				centerPadding: '0',
+				focusOnSelect: true,
+				infinite: false,
 				dots: true,
-				arrows: false
+				arrows: false,
+				// touchThreshold: 100,
+
+				// accessibility: false,
+				// draggable: false,
+				// swipe: false,
+				// touchMove: false,
+			}).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+				var $slide = $(slick.$slides),
+					$curSlide = $(slick.$slides).eq(nextSlide);
+
+				setSiblingsClass($slide, $curSlide)
 			});
 		});
 	}
@@ -624,103 +539,6 @@ function toggleNav() {
 				, beforeAdded: function () {}
 				, beforeRemoved: function () {}
 			});
-		});
-	}
-}
-
-/**
- * !Toggle Popup
- * */
-function togglePop() {
-	var $open = $('.pop__open');
-
-	var addAlignClass = function ($curPop, $curDrop) {
-		if (!$curPop.hasClass(alignClass)) {
-			var containerPosRight = $container.offset().left + $container.outerWidth(), navDropPosRight = $curDrop.offset().left + $curDrop.outerWidth();
-
-			if (containerPosRight < navDropPosRight) {
-				$curPop.addClass(alignClass);
-			}
-		}
-	};
-
-	if ($open.length) {
-		var $container = $('.content'),
-			$tplWrap = $('<div>', {
-			class: 'pop pop-js'
-		}),
-			pop = '.pop-js',
-			drop = '.pop-content-js',
-			alignClass = 'position-right',
-			createdClass = 'pop-open-js';
-
-		$.each($open, function () {
-			var $cur = $(this);
-
-			if(!$cur.hasClass(createdClass)){
-				$cur.addClass(createdClass).wrap($tplWrap);
-				$('<div class="pop__content pop-content-js">' +
-					'<span class="pop__close pop-close-js">Close</span>' +
-					'<strong class="pop__title">' + $cur.attr('data-title') + '</strong> ' + $cur.attr('data-description') +
-					'</div>').insertAfter($cur);
-			}
-
-			var $curPop = $cur.closest(pop),
-				$curDrop = $curPop.find(drop);
-			addAlignClass($curPop, $curDrop);
-		});
-
-		$(window).on('resizeByWidth', function () {
-			$(pop).removeClass(alignClass);
-
-			$.each($open, function () {
-				var $curPop = $(this).closest(pop),
-					$curDrop = $curPop.find(drop);
-				addAlignClass($curPop, $curDrop);
-			})
-		});
-
-		var $pop = $(pop),
-			$cont = $(drop),
-			$close = $('.pop-close-js'),
-			openClass = 'pop-is-open';
-
-		$open.on('mouseenter touchstart', function (e) {
-			e.preventDefault();
-
-			var $cur = $(this),
-				$curPop = $cur.closest($pop);
-
-			// if ($curPop.hasClass(openClass)) {
-			// 	$curPop.removeClass(openClass);
-			// } else {
-			// 	$pop.removeClass(openClass);
-			// 	$curPop.addClass(openClass);
-			// }
-
-			$pop.removeClass(openClass);
-			$curPop.addClass(openClass);
-
-			event.stopPropagation();
-		});
-
-		$close.on('click', function (e) {
-			e.preventDefault();
-
-			$(this).closest($pop).removeClass(openClass);
-
-			event.stopPropagation();
-		});
-
-		$cont.on('mouseleave', function () {
-			$(this).closest($pop).removeClass(openClass);
-		});
-
-		$(document).on('click', function(e){
-			if( $(e.target).closest($cont).length || $(e.target).closest($open).length )
-				return;
-			$pop.removeClass(openClass);
-			e.stopPropagation();
 		});
 	}
 }
@@ -1136,62 +954,6 @@ function togglePop() {
 })(jQuery);
 
 /**
- * !Accordion Initial
- * */
-function accordionInit() {
-	var $accordion = $('.rolls-js');
-
-	if ($accordion.length) {
-		$accordion.msRolls({
-			animationSpeed: 330
-			, modifiers: {
-				activeClass: 'is-open'
-			}
-		});
-	}
-}
-
-/**
- * !Offers Accordion Initial
- * */
-function offersAccordionInit() {
-	var $offersAccord = $('.offers-rolls-js');
-
-	if ($offersAccord.length) {
-		var activeClass = 'is-open';
-		$offersAccord.msRolls({
-			item: '.offers-rolls__item-js'
-			, header: '.offers-rolls__header-js'
-			, hand: '.offers-rolls__hand-js'
-			, panel: '.offers-rolls__panel-js'
-			, animationSpeed: 330
-			, collapsed: false
-			, modifiers: {
-				activeClass: activeClass
-			}
-		});
-
-		$('.offers-rolls__hand-js').on('click', function () {
-			if (window.innerWidth > 992)
-				return;
-
-			var $curOpener = $(this);
-			var $panel = $curOpener.closest('.offers-rolls__item-js').siblings().find('.offers-rolls__panel-js');
-			if($curOpener.hasClass(activeClass)) {
-				$offersAccord.msRolls('close', $panel);
-			} else {
-				$offersAccord.msRolls('open', $panel);
-			}
-		});
-	}
-
-	var $clickElem = $('.offers-rolls__header-js').find('td').not('.no-toggle-js');
-	$clickElem.on('click', function () {
-		$(this).closest('.offers-rolls__header-js').find('.offers-rolls__hand-js').trigger('click');
-	})
-}
-
-/**
  * !Appeal Form Drop Initial
  * */
 function singleDrop() {
@@ -1221,371 +983,17 @@ function singleDrop() {
 }
 
 /**
- * !Locations Map Init
- * */
-var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#f7f7f7"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#e5e5e5"}]}];
-/** Place bonds map */
-function locationsMap(){
-	var mapId = 'locations-map', $mapId = $('#' + mapId);
-
-	if (!$mapId.length) return false;
-
-	function mapCenter(index, pos){
-		if (pos) {
-			return{
-				lat: pos[0],
-				lng: pos[1]
-			};
-		}
-
-		var localObject = localObjects[index];
-
-		return{
-			lat: localObject[0].lat + localObject[1].latBias,
-			lng: localObject[0].lng + localObject[1].lngBias
-		};
-
-		// return{
-		// 	lat: 53.932987,
-		// 	lng: 27.615747
-		// };
-	}
-
-	var markers = [],
-		elementById = [
-			document.getElementById(mapId)
-		];
-
-	// pinMap['anchor'] = new google.maps.Point(300,830);
-	// pinMap['scale'] = 0.07;
-
-	var zoom = (window.innerWidth < 992) ? (initialMap.zoom - 2) : initialMap.zoom;
-	var mapOptions = {
-		// zoom: localObjects[0][3],
-		zoom: zoom,
-		// center: mapCenter(0),
-		center: mapCenter(0, initialMap.coords),
-		styles: styleMap,
-		mapTypeControl: false,
-		scaleControl: false,
-		scrollwheel: false
-	};
-
-	var map0 = new google.maps.Map(elementById[0], mapOptions);
-
-	addMarker(0, map0);
-
-	for (var i = 0; i < localObjects.length; i++) {
-		addMarker(i, map0);
-	}
-
-	/*aligned after resize*/
-	// var resizeTimer0;
-	// $(window).on('resize', function () {
-	// 	clearTimeout(resizeTimer0);
-	// 	resizeTimer0 = setTimeout(function () {
-	// 		moveToLocation(0, map0, initialMap.coords);
-	// 	}, 500);
-	// });
-
-	/*move to location*/
-	function moveToLocation(index, map, pos){
-		var object = localObjects[index];
-		var center = new google.maps.LatLng(mapCenter(index, pos));
-		map.panTo(center);
-		map.setZoom(object[3]);
-	}
-
-	// var infoWindow = new google.maps.InfoWindow({
-	// 	maxWidth: 220
-	// });
-
-	// var mapMarkerIndex, currentMapMarkerIndex = 0;
-	// var mapMarkerIndex, currentMapMarkerIndex;
-
-	var $mapToLink = $('.map-to-js');
-	$mapToLink.on('click', function(e) {
-		e.preventDefault();
-
-		var $cur = $(this),
-			index = $cur.data('location'),
-			activeClass = 'active';
-
-		$cur.closest('table').find($mapToLink).removeClass(activeClass);
-		$cur.addClass(activeClass);
-
-		// deleteMarkers();
-		moveToLocation( index, map0 );
-		// addMarker(index, map0);
-
-		if (!$('html,body').is(':animated')) {
-			$('html,body').stop().animate({scrollTop: $mapId.offset().top - 120}, 300);
-		}
-	});
-
-	function addMarker(index, map) {
-		var object = localObjects[index];
-
-		var marker = new google.maps.Marker({
-			position: object[0],
-			map: map,
-			icon: object[2],
-			title: object[4].title,
-			//animation: google.maps.Animation.DROP
-		});
-
-		markers.push(marker);
-
-		// function onMarkerClick() {
-		// 	var marker = this;
-		//
-		// 	infoWindow.setContent(
-		// 		'<div class="map-popup">' +
-		// 		'<h4>'+object[4].title+'</h4>' +
-		// 		'<div class="map-popup__list">' +
-		// 		'<div class="map-popup__row">'+object[4].address+'</div>' +
-		// 		'<div class="map-popup__row">'+object[4].phone+'</div>' +
-		// 		'<div class="map-popup__row">'+object[4].works+'</div>' +
-		// 		'</div>' +
-		// 		'</div>'
-		// 	);
-		//
-		// 	infoWindow.close();
-		//
-		// 	infoWindow.open(map, marker);
-		// }
-
-		// map.addListener('click', function () {
-		// 	infoWindow.close();
-		// });
-
-		// marker.addListener('click', onMarkerClick);
-	}
-
-	function setMapOnAll(map) {
-		for (var i = 0; i < markers.length; i++) {
-			markers[i].setMap(map);
-		}
-	}
-
-	function deleteMarkers() {
-		setMapOnAll(null);
-		//markers = [];
-	}
-}
-
-/**
- * Contacts map
- * */
-function contactsMap(){
-	var mapId = 'contacts-map', $mapId = $('#' + mapId);
-
-	if (!$mapId.length) return false;
-
-	var localObjects = localObjectsCont;
-
-	function mapCenter(index, pos){
-		if (pos) {
-			return{
-				lat: pos[0],
-				lng: pos[1]
-			};
-		}
-
-		var localObject = localObjects[index];
-
-		return{
-			lat: localObject[0].lat + localObject[1].latBias,
-			lng: localObject[0].lng + localObject[1].lngBias
-		};
-	}
-
-	var markers = [],
-		elementById = [
-			document.getElementById(mapId)
-		];
-
-	var zoom = (window.innerWidth < 992) ? (localObjects[0][3] - 2) : localObjects[0][3];
-	var mapOptions = {
-		zoom: zoom,
-		center: mapCenter(0),
-		styles: styleMap,
-		mapTypeControl: false,
-		scaleControl: false,
-		scrollwheel: false
-	};
-
-	var map0 = new google.maps.Map(elementById[0], mapOptions);
-
-	addMarker(0, map0);
-
-	for (var i = 0; i < localObjects.length; i++) {
-		addMarker(i, map0);
-	}
-
-	function addMarker(index, map) {
-		var object = localObjects[index];
-
-		var marker = new google.maps.Marker({
-			position: object[0],
-			map: map,
-			icon: object[2],
-			title: object[4].title,
-			//animation: google.maps.Animation.DROP
-		});
-
-		markers.push(marker);
-
-		// function onMarkerClick() {
-		// 	var marker = this;
-		//
-		// 	infoWindow.setContent(
-		// 		'<div class="map-popup">' +
-		// 		'<h4>'+object[4].title+'</h4>' +
-		// 		'<div class="map-popup__list">' +
-		// 		'<div class="map-popup__row">'+object[4].address+'</div>' +
-		// 		'<div class="map-popup__row">'+object[4].phone+'</div>' +
-		// 		'<div class="map-popup__row">'+object[4].works+'</div>' +
-		// 		'</div>' +
-		// 		'</div>'
-		// 	);
-		//
-		// 	infoWindow.close();
-		//
-		// 	infoWindow.open(map, marker);
-		// }
-
-		// map.addListener('click', function () {
-		// 	infoWindow.close();
-		// });
-
-		// marker.addListener('click', onMarkerClick);
-	}
-
-	// function setMapOnAll(map) {
-	// 	for (var i = 0; i < markers.length; i++) {
-	// 		markers[i].setMap(map);
-	// 	}
-	// }
-
-	// function deleteMarkers() {
-	// 	setMapOnAll(null);
-	// 	//markers = [];
-	// }
-}
-
-/**
- * !Scroll to section
- * */
-// function scrollToSection(){
-// 	// if (TOUCH)
-// 	// 	return false;
-//
-// 	var $page = $('html, body');
-//
-// 	function scrollToLocal(id) {
-//
-// 		// var hash = window.location.hash;
-// 		// var target = hash || id;
-// 		var target = id;
-//
-// 		// console.log("hash: ", hash);
-// 		// console.log("target: ", target);
-//
-// 		// if (hash && !$page.is(':animated')) {
-// 		// 	$page.stop().animate({scrollTop: $(hash).offset().top - 95}, 300);
-// 		// 	return;
-// 		// }
-//
-// 		if (target && !$page.is(':animated')) {
-// 			$page.stop().animate({scrollTop: $(target).offset().top - 20}, 300);
-// 		}
-// 	}
-//
-// 	// scrollToLocal();
-//
-// 	$('.btn-scroll-to-js').on('click', function (e) {
-// 		e.preventDefault();
-//
-// 		var $curAnchor = $(this);
-//
-// 		var id = '#' + $curAnchor.attr('href').split('#')[1];
-//
-// 		scrollToLocal(id);
-// 	});
-// }
-
-function scrollToSection(){
-	var $page = $('html, body');
-
-	$('body').on('click', '.btn-scroll-to-js', function (e) {
-		e.preventDefault();
-
-		var $curAnchor = $(this),
-			$scrollElem = $($curAnchor.attr('data-scroll-to'));
-
-		if (!$page.is(':animated')) {
-			$page.stop().animate({scrollTop: $scrollElem.offset().top - 20}, 300);
-		}
-	});
-}
-
-/**
- * !Scroll to section
- * */
-function filterYears(){
-	var $container = $('.date-filters-js'),
-		$filters = $('.date-select-js'),
-		$filter = $('a', $filters),
-		$target = $('.date-list-js'),
-		activeClass = 'active';
-
-	var toggleTargets = function (element) {
-		var $curContainer = element.closest($container);
-
-		$curContainer.find($filter).removeClass(activeClass);
-		element.addClass(activeClass);
-		$curContainer
-			.find($target).hide()
-			.end()
-			.find($target.filter('[data-filter="' + element.attr('data-filter') + '"]')).show()
-			.addClass(activeClass);
-	};
-
-	$.each($filter, function () {
-		var $curFilter = $(this);
-		if ($curFilter.hasClass(activeClass)) {
-			toggleTargets($curFilter);
-		}
-	});
-
-	$filter.on('click', function (e) {
-		var $curFilter = $(this);
-		toggleTargets($curFilter);
-		e.preventDefault();
-	})
-}
-
-/**
  * =========== !ready document, load/resize window ===========
  */
 
 $(document).ready(function () {
 	objectFitImages(); // object-fit-images initial
 	placeholderInit();
-	printShow();
 	inputFocusClass();
 	inputHasValueClass();
 	customSelect();
 	equalHeight();
 	slidersInit();
 	toggleNav();
-	togglePop();
-	accordionInit();
-	offersAccordionInit();
 	singleDrop();
-	// locationsMap();
-	// contactsMap();
-	scrollToSection();
-	filterYears();
 });

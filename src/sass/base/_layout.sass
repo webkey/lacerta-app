@@ -73,7 +73,13 @@ html
 
 	& > h1, & > .h1
 		max-width: $wide-layout-width
-		margin-top: 7rem
+		margin-top: 12.2rem
+
+		+media('<tab-lg')
+			margin-top: 7rem
+
+		+media('<mob-lg')
+			margin-top: 2.5rem
 
 		&:first-child
 			margin-top: 0
@@ -261,6 +267,7 @@ html
 	position: relative
 	//margin-bottom: 10.6rem
 	margin-bottom: 7rem
+	transition: box-shadow 0.8s
 
 	+media('<desk-lg')
 		display: flex
@@ -271,6 +278,10 @@ html
 		padding: 1rem nth($page-layout-space--md, 2)
 		background-color: $header-bg
 		z-index: $z-middle
+		box-shadow: 0 0 10px rgba(black, 0.15)
+
+		.nav-is-open &
+			box-shadow: 0 0 10px rgba(black, 0)
 
 	+media('<tab-lg')
 		padding: 1rem nth($page-layout-space--mob, 2)
@@ -283,10 +294,10 @@ html
 .logo
 	display: block
 	position: relative
-	background-image: url(../../img/logo.png)
+	background-image: url(../../img/logo-app.png)
 	background-repeat: no-repeat
 	background-size: contain
-	width: 155px
+	width: 165px
 	color: #cccddb
 	z-index: 5
 
@@ -307,6 +318,9 @@ html
 		content: ""
 		display: block
 		+ratio(155, 33)
+
+	.top-panel &
+		margin: -12px 0 0
 
 	a, & > span
 		display: block
@@ -618,8 +632,8 @@ a.nav-opener
 	$burger-bg: transparent
 	$burger-size: $header-height--md
 	$burger-size--mob: $header-height--mob
-	$layer-width: 43px
-	$layer-width--mob: 25px
+	$layer-width: 44px
+	$layer-width--mob: 24px
 	$layer-height: 7px
 	$layer-height--mob: 4px
 	$layer-space: 7px
@@ -749,11 +763,11 @@ a.nav-opener
 		//first line menu
 		&::before
 			top: -#{$layer-height + $layer-space}
-			max-width: $layer-width - 5
+			max-width: $layer-width - 9
 
 			+media('<tab-lg')
 				top: -#{$layer-height--mob + $layer-space--mob}
-				max-width: $layer-width--mob - 5
+				max-width: $layer-width--mob - 7
 
 		//third line menu
 		&::after
@@ -785,6 +799,7 @@ a.nav-opener
 	&.#{$nav-is-open-class}
 		& > span
 			opacity: 0
+			visibility: hidden
 			transition-delay: 0s
 
 		&::before, &::after
@@ -819,8 +834,14 @@ a.nav-opener
 					transform: translate(0, -#{$layer-height--mob + $layer-space--mob}) translateZ(0)
 
 a.nav-opener-desk
+	$burger-size: 44px
+
 	display: block
 	position: fixed
+	right: 161px
+	top: round($header-height--md / 2 + 1)
+	margin-top: -#{round($burger-size/2)}
+	+size($burger-size)
 	z-index: $z-high
 	// transition
 	$prop: transform
@@ -835,10 +856,13 @@ a.nav-opener-desk
 
 	& > span
 		display: block
+		padding: 0 20px 0 0
+		margin: 0
+		line-height: $burger-size
 
 	// active
 	&.#{$nav-is-open-class}
-		transform: translate(40px, 0)
+		transform: translate(120px, 0)
 
 // overlay
 // в html добавить
@@ -859,7 +883,7 @@ a.nav-opener-desk
 	will-change: $prop
 	transition:
 		property: $prop
-		duration: $animation-speed
+		duration: 0.8s
 
 	&.nav-overlay
 		top: 0
@@ -886,7 +910,7 @@ a.nav-opener-desk
 	position: relative
 	width: 100%
 	padding-top: 6.6rem
-	padding-bottom: nth($page-layout-space, 1) + 3rem
+	padding-bottom: nth($page-layout-space, 1) + 6.6rem
 	//z-index: $z-high
 	z-index: $z-low
 	background-color: $base-color
@@ -973,10 +997,14 @@ a.nav-opener-desk
 	.f-box__title
 		+font-bold
 		+font(2.6rem, round-float(30/26, 2))
-		margin-bottom: 1.5rem
+		margin-bottom: 1.6rem
 
 		+media('<tab-lg')
 			font-size: 2.0rem
+
+	&.f-box_subs
+		.f-box__title
+			margin-bottom: 2.4rem
 
 // f-box__angle
 .f-box__angle
@@ -1120,6 +1148,8 @@ a.nav-opener-desk
 		padding: 0
 
 	.f-box__title
+		margin-bottom: 1.8rem
+
 		+media('<tab-sm')
 			position: relative
 			padding: $footer-box-space--mob
@@ -1151,7 +1181,7 @@ a.nav-opener-desk
 	position: absolute
 	right: 0
 	bottom: 0
-	padding: 0 nth($page-layout-space, 2) nth($page-layout-space, 1) 0
+	padding: 0 nth($page-layout-space, 2) 4.6rem 0
 	width: auto
 	line-height: 0
 	text-align: right
@@ -1259,6 +1289,7 @@ a.nav-opener-desk
 	display: flex
 	flex-direction: column
 	justify-content: space-between
+	padding-bottom: 1.3rem
 
 	&::after
 		content: none
@@ -1268,6 +1299,7 @@ a.nav-opener-desk
 		display: flex
 		flex-direction: column
 		justify-content: space-between
+		padding-bottom: 0
 
 	+media('<desk-sm')
 		flex-direction: row

@@ -24,14 +24,20 @@
 </section>
 
 <h2 class="h1">Вкладывайте в компании по всей Европе</h2>
-<p><mark><strong>LACERTA</strong></mark> – это сервис надежных инвестиций. Вкладывайте деньги в облигации и другие ценные бумаги компаний по всей Европе — это в разы выгоднее, чем банковский вклад и уж конечно, легче. Приумножать Ваши сбережения ещё никогда не было так просто.</p>
+<p><mark><strong>LACERTA</strong></mark> – это сервис надежных инвестиций. Вкладывайте деньги в облигации и другие ценные бумаги компаний по всей Европе — это в разы выгоднее, чем банковский вклад и уж конечно, легче.</p>
+
+<section class="advantage-list layout-flood advantage-list-js">
+	@@loop('_tpl_advantage--items.html', 'includes/json/_tpl_advantage--items.json')
+</section>
 
 <h2 class="h1">Очереди? Бумаги? Забудьте!</h2>
 <p><strong><mark>От вашего желания до покупки первой облигации - пять минут.</mark></strong></p>
 <p>Установите приложение Lacerta, зарегистрируйтесь в нем, выбирите компанию, которая близка вам по духу и купите ее облигацию. Следите за доходом и выводите сумму при необходимости.</p>
 
-<section class="promo-slider layout-full-width promo-slider-js">
-	@@loop('_tpl_promo-slider--items.html', 'includes/json/_tpl_promo-slider--items.json')
+<section class="promo layout-full-width">
+	<div class="promo-slider promo-slider-js">
+		@@loop('_tpl_promo-slider--items.html', 'includes/json/_tpl_promo-slider--items.json')
+	</div>
 </section>
 
 <h3>Почему Lacerta предлагает именно облигации?</h3>
@@ -44,11 +50,11 @@
 
 <h2 class="h1">Вы видите, как работают ваши деньги, а не вы.</h2>
 <p><strong><mark>Через приложением LACERTA APP зарабатывать не труднее, чем написать смс.</mark></strong></p>
-<p>Безопасность операций. Защита ваших вложений. Лицензированные специалисты. Попробуйте!их инвестиций.</p>
+<p>Безопасность операций. Защита ваших вложений. Лицензированные специалисты. Попробуйте!</p>
 
-<section class="app layout-wide">
-	@@include("_tpl_btn.html", {"value": "Скачать на App store"})
-	@@include("_tpl_btn.html", {"value": "Скачать на Google playv"})
+<section class="app">
+	<div class="app__item"><a href="#" class="btn-app btn-app_apple">Скачать на App store</a></div>
+	<div class="app__item"><a href="#" class="btn-app btn-app_google">Скачать на Google play</a></div>
 </section>
 
 @@include('_tpl_PAGE_WRAP.html', {"pageWrap": "END", "currentItem": "Главная", "noBigBtn": "true"})

@@ -30,6 +30,7 @@
 	background: $btn-bg-color
 	box-shadow: none
 	+font-normal
+	letter-spacing: normal
 	color: $btn-text-color
 	text-align: left
 	// transition
@@ -57,29 +58,6 @@
 		+media($btn-media--mob)
 			right: 16px
 			+size(5px)
-
-	//&::before, &::after
-		content: ""
-		display: block
-		position: absolute
-		right: 32px
-		width: 6px
-		height: 1px
-		margin: 2px -1px
-		background-color: $base-color
-
-		+media($btn-media--mob)
-			right: 16px
-			width: 5px
-			margin: 1px 0
-
-	//&::before
-		bottom: 50%
-		transform: rotate(45deg)
-
-	//&::after
-		top: 50%
-		transform: rotate(-45deg)
 
 	&, & > span
 		+font($btn-font-size, $btn-line-height)

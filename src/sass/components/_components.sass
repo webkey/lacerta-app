@@ -538,19 +538,29 @@ input, button, [class|="btn"], [class*=" btn-"],
 				content: none
 
 		button
-			width: 10px
-			height: 10px
+			$size: 10px
+			width: $size
+			height: $size
 			padding: 0
-			border-radius: 50%
-			background: $text-color-light
+			border-radius: round($size / 2)
+			background: $highlight-color
 			position: relative
-			transition: background-color $animation-speed ease-in-out
+			box-shadow: 0 0 0 1px transparent
+			// transition
+			$prop: background-color, box-shadow
+			will-change: $prop
+			transition:
+				property: $prop
+				duration: $animation-speed
+				timing-function: ease-in-out
 
 			&::before
 				content: none
 
 		&.slick-active button
-			background-color: $highlight-color
+			color: $text-color
+			background-color: currentColor
+			box-shadow: 0 0 0 1px currentColor
 
 //.no-touchevents &:hover button::before
 /* slick sliders end
@@ -1198,6 +1208,9 @@ input, button, [class|="btn"], [class*=" btn-"],
 	//margin-bottom: $bottom-space--section + 0.7 //костыль для подгонки отступов под дизайн
 	margin-top: $bottom-space--section + 0.1
 	margin-bottom: $bottom-space--section + 0.7
+
+	+media('<tab-lg')
+		margin-bottom: 7rem
 
 	+media('<mob-lg')
 		margin-top: 4.5rem
@@ -2750,7 +2763,7 @@ input, button, [class|="btn"], [class*=" btn-"],
 		margin-bottom: 0
 
 	li
-		margin-bottom: 1.5rem
+		margin-bottom: 1.7rem
 
 		+media('<tab-lg')
 			margin-bottom: 0.9rem
@@ -2821,6 +2834,10 @@ input, button, [class|="btn"], [class*=" btn-"],
 		display: block
 		width: 100%
 		text-align: center
+		margin-top: 6rem
+
+		+media('<desk-lg')
+			margin-top: 0
 
 		+media('<tab-sm')
 			+push-auto
@@ -4324,7 +4341,36 @@ a.news-heading
 
 /* promo
 .promo
-	padding: 0
+	$top: 41px
+	$top--mob: 20px
+
+	padding: $top 0 111px
+	overflow: hidden
+	position: relative
+	margin-bottom: 10.8rem
+
+	+media('<tab-lg')
+		margin-bottom: 5rem
+
+	+media('<mob-lg')
+		margin-bottom: 2.5rem
+		padding: $top--mob 0 60px
+
+	&:last-child
+		margin-bottom: 0
+
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		left: 0
+		right: 0
+		top: $top + 40
+		bottom: 0
+		background-color: $base-color-alt
+
+		+media('<mob-lg')
+			top: $top--mob * 2
 
 .promo-slider
 	// before slide load
@@ -4333,6 +4379,10 @@ a.news-heading
 	opacity: 0
 	visibility: hidden
 	// before slide load end
+	position: relative
+	width: 456px
+	max-width: 100%
+	margin: 0 auto
 	// transition
 	$prop: visibility
 	will-change: $prop
@@ -4347,51 +4397,59 @@ a.news-heading
 		// after slide load end
 
 	&, &.slick-dotted
-		margin-bottom: 14.5rem
+		margin-bottom: 0
 
-		+media('<mob-lg')
-			margin-bottom: 5.6rem
+	.slick-list
+		overflow: visible
 
 	.slick-dots
-		&, .#{$user-content} & .slick-dots
-			margin: 0
+		bottom: auto
+		top: 100%
+		margin-top: 57px
 
-		&
-			left: auto
-			right: nth($page-layout-space, 2)
-			bottom: 8rem
-			width: auto
+		+media('<mob-lg')
+			margin-top: 23px
 
-			+media('<desk-lg')
-				right: nth($page-layout-space--md, 2)
+//.slick-dots
+	&, .#{$user-content} & .slick-dots
+		margin: 0
 
-			+media('<tab-lg')
-				right: nth($page-layout-space--mob, 2)
-				bottom: 5rem
+	&
+		left: auto
+		right: nth($page-layout-space, 2)
+		bottom: 8rem
+		width: auto
 
-			+media('<mob-lg')
-				bottom: 3rem
+		+media('<desk-lg')
+			right: nth($page-layout-space--md, 2)
 
-			li
-				display: block
-				padding: 14px 0 0
-				font-size: 0
-				line-height: 0
+		+media('<tab-lg')
+			right: nth($page-layout-space--mob, 2)
+			bottom: 5rem
 
+		+media('<mob-lg')
+			bottom: 3rem
+
+		li
+			display: block
+			padding: 14px 0 0
+			font-size: 0
+			line-height: 0
+
+			button
+				width: 14px
+				height: 14px
+				background-color: rgba(white, 0.5)
+
+			// hover
+			&:hover
 				button
-					width: 14px
-					height: 14px
-					background-color: rgba(white, 0.5)
+					background-color: rgba(white, 0.7)
 
-				// hover
-				&:hover
-					button
-						background-color: rgba(white, 0.7)
-
-				// active
-				&.slick-active
-					button
-						background-color: white
+			// active
+			&.slick-active
+				button
+					background-color: white
 
 .promo-slider__item
 	// before slide load
@@ -4399,24 +4457,10 @@ a.news-heading
 	display: inline-block
 	vertical-align: top
 	// before slide load end
+	padding: 0 14px
 	position: relative
-	overflow: hidden
 	width: 100%
-	padding: 6.5rem nth($page-layout-space, 2) 8.7rem
-	text-decoration: none
-	color: white
 	z-index: 1
-
-	+media('<desk-lg')
-		padding: 6.5rem nth($page-layout-space--md, 2) 8.7rem
-
-	+media('<tab-lg')
-		padding: 5rem nth($page-layout-space--mob, 2)
-
-	+media('<mob-lg')
-		+padding-vertical(nth($page-layout-space--mob, 1))
-		height: auto
-		min-height: 320px
 
 	&, .slick-vertical &
 		border: none
@@ -4427,91 +4471,85 @@ a.news-heading
 		display: block
 		// after slide load end
 
-	&::before, &::after
-		content: ""
-		display: block
-		position: absolute
-		+size(100%)
-		left: 0
-		top: 0
-		// transition
-		will-change: opacity
-		transition: opacity $animation-speed ease-in-out
-		z-index: 1
+.promo-slider__figure
+	position: relative
+	display: block
+	margin: 0
+	padding: 0
+	opacity: 0.15
+	$scale: 0.824
+	$translate: 0, 0
+	transform: scale($scale) translate($translate) // for old browser
+	transform: scale3d($scale, $scale, 1) translate3d($translate, 0)
+	transform-origin: center bottom
+	// transition
+	$prop: transform, opacity
+	will-change: $prop
+	transition:
+		property: $prop
+		duration: $animation-speed
+		timing-function: ease-in-out
 
-	&::before
+	.current-p &
+		opacity: 0.3
+		$scale: 0.88
+		$translate: 28px, 0
+		transform: scale($scale) translate($translate) // for old browser
+		transform: scale3d($scale, $scale, 1) translate3d($translate, 0)
+
+	.current-pp &
+		opacity: 0.15
+		$scale: 0.824
+		$translate: 106px, 0
+		transform: scale($scale) translate($translate) // for old browser
+		transform: scale3d($scale, $scale, 1) translate3d($translate, 0)
+
+	.current-n &
+		opacity: 0.3
+		$scale: 0.88
+		$translate: -28px, 0
+		transform: scale($scale) translate($translate) // for old browser
+		transform: scale3d($scale, $scale, 1) translate3d($translate, 0)
+
+	.current-nn &
+		opacity: 0.15
+		$scale: 0.824
+		$translate: -106px, 0
+		transform: scale($scale) translate($translate) // for old browser
+		transform: scale3d($scale, $scale, 1) translate3d($translate, 0)
+
+	.slick-current &
 		opacity: 1
-		$grad-color: black
-		+linear-gradient(to bottom, rgba($grad-color, 0) 0%,rgba($grad-color, 0.03) 27%,rgba($grad-color, 0.12) 70%,rgba($grad-color, 0.15) 100%)
+		$scale: 1
+		$translate: 0, 0
+		transform: scale($scale) translate($translate) // for old browser
+		transform: scale3d($scale, $scale, 1) translate3d($translate, 0)
 
 	&::after
+		content: ''
+		display: block
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		border: 1px solid #c2c2c2
+		box-shadow: 0 8px 40px rgba(black, 0.3)
 		opacity: 0
-		$bg-color: #41418b
-		+linear-gradient(to top, rgba($bg-color, 1) 0%, rgba($bg-color, 0) 100%)
+		// transition
+		$prop: opacity
+		will-change: $prop
+		transition:
+			property: $prop
+			duration: $animation-speed
+			timing-function: ease-in-out
 
-.promo-slider__figure
-	position: absolute
-	left: 0
-	top: 0
-	width: 100%
-	height: 100%
-	max-width: none
-	margin: 0
-	background-color: $base-color
-	+size(100%)
-	+object-fit(cover)
-
-.promo-slider__content
-	position: relative
-	z-index: 2
-	+wide
-
-	+media('<tab-lg')
-		padding-right: 40px
-
-	+media('<mob-lg')
-		padding-right: 30px
-
-.promo-slider__title
-	width: round(980 / 1240 * 100) * 1%
-	margin-bottom: 7rem
-	+font-h1
-
-	+media('<tab-lg')
-		width: auto
-		margin-bottom: 3rem
-
-	&:last-child
-		margin-bottom: 0
-
-.promo-slider__text
-	+font-bold
-	+font(2.4rem, round-float(29/24, 2))
-	margin: 0 0 5rem $main-sect-heading-width
-
-	+media('<desk-sm')
-		margin-left: 0
-
-	+media('<mob-lg')
-		margin-bottom: 3rem
-		font-size: 2rem
-
-	&:last-child
-		margin-bottom: 0
-
-.promo-slider__text-inner
-	max-width: $text-layout-width-alt
-
-// hover
-.promo-slider__item
-	&:hover
-		color: white
-
-		&::before
-			opacity: 0
-
-		&::after
+		.slick-current &
 			opacity: 1
+
+	img
+		display: block
+		margin: 0 auto
 
 /* promo end
 
@@ -4520,28 +4558,51 @@ a.news-heading
 /* phone on bg
 .bg-phone
 	position: absolute
-	right: 11px
+	left: 0
 	top: 0
 	z-index: -1
-	+size(912px)
-	transform: translate(0, -198px)
+	overflow: hidden
+	+size(912px, 100%)
+
+	+media('<mob-md')
+		display: none
 
 	&::before
 		content: ''
 		display: block
 		position: absolute
 		+size(912px)
-		left: 0
+		left: 50%
 		top: 0
 		background-color: #2f2f9f
 		border-radius: 50%
 		z-index: -1
+		transform: translate(28px, -198px)
+
+		+media('<desk-sm')
+			+size(700px)
+			transform: translate(28px, -120px)
+
+		+media('<tab-lg')
+			+size(480px)
+
+		+media('<mob-lg')
+			+size(320px)
+			transform: translate(80px, -110px)
 
 .bg-phone__img
 	position: absolute
-	left: 136px
+	left: calc(50% + 136px)
 	top: 248px
 	width: 677px
+	transform: translate(28px, -198px)
+
+	+media('<desk-sm')
+		width: 480px
+		transform: translate(28px, -120px)
+
+	+media('<tab-lg')
+		display: none
 
 	&::before
 		content: ''
@@ -4563,7 +4624,6 @@ a.news-heading
 	display: flex
 	align-items: center
 	height: $header-height--md
-	background-color: rgba(lightgreen, 0.5)
 	padding: 0 15rem
 
 	+media('<desk-lg')
@@ -4576,27 +4636,271 @@ a.news-heading
 /* caption
 .caption
 	text-align: left
-	min-height: 815px // отодвинуть контент от телефона на фоне
+	padding-top: 4.5rem
+	min-height: 610px // отодвинуть контент от телефона на фоне
+
+	+media('<desk-sm')
+		min-height: 450px
+
+	+media('<tab-lg')
+		min-height: 0
+
+	+media('<mob-lg')
+		padding-top: 3rem
 
 	h1, .h1
 		text-align: left
+		margin-bottom: 4.7rem
+
+		+media('<mob-lg')
+			margin-bottom: 2.5rem
 
 	.section__holder
 		padding-right: 30rem
 
+		+media('<tab-lg')
+			padding-right: 0
+
 .caption__content
 	max-width: 60rem
-
-	margin-bottom: 2.5rem
+	margin-bottom: 3.7rem
 
 	&:last-child
 		margin-bottom: 0
 
+.caption__footer
+	.btn-def
+		padding-right: 80px
+		padding-left: 42px
+
+		+media($btn-media--mob)
+			padding-right: 46px
+			padding-left: 32px
+
+		&::before
+			right: 61px
+
+			+media($btn-media--mob)
+				right: 16px
+
 /* caption end
+
+/* advantage
+.advantage-list
+	margin: 10.2rem auto 12.9rem
+	+clear-spacing
+
+	+media('<tab-lg')
+		margin: 5rem auto 7rem
+
+	+media('<mob-lg')
+		margin: 1.5rem auto 2.5rem
+
+	&:first-child
+		margin-top: 0
+
+	&:last-child
+		margin-bottom: 0
+
+.advantage-item
+	display: inline-block
+	vertical-align: top
+	width: 50%
+	padding: 3.9rem
+	+font($font-size, $line-height)
+	letter-spacing: normal
+	border: 1px solid #c5c5c5
+	background-color: #f0f0f0
+	min-height: 360px
+
+	+media('<desk-sm')
+		padding: $grid-space--md
+
+	+media('<tab-lg')
+		display: block
+		width: 100%
+		height: auto !important
+		min-height: 0
+
+	+media('<mob-lg')
+		+font($font-size--mob, $line-height--mob)
+		padding: $grid-space--mob
+
+.advantage-item__icon
+	margin: 0 0 3.5rem -1px
+
+	+media('<mob-lg')
+		margin: 0 0 1rem
+
+	&:last-child
+		margin-bottom: 0
+
+.advantage-item__title
+	+font-bold
+	font-size: 3.2rem
+	line-height: 3.4rem
+	margin-bottom: 1.8rem
+	color: $base-color-alt
+
+	+media('<mob-lg')
+		font-size: 2.0rem
+		line-height: 2.2rem
+		margin-bottom: 0.8rem
+
+	&:last-child
+		margin-bottom: 0
+
+.advantage-item__text
+	margin-bottom: 1.8rem
+
+	+media('<mob-lg')
+		margin-bottom: 0.8rem
+
+	&:last-child
+		margin-bottom: 0
+
+/* advantage end
+
+/* app buttons
+.btn-app
+	$btn-height: 120px
+	$btn-font-size: 28px
+	$btn-line-height: 32px
+
+	position: relative
+	padding: floor(($btn-height - $btn-line-height) / 2 + 1) 57px ceil(($btn-height - $btn-line-height) / 2 - 1) 139px
+	margin: 0
+	border: none
+	border-radius: round($btn-height/2)
+	background-color: $btn-bg-color
+	background-repeat: no-repeat
+	box-shadow: none
+	+font-bold
+	+font($btn-font-size, $btn-line-height)
+	letter-spacing: normal
+	color: $btn-text-color
+	text-align: center
+	// transition
+	$prop: color, background-color, border-color
+	transition:
+		property: $prop
+		duration: $animation-speed
+
+	+media('<mob-lg')
+		$btn-height: 80px
+		$btn-font-size: 22px
+		$btn-line-height: 26px
+
+		padding: floor(($btn-height - $btn-line-height) / 2 + 1) 20px ceil(($btn-height - $btn-line-height) / 2 - 1) 82px
+		+font($btn-font-size, $btn-line-height)
+		text-align: left
+
+	+media('<mob-md')
+		$btn-height: 80px
+		$btn-font-size: 18px
+		$btn-line-height: 24px
+
+		padding: floor(($btn-height - $btn-line-height) / 2 + 1) 10px ceil(($btn-height - $btn-line-height) / 2 - 1) 65px
+		+font($btn-font-size, $btn-line-height)
+
+	&.btn-app_apple
+		background-image: url(../../img/icon-app-store.png)
+		background-position: 71px 19px
+
+		+media('<mob-lg')
+			background-size: 40px auto
+			background-position: 26px 10px
+
+		+media('<mob-md')
+			background-position: 16px 10px
+
+	&.btn-app_google
+		background-image: url(../../img/icon-google-play.png)
+		background-position: 52px 27px
+
+		+media('<mob-lg')
+			background-size: 40px auto
+			background-position: 27px 20px
+
+		+media('<mob-md')
+			background-position: 18px 20px
+
+	.touchevents &
+		user-select: none
+		-webkit-tap-highlight-color: transparent
+		
+	// hover
+	&:hover:not(:disabled):not(.disabled)
+		background-color: $btn-bg-hover-color
+		color: $btn-text-color
+
+	// disabled
+	//&:disabled, &.disabled
+		cursor: default
+		color: $btn-disabled-color
+		background-color: $btn-disabled-bg
+
+		&::before, &::after
+			border-color: currentColor
+
+		path
+			fill: currentColor
+
+/* app buttons enc
 
 /* app
 .app
 	text-align: center
+	max-width: 105.8rem
+	margin: 4.4rem auto 7rem
+	+clear-spacing
+
+	&:first-child
+		margin-top: 0
+
+	&:last-child
+		margin-bottom: 0
+
+.app__item
+	display: inline-block
+	vertical-align: top
+	margin: 0 3rem 6rem
+	width: calc(50% - 3rem)
+
+	+media('<1200px')
+		display: block
+		width: auto
+		margin: 0 0 4rem
+
+	&:nth-child(odd)
+		margin-left: 0
+
+	&:nth-child(even)
+		margin-right: 0
+
+	&:nth-last-child(-n+2)
+		margin-bottom: 0
+
+		+media('<1200px')
+			margin-bottom: 4rem
+
+		+media('<mob-lg')
+			margin-bottom: 2rem
+
+	&:last-child
+		+media('<1200px')
+			margin-bottom: 0
+
+	.btn-app
+		+media('<1200px')
+			width: 500px
+
+		+media('<mob-lg')
+			width: 360px
+
+		+media('<mob-md')
+			width: 280px
 
 /* app end
+
 /* ==== app end =====
