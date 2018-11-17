@@ -983,6 +983,26 @@ function singleDrop() {
 }
 
 /**
+ * !Scroll To Section
+ * */
+function scrollToSection(){
+	var $page = $('html, body'),
+		mq = 1899;
+
+	$('body').on('click', '.btn-scroll-to-js', function (event) {
+		event.preventDefault();
+
+		var $curAnchor = $(this),
+			$scrollElem = $($curAnchor.attr('href'));
+
+		if (!$page.is(':animated')) {
+			var topSpace = window.innerWidth > mq ? 0 : $('.header__top').outerHeight();
+			$page.stop().animate({scrollTop: $scrollElem.offset().top - (topSpace + 40)}, 300);
+		}
+	});
+}
+
+/**
  * =========== !ready document, load/resize window ===========
  */
 
@@ -996,4 +1016,5 @@ $(document).ready(function () {
 	slidersInit();
 	toggleNav();
 	singleDrop();
+	scrollToSection();
 });
