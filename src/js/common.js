@@ -271,7 +271,7 @@ function slidersInit() {
 	if ($promoSlider.length) {
 		$.each($promoSlider, function () {
 			var $currentSlider = $(this),
-				initialSlide = 2;
+				initialSlide = 0;
 
 			$currentSlider.on('init', function (event, slick) {
 				var $slide = $(slick.$slides),
@@ -286,9 +286,12 @@ function slidersInit() {
 				centerMode: true,
 				centerPadding: '0',
 				focusOnSelect: true,
-				infinite: false,
+				infinite: true,
 				dots: true,
 				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				pauseOnFocus: false
 				// touchThreshold: 100,
 
 				// accessibility: false,
@@ -296,7 +299,7 @@ function slidersInit() {
 				// swipe: false,
 				// touchMove: false,
 			}).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-				var $slide = $(slick.$slides),
+				var $slide = $('.slick-slide', $(slick.$slider)),
 					$curSlide = $(slick.$slides).eq(nextSlide);
 
 				setSiblingsClass($slide, $curSlide)
